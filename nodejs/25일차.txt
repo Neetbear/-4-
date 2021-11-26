@@ -1,0 +1,47 @@
+마리아db 설치 
+마이스퀘어 워크벤치 설치
+sys shemas 삭제 금지
+
+create database nodepot;
+use nodepot; -> 폴더 아님 데이터베이스임
+
+seq(시퀀스) int(숫자변수) not null auto_increment(자동증가 ++)
+auto_increment사용할라면 PRIMARY KEY 필수
+userid varchar(16)(캐릭터 문자열) null 사실 디폴트가 null 허용이라 안써도 됨
+
+select * from class4;
+select 질의(query) * 모든거(여기다 column 이름 넣으면 보고싶은거만 봄)  from 어디서부터 
+
+(userid, userpwd, phone, addr, descr)
+column 이름임? 
+
+UPDATE class4 set userid = 'rogue'
+WHERE userid = 'rog'; -> rog인애 rogue로 변경
+
+내용물말고 명령어는 대문자로 쓰는게 국룰 (query문)
+
+DELETE FROM class4
+WHERE userid = 'rogue'; index번호도 같이 날라감 
+
+INSERT INTO
+
+주석 /**/ -- 주석  ->두종류인데 /**/이걸로하자
+
+
+CREATE user 'sa'@'%' IDENTIFIED BY '1234';
+'@' 모든 호스트가 접속 가능?
+% -> 어떤 아이피에서든
+
+GRANT ALL PRIVILEGES ON nodepot.* TO 'sa'@'%';
+nodepotdb에서만 권한주기
+GRANT ALL PRIVILEGES ON *.* TO 'sa'@'%';
+이렇게 권한줘라 
+권한 안주면 밖에서 remote(원격)로 연결이 안된다
+
+"connectionLimit": 100 
+몇개의 세션까지 연결할래
+많아지면 느려지니까 보통 20~30?
+
+drop은 서버에서 데이터베이스 떨군다 -> 완전히 날린다
+
+try catch와 if문의 err 차이는 try catch는 서버 의존적 error 처리 if문은 내가 직접 조건 가지고 잡는 방식

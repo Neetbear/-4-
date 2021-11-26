@@ -1,0 +1,49 @@
+node js 시작
+    크롬의 자바스크립트 엔진을 기반으로 구축된 server-side platform
+    non-blocking I/O 모델 -> blocking은 콜백함수에서 나왔던 용어 생각하면됨
+    open source crossplatform runtime 환경 -> 런타임 환경에서 바로 적용되어 실행됨
+    
+    node.js = runtime enviroment + javascript library
+
+    비동기(asynchronous, 콜백 생각) & event driven
+        blocking 설거지 중에 전화가 왔을때 설거지 끝나고 통화하는 느낌
+        non blocking 설거지 중에도 통화하는 느낌
+    node.js의 이벤트 알림 매커니즘은 이전 api호출에 대한 응답을 받을 수 있도록 도와준다.
+
+    single threaded but highly scalable
+    no buffering 
+        데이터 덩어리 한덩어리씩은 chunk
+        buffer면 내용물마다 잘라서?
+    nodejs는 MIT license
+        오픈소스 사용하더라도 오픈소스 사용했다고 다 공개해야함
+
+
+    asynchronous programming
+        작업을 컴퓨터의 file system으로 보낸다
+        다음 요청을 처리할 준비를 한다.
+        file system이 열리고 file을 읽으면 서버는 콘텐츠를 클라이언트에게 반환한다. -> non blocking
+    -> 대기를 없애고 단순히 다음 요청을 계속한다. 메모리가 매우 효율적?
+
+    이벤트 함수를 던지면 크롬이 처리 / 내 thread가 아니다?
+
+    crypto는 나중에 회사가서 배우고 생략
+    clustor - 데이터베이스 여러개 두고 유기적으로 통신시켜서 main이 죽으면 다른걸 main으로 돌아가게함 복구되면 다시 main 변경/무중단되게
+
+    callback, module 중요
+
+    CPU 집약적인 어플리케이션에서는 node.js 사용하지 않는 것이 좋다 -> 서버 사이드에서 돌아가는 것들 -> 아무리 비동기여도 cpu 퍽남
+    
+https://github.com/coreybutler/nvm-windows/releases 노드 버전 매니져 여기서 설치nvm-setup 압축파일 설치 
+nodejs 홈페이지 드가서 LTS 버전으로 다운 (long term 버전) 
+
+cmd 창 말고 powershell으로 작업
+보통창에서 nvm install lts
+관리자창에서 nvm use 16.13.0
+
+    npm node package manager
+    https://www.npmjs.com/ 여기서 npm module 검색 가능
+
+웹서버 기본포트 80
+
+오브젝트를 적재한다 -> 로딩?
+instance 

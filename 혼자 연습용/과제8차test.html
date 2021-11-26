@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제8차</title>
+</head>
+<body>
+    <!--8차과제 문제
+    console에 출력
+    function1 * 삼각형찍기 
+    function2 * 역삼각형찍기
+    function3 * 다이아몬드찍기-->
+    <script>
+        for(let n = 1; n <= 10; n++) {
+            console.log("*".repeat(n));
+        }
+
+        var tri2 = '';
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j <= i; j++) {
+                tri2 += '*';
+            }
+            tri2 += '\n';
+        }
+        console.log(tri2);
+
+        //어제 과제 고쳐서 만든거
+        const tri = [];
+        for(let n = 0; n < 10; n++){
+            tri.push('');
+            for(let i = 0; i < n + 1 ; i++) {
+                if(i <= n) {  
+                    tri[n] += '*'; 
+                }
+                else {
+                    tri[n] += '';
+                } 
+            }
+            console.log(tri[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+        }
+ 
+        for(let n = 10; n > 0; n--) {
+            console.log("*".repeat(n));
+        }
+
+        let revtri2 = '';
+        for(let n = 10; n > 0; n--) {
+            for(let i = 0; i < n; i++){
+                revtri2 += "*";
+            }
+            revtri2 += '\n'
+        }
+        console.log(revtri2);
+
+        const revtri = [];
+        for(let n = 10; n > 0 ; n--){
+            revtri.push("");
+            for(let i = 0; i < n ; i++) {
+                if(i <= n) {
+                    revtri[n] += "*"; 
+                }
+                else {
+                    revtri[n] += " ";
+                } 
+            }
+            console.log(revtri[n]);  
+        }
+        
+        const diam = [];
+        for(let n = 0; n < 11 ; n++){
+            diam.push(' ');
+            for(let i = 0; i <= 11 ; i++) {
+                if((i > Math.abs(5 - n)) && (i < (12 - Math.abs(5 - n)))) {
+                    diam[n] += '*'; 
+                }
+                else {
+                    diam[n] += ' ';
+                } 
+            }
+            console.log(diam[n] + "\n"); 
+        }
+
+        let x = "";
+        for(let n = 0; n < 11 ; n++){
+            for(let i = 0; i <= 11 ; i++) {
+                if((i > Math.abs(5 - n)) && (i < (12 - Math.abs(5 - n)))) {
+                    x += '*'; 
+                }
+                else {
+                    x += ' ';
+                } 
+            } 
+            x += "\n"
+        } 
+        console.log(x);
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+5일차
+css 박스모델부터 이어서
+
+    border 속성
+        border-width 상하좌우 별개로 가능 (상우하좌 순서임)
+        border-style 실선 점선 등등
+        border-color 테두리 색상
+        border-radius 테두리 모서리 둥글게 px나 %단위로 준다
+
+    단축형
+        border: width style color; 순으로 나열해서 씀
+        border-left: ; 이러면 왼쪽만 건드리겠다 
+
+    margin
+        박스와 인접요소간의 여백
+        박스를 가운데 정렬할때도 쓸수 있다.
+
+    레이아웃
+        화면의 배치 position/ 나란히 배치되는 애들은 foalt, display로
+
+      그리드(grid)시스템 
+        가로 세로 격자로 나누는것
+        bootstrap은 한줄을 최대 12개 칼럼으로 분할 -> 연습용으론 나쁨 의존됨
+        한줄을 100%로 가정하고 컬럼마다 비율 분할 가능
+      
+      컨테이너 전체 영역 header contest footer로 분할 가능
+        컨테이너는 박스 클래스 요소를 가진다  <div class="cantainer">
+
+      포지션(position) 기본 위치는 기준위치의 좌측상단임 
+        스태틱(static) - 기본값, 요소를 왼쪽에서부터 순서대로 나열 / 공간 없을땐 다음줄로 넘어감
+        Relative - 나열한순서로 배치하지만 원위치에서 top,right,bottom,left로 위치 지정가능 / 지정위치에서부터 이동임
+        Absolute - 상하좌우 속성값 가능 /  기준위치는 부모요소, 없으면 브라우저 기준임 
+        Fixed - 기준이 무조건 브라우저 창 / 페이지 스크롤해도 고정되어 표시
+        z-index - z축 중첩되는 박스들에 위치조정 /  맨뒤 맨앞 보내기용 / position 속성적용해야만 작용 
+                    / 0기준으로 수 클수록 앞 작을수록 뒤
+
+    %right: 0px; 면 오른쪽으로 붙으라는 소리임
+    % 단위안쓰면 px 기준?
+
+      Float 좌측 혹은 우측부터 박스 콘첸츠 배열가능
+        float준대로 width값만큼 차지하면서 좌우배열되고 남은 공간엔 다른 요소들이 자리차지하게 공간비워줌
+      clear float 속성이 더 이상 유용하지 않다고 알려주는 속성
+        모든 클리어 무효시엔 clear: both;
+
+      dlsplay 요소를 보여주는 방식을 지정
+        none: 보이지 않음 
+        visibility(hidden과 유사하면 영역자체가 사라짐)
+        %block -> width 100%인 애들 나란히 배치 불가
+        %inline -> 나란히 배치 가능, width height 주기 불가 
+        inline-block -> dlsplay 사용해서 block에 inline의 중간형태
+
+    박스 요소 정렬
+      좌-우, 중양 정렬 등    
+        margin:auto 가운데 정렬
+        width가 100%또는 정의되지 않으면 정렬 안됨 ->꽉차거나 없으면 정의가 안되니까
+      블럭 요소의 position속성을 Absolute로 두고 right, left로 원하는 위치에 정렬  
+      수직정렬 
+        기본은 padding 주기 위/아래 동일하게 지정하면 가운데정렬
+        
+    블럭 요소 수직 정렬
+        기본 방법은 padding으로 위아래 여백 지정
+
+    이미지 가운데 정렬
+        1. text-align:center
+        2. display: block; margin:auto
+
+    복합셀렉터
+        가상클래스, 가상엘리먼트 / css 상속 개념, 후손, 자손 등등
+        
+        상속(inheritance): 상위 오브젝트(부모요소)와 하위 오브젝트(자식요소) 
+                            코드 중복 방지 / 유지보수 편리 재활용 용이
+        셀렉터 조합 
+            A B { } -> A의 후손 B를 선택 B는 A요소안의 다른 요소의 자식이어도 됨
+            div a { }  <div> <p> <a> </a> </p> </div> 이래도 된다는 소리임
+        자식 선택자 
+            Selector A > Selector B {} -> A의 직접 자식인 모든 B = 다른 요소 안에 있는 B는 제외
+        인접 형제 선택자
+            Selector A + Selector B {} -> A와 B는 같은 부모여야하고 A와 가장 인접한 B만 적용 
+                                                            (위가 아니라밑쪽이 더 가까운거임)
+        일반 형제 선택자
+            Selector A ~ Selector B {} -> A 요소의 형제인 모든 B
+
+    가상 셀렉터
+        가상 셀렉터에는 가상 클래스(pseudo 슈도)와 가상 엘리먼트
+        가상 클래스 링크 아니어도 적용됨
+            :virtual Selector 같이 사용  a:hover 같은거
+            :active 
+            :hover
+            :link 
+            :focus -> 작성바? 커서? 
+            :checked 사용된 
+            :disabled 사용 불가능
+            :enabled 사용가능
+            :frisr-child 첫자식
+            :last-child 마지막자식
+            :nth-child n번째 자식
+        가상 엘리먼트
+
+
+
+
+
+
+
+
+
+
+
+
+    %보통 전체는 글꼴같은것만 건들고 각각의 개체는 class로 건드리는게 좋음
+    %border-box 걸면 box 전체영역크기 조절 즉 컨텐츠 크기 = border-box – border – padding – margin
+    %일반적인 content-box에서 건드리면 컨텐츠 크기 = content-box만 조절 -> 전체 크기 = content-box + border + padding + margin

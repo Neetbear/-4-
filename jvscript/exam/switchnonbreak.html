@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switchcase문에 break 없을때</title>
+</head>
+<body>
+    <button onclick="checkSwitch()">Click</button>
+    <p id="result"></p>
+
+    <script>
+        function checkSwitch() {
+            let text;
+
+            switch(new Date().getDay()){
+                case 1:
+                case 2:
+                    text += "Today is Tuseday!!!";
+                    // break; 
+                    //브레이크 없으면 다음것도 실행되니까 디폴트까지 감
+                    // 1~5까지 묶을땐 break빼고 쓰는 식으로 써먹음 무조건 break쓰라는거 아님
+                case 3:
+                    text += "Today is Wednesday!!!";
+                    // break;
+                default:
+                    text += "Looking forward to the Weekend!!!"; //+=로 1~x까지 계속 추가하게 쓸수도 있네
+                    break;
+                case 4:
+                case 5:
+                    text = "Soon it is Weekend!!!"
+                    break;
+                case 0:
+                case 6:
+                    text = "It is Weekend!!!"    
+            }
+
+            // switch(){
+            //     case 1:
+            //     case 2:
+            //     case 3:
+            //     case 4:
+            //     case 5:
+            //         break;
+            // } 이 2개가 비슷한 방식임
+            // if(a === 1 || a === 2 || a === 3 || a === 4 || a === 5) {
+
+            // }
+
+            document.getElementById("result").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

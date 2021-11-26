@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function makeday(year, month)
+        {   
+            //윗줄 출력
+            console.log(year + "년, " + month + "월");
+            console.log("일" + "월" + "화" + "수" + "목" + "금" + "토");
+            //마지막날 28,30,31 잡기
+            var lday = ""; 
+            switch(month)
+            {
+                case 1:
+                    lday = 31;
+                    break;
+                case 2:
+                    lday = 28;
+                    break;      
+                case 3:
+                    lday = 31;
+                    break; 
+                case 4:
+                    lday = 30;
+                    break; 
+                case 5:
+                    lday = 31;
+                    break; 
+                case 6:
+                    lday = 30;
+                    break; 
+                case 7:
+                    lday = 31;
+                    break; 
+                case 8:
+                    lday = 30;
+                    break; 
+                case 9:
+                    lday = 31;
+                    break; 
+                case 10:
+                    lday = 30;
+                    break; 
+                case 11:
+                    lday = 30;
+                    break;
+                default:
+                    lday = 31;
+                    break;         
+            }
+
+            //1~lday까지 한 array로 묶기
+            var dayarr = [];
+            var i = 1;
+            while(i <= lday)
+            {
+                dayarr.push(i);
+                i++;
+            }
+
+            //array 요일에 맞게 재배치
+            var fdate = new Date(year, month, 1);
+            var fday = fdate.getDay();
+            if (fday == 0)
+            {
+                return dayarr;
+            }
+            if (fday == 1)
+            {
+                dayarr.unshift(' ');
+            }
+            else if (fday == 2)
+            {
+                dayarr.unshift(' ', ' ');
+            }
+            else if (fday == 3)
+            {
+                dayarr.unshift(' ', ' ', ' ');
+            }
+            else if (fday == 4)
+            {
+                dayarr.unshift(' ', ' ', ' ', ' ');
+            }
+            else if (fday == 5)
+            {
+                dayarr.unshift(' ', ' ', ' ', ' ', ' ');
+            }
+            else
+            {
+                dayarr.unshift(' ', ' ', ' ', ' ', ' ', ' ');
+            }
+
+            // console.log(dayarr);
+            //day array값 배열하기
+            var dayarr1 = dayarr.slice(0,7);
+            var dayarr2 = dayarr.slice(7,14);
+            var dayarr3 = dayarr.slice(14,21);
+            var dayarr4 = dayarr.slice(21,28);
+            var dayarr5 = dayarr.slice(28,35);
+            var dayarr6 = dayarr.slice(35,42);
+            console.log(dayarr1.join(' ') );
+            console.log(dayarr2.join(' ') );
+            console.log(dayarr3.join(' ') );
+            console.log(dayarr4.join(' ') );
+            console.log(dayarr5.join(' ') );
+            console.log(dayarr6.join(' ') );
+        }
+        makeday(2021, 5);
+        makeday(2021, 3);
+    </script>
+</body>
+</html>

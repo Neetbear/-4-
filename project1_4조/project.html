@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link rel="icon" href="./img/whiskyicon.png">
+    <link rel="stylesheet" href="./pro.css" type="text/css">
+</head>
+<body>
+    <header>
+        <div>
+            <h1 id="logo">
+                <img src="img/whiskymain.jpg" style="opacity: 0.8;">
+                <a href="./project.html"></a>
+            </h1>
+        </div>
+        <nav id="gnb">
+            <ul class="depth1">
+                <li id="logoutstate1" style="display: block;"><a href="./login.html" ><span class="neonText">로그인</span></a></li>
+                <li id="loginstate1" style="display: none;"><a href="" onclick="logoutFunc()"><span class="neonText">로그아웃</span></a></li>
+                <li id="logoutstate2" style="display: block;"><a href="./join.html"><span class="neonText">회원가입</span></a></li>
+                <li id="loginstate2" style="display: none;"><a href=""><span class="neonText">마이페이지</span></a></li>
+                <li><span class="neonText">고객센터</span></li>
+            </ul>
+        </nav>
+                
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="main-container-jack">
+                <a href="./jack.html" >
+                    <img src="img/jacklogo.png" id="jacklogo">
+                </a> 
+            </div>
+            <div class="main-container-ballan">
+                <a href="./ballentine.html" >
+                    <img src="img/ballanlogo.png" id="ballanlogo">
+                </a>
+            </div>
+            <div class="main-container-walker">
+                <a href="./walker.html" >
+                    <img src="img/walkerlogo.png" id="walkerlogo">
+                </a>
+            </div>
+            <div class="main-container-glen">
+                <a href="./glen.html" >
+                    <img src="img/glenlogo.png" id="walkerlogo">
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerdiv">
+            <div id="footerimg">
+                <a href="https://www.facebook.com/" target="_blank"> 
+                    <img src="img/facebooklogo.png"> 
+                </a>
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="img/youtubelogo.png">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="img/instarlogo.png">
+                </a>
+                
+            </div>  
+            <div class="footer2">
+                <div>
+                    <ul class="footerul">
+                        <li><p><strong>조장</strong> : 노진형 <strong>이메일</strong> : flffkry@gmail.com</p> </li>
+                        <li><p><strong>조원</strong> : 조민경 <strong>이메일</strong> : jmk5357@naver.com</p></li>
+                        <li><p><strong>조원</strong> : 이시은 <strong>이메일</strong> : leesieun9524@gmail.com</p></li>
+                        <li><p><strong>조원</strong> : 박태현 <strong>이메일</strong> : taehhh8@naver.com</p></li>
+                    </ul>
+                </div>    
+            </div>
+        </div> 
+    </footer>
+
+    <script>
+        window.onload = function() {
+            if (localStorage.getItem("loginstate") == "okay" ) {
+                document.getElementById("logoutstate1").style.display = "none";
+                document.getElementById("logoutstate2").style.display = "none";
+                document.getElementById("loginstate1").style.display = "block";
+                document.getElementById("loginstate2").style.display = "block";
+            }
+            else{
+                document.getElementById("logoutstate1").style.display = "block";
+                document.getElementById("logoutstate2").style.display = "block";
+                document.getElementById("loginstate1").style.display = "none";
+                document.getElementById("loginstate2").style.display = "none";
+            }
+        }
+
+        function logoutFunc() {
+            localStorage.setItem("loginstate", "");
+        }
+    </script>
+</body>
+</html>

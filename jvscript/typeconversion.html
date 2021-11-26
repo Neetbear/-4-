@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion</title>
+</head>
+<body>
+    <h1>Type Conversion</h1>
+    <div id="result"></div>
+    <script>
+        //num  은 타입을 정해주지 않은거고 var num은 var 타입을 정해준거임
+        var num = 20;
+        document.getElementById("result").innerHTML = num + "<br>";
+        num = "이십"; //명시적으로 string 쓰지만 자바스크립트는 타입이 유연해서 됨
+        document.getElementById("result").innerHTML += num + "<br>";
+        var num; //재선언했지만 로컬변수라 변환x 그대로 찍힘
+        document.getElementById("result").innerHTML += num + "<br>";
+    </script>
+</body>
+</html>

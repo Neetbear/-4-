@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function star(a) {
+            //삼각형
+            let tri = '';
+            for (let i = 0; i < a; i++) {
+                for (let j = 0; j <= i; j++) {
+                    if(j <= i) {
+                        tri += '*';
+                    }
+                    else {
+                        tri += '';
+                    }
+                }
+                tri += '\n';
+            }
+            console.log(tri);
+
+            //역삼각형
+            let revtri = "";
+            for(let n = a; n > 0 ; n--){
+                for(let i = 0; i < a ; i++) {
+                    if(i >= n) {
+                        revtri += ""; 
+                    }
+                    else {
+                        revtri += "*";
+                    } 
+                }
+                revtri += "\n";
+            }
+            console.log(revtri);
+
+            //다이아몬드
+            let diam = "";
+            for(let n = 0; n < a + 1 ; n++){
+                for(let i = 0; i <= a + 1 ; i++) {
+                    if((i > Math.abs(a/2 - n)) && (i < (a + 2 - Math.abs(a/2 - n)))) {
+                        diam += '*'; 
+                    }
+                    else {
+                        diam += ' ';
+                    } 
+                } 
+                diam += "\n"
+            } 
+            console.log(diam);
+        }
+
+        star(10)   
+
+    </script>
+</body>
+</html>

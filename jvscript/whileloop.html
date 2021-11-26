@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop</title>
+</head>
+<body>
+    <h1>While Loop</h1>
+    <div id="result"></div>
+    <script>
+        let text = "";
+        let i = 0;
+
+        // while(i < 10)
+        // {
+        //     text += "<br>The number is " + i;
+        //     i++
+        // }
+
+        // while(i < 10)
+        // {
+        //     if(i % 2 == 0)      //짝수일때 조건문 이렇게 주기
+        //     {
+        //         text += "<br>Hello World";
+        //     }
+        //     else
+        //     {
+        //         text += "<br>The number is " + i;
+        //     }
+        //     i++
+        // }
+       while(i < 10)
+       {
+            //if(i==5)  
+                //break;   //5에서 와일문 나가라고 걸어준거임
+            
+            //text += "<br>The number is" + i;
+            //text += (i % 2 == 0) ? "<br>Hello World" : "<br>The number is " + i;
+            i++
+            if(i==5)
+                continue; //continue 때 만나는 문장은 실행하지 않고 바닥으로 간다 -> 5때 안찍힘
+                //if문안에 한줄이면 안찍음 
+            text += "<br> before continue" + i;
+       }
+        document.getElementById("result").innerHTML = text;
+    </script>
+</body>
+</html>

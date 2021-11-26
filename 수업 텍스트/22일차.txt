@@ -1,0 +1,45 @@
+postman 설치부터 시작
+    만든 서버 test가능
+
+await 비동기 함수로 사용하겠다는 뜻
+
+get method 
+    값 조회?
+
+post method
+    값 전달
+
+크롬 확장프로그램 Json Formatter
+
+promise 
+    비동기에서 기본단위 
+
+async 
+    비동기함수화? 
+
+async await
+ async 함수 출력하면 코드가 promise를 반환한다 
+
+    let hello = function() { return "Hello" }; -> hello
+    hello();
+
+    let hello = async () => { return "Hello" }; -> promise 
+
+    두 코드는 같은 함수를 다른 방식으로 적어본건데 
+    fulfil Promise가 반환되기 때문에 반환된 값을 사용하기 위해선 .then()을 사용해야한다
+    
+    hello().then((value) => console.log(value)) 또는 hello().then(console.log)
+
+ await 함수
+    Promise기반 함수 앞에 놓을 수 있습니다. 그리고 우리의 코드의 Promise fulfil을 잠시 중단하고, 결과를 반환합니다. 
+    그리고 실행을 기다리는 다른 코드들을 중지시키지 않고 그대로 실행되게 합니다.
+
+ Async/await 
+    Async/await 는 우리의 코드를 마치 동기식 코드처럼 보이게 합니다. 그리고 어떤 면에서는 정말로 동기적으로 행동합니다. 
+    함수 블럭에 여러 개의 await 키워드를 사용하면 Promise가 fulfilled되기 전 까지 다음 await 을 차단합니다. 
+    그 동안 다른 태스크는 계속 실행이 되지만 정의한 함수 내에서는 동기적으로 작동할 것 입니다.
+
+query
+    질의 
+body-parser
+    데이터 유지 새로고침해도 메모리 안날라감

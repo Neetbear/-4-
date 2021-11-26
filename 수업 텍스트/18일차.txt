@@ -1,0 +1,58 @@
+내장 함수 이어서
+
+callback concept    
+  function에 대한 비동기 호출
+  주어진 작업(task)가 완료되면 콜백함수 호출
+  node의 모든 api는 callback을 지원하는 방식으로 작성
+  싱글 스레드임에도 불구하고 비동기로 처리하기에 요청을 계속 받아서 처리하는 이점이 있다.
+
+blocking / nonblocking
+    blocking
+        var fs = require("fs");
+        var data = fs.readFileSync('input.txt');
+
+        console.log(data.toString());
+        console.log("Program finished");
+        이러면 순서대로 찍힘
+
+    non blocking
+        var fs = require("fs");
+
+        fs.readFile('input.txt', function(err, data) {
+            if(err) return console.log(err);
+            console.log(data.toString());
+        });
+
+        console.log("Finished program");
+        nonblocking이라 함수 도는중에 아래 콘솔부터 찍은거임
+    
+    프로그램이 처리할 데이터를 사용해야 하는 경우 동일 block내에서 보관해서 순차적으로 처리해야한다.
+    콜백 함수 안에서는 순차적으로 진행되고 밖은 알아서 하고 있어라고 던져두는 느낌
+    아니면 두번 실행되는 등 오류 발생가능
+
+fs module의 모든 method에는 sync와 async가 있다. async사용이 좋다.
+
+access file system
+    syntax
+        비동기 모드에서 파일을 여는 방법
+
+        fs.open(path,flags[, mode],callback);
+        path 경로를 포함한 파일명을 가지는 문자열
+        flags 열려는 파일의 동작
+        mode 파일 모드(permission 및 고정 비트)를 설정하지만 파일이 생성된 경우에만 설정 기본값 0666?
+        callback 
+
+        fs.stat(path, callback) file 정보 땡겨오기
+        blksize: 4096, -> 더 작아도 윈도우에서 제공하는 최소의 파일 저장 사이즈 단위
+
+        queue deque
+        통신소켓
+
+        fs.writeFile(filename, data[, options], callback)
+        파일 생성 -> 덮어쓰기라 기존파일에 사용하면 기존파일 날라감
+
+        fs.read (fd, buffer, offset, length, position, callback)
+        file descriptor를 사용하여 읽는다
+
+        fs.close(fd, callback) open하면 close해주는게 한 세트 느낌 원래는 반드시 해줘야함
+        

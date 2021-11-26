@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("result").innerHTML = some;
+        }
+        function getFile(myCallback) {
+            let req = new XMLHttpRequest(); //Http 요청한다
+            req.open('GET', 'mycar.html')
+            req.onload = function() {
+                if(req.status == 200)
+                {
+                    myCallback(this.responseText)
+                }
+                else
+                {
+                    myCallback("Error: " + req.status);
+                } //파일명 바꿔서 없으면 Error 404 찍힘 파일 없다는 소리임
+            }
+            req.send();
+        }
+
+        getFile(myDisplayer); //
+    </script>
+</body>
+</html>

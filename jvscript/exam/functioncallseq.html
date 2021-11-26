@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>콜백함수 시퀀스</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        function myDisplay(some) {
+            document.getElementById("result").innerHTML = some;
+        }
+
+        function myFirstFunc() {
+            myDisplay("Hello");
+        }
+
+        function mySecondFunc() {
+            myDisplay("Goodbye");
+        }
+
+        myFirstFunc();
+        mySecondFunc(); //헬로 찍히고 굳바이 찍혀서 굳바이만 보임
+    </script>
+</body>
+</html>

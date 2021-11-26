@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제2</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        a:link {
+            color: black;
+        }
+        a:visited {            
+            color: black;
+        }
+        a:hover {
+            color: black;
+        }
+        a:active {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: right; font-size: 12px;">
+        <a href="https://help.naver.com/support/welcomePage/guide.help">네이버를 시작페이지로</a> >
+        <a href="https://jr.naver.com/">주니어네이버</a>  
+        <a href="https://happybean.naver.com/">해피빈</a> 
+    </div>
+    <form action="https://search.naver.com/search.naver" method="get">
+        <label for="nsearch">&nbsp;&nbsp;<img src="./navericon.png" alt="없음" width="200px" height="" style="vertical-align: middle;"></label>
+        <input type="text" id="nsearch" name="query" style="width: 50%; height: 20px;">
+        <input type="submit" value="검색">
+    </form><br>
+    <hr style="width: 100%; margin: 10px 0px 10px 0px;">
+    <div style="padding-left: 60px;">
+        <a href="https://mail.naver.com/">메일</a>
+        <a href="https://section.cafe.naver.com/">카페</a>
+        <a href="https://section.blog.naver.com/">블로그</a>
+        <a href="https://kin.naver.com/">지식iN</a>
+        <a href="https://shopping.naver.com/">쇼핑</a>
+        <a href="https://shoppinglive.naver.com/home">쇼핑Live</a>
+        <a href="https://order.pay.naver.com/home">Pay</a>
+        <a href="https://tv.naver.com/">TV</a>
+        <a href="https://dict.naver.com/">사전</a>
+        <a href="https://news.naver.com/">뉴스</a>
+        <a href="https://finance.naver.com/">증권</a>
+        <a href="https://land.naver.com/">부동산</a>
+        <a href="https://map.naver.com/">지도</a>
+        <a href="https://vibe.naver.com/">VIBE</a>
+        <a href="https://book.naver.com/">책</a>
+        <a href="https://comic.naver.com/">웹툰</a> 더보기
+        <a href="https://weather.naver.com/today/02271107"><img src="날씨.png" alt="없음" style="float: right;"></a>
+    </div>
+    <hr style="width: 100%; margin: 10px 0px 10px 0px;">
+    <table style="text-align: center; width: 100%;">
+        <tr>
+            <td style="width: 70%;">
+                <a href="https://siape.veta.naver.com/fxclick?eu=EU10041888&calp=-&oj=A4YjrwVVtw%2BL6iu0FH0UXCLDRLzjRLV%2BMbcfG3C9pH7jyqzBJig6KHLpTw4w4yacYONJiz3IYtw7qqYCCDBFJST1Idp%2Bj46%2FnFkLcXlIagY&ac=8427578&src=5390910&br=3639235&evtcd=P901&x_ti=1308&tb=&oid=&sid1=&sid2=&rk=997f448ee090d1cfd39c7bff08401964&eltts=aEdwsgrQWuA9VJBuHZSoBg%3D%3D&lu=&brs=Y&">
+                    <img src="https://ssl.pstatic.net/tveta/libs/1358/1358373/ac4ef44c976b83fbc3f6_20210928114703811.jpg" alt="없음" width="900" height="" style="margin: 0px;">
+                </a>
+            </td>
+            <td>
+                <p style="background-color: rgb(190, 190, 190); border: 1px black; border-style: solid; padding-top: 5px; padding-bottom: 5px; line-height: 3px;"> 
+                    네이버를 더 안전하고 편리하게 이용하세요. <br>
+                    <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com">
+                        <img src="https://static.nid.naver.com/oauth/big_g.PNG?version=js-2.0.0"  width="80%">
+                    </a> <br>                          
+                    <a href="https://nid.naver.com/user/help.nhn?todo=idinquiry">아이디 /</a>
+                    <a href="https://nid.naver.com/nidreminder.form">비밀번호찾기</a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com">회원가입</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0px 0px 0px 60px;">
+                <table style="background-color: rgb(190, 190, 190); border: 1px black; border-style: solid;">
+                    <tr>
+                        <td style="text-align: left; width: 74%;">
+                            <a href="http://news.naver.com/main/list.naver?mode=LPOD&mid=sec&sid1=001&sid2=140&oid=001&isYeonhapFlash=Y">
+                                연합뉴스 </a> > 
+                            <a href="https://news.naver.com/main/list.naver?mode=LPOD&mid=sec&sid1=001&sid2=140&oid=001&isYeonhapFlash=Y&aid=0012738223">
+                                누리호, 오늘 5시 발사확정   
+                        </td>
+                        <td>
+                            <a href="http://news.naver.com/">
+                                네이버 뉴스
+                            </a> · 
+                            <a href="http://entertain.naver.com/home">
+                                연애
+                            </a>
+                            <a href="http://sports.news.naver.com/">
+                                스포츠
+                            </a>
+                            <a href="http://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=101">
+                                경제
+                            </a>
+                        </td>
+                    </tr>
+                </table> 
+            </td>
+            <td>
+                <p style="text-align: left; background-color: rgb(190, 190, 190); border: 1px black; border-style: solid;">
+                    <a href="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=%EC%BD%94%EB%A1%9C%EB%82%9819">
+                        이슈 코로나바이러스감염증-19 현황 </a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td  rowspan="2">
+                <p style="text-align: left;padding: 0px 0px 0px 60px;">
+                    뉴스 스탠드 > 구독한 언론사 · 전체 언론사</p>
+                <table style="padding: 0px 0px 0px 60px; ">    
+                    <tr>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                        <td><img src="https://via.placeholder.com/140x75"></td>
+                    </tr>        
+                </table>
+            </td>
+            <td>                              
+                <a href="https://siape.veta.naver.com/fxclick?eu=EU10041892&calp=-&oj=ZagUyei1lSg7WCFdimRBaXIO9BtzpiTPaCEHCnGSvnII9VXnPwcoGWx%2FhcG054wnwZWybJuLGKr5HNTUnfYc%2BGQbEkDwIInI&ac=8434454&src=5410444&br=3647979&evtcd=P901&x_ti=1312&tb=&oid=&sid1=&sid2=&rk=2c6a3b7deec2bf1541cafb685f75618c&eltts=XDSEm%2B2CJx1ZJBOKZHvNgg%3D%3D&lu=&brs=Y&">
+                    <img src="https://ssl.pstatic.net/tveta/libs/1349/1349760/a18b0dc80127099acf11_20211015141204769.jpg" width="100%">
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="text-align: left;">트렌드쇼핑 > 상품 쇼핑몰 MEN</p>
+                <div style="text-align: left; background-color: rgb(190, 190, 190); border: 1px black; border-style: solid;">
+                    쿠팡 · G마켓 · 옥션 · 11번가 · 이마트몰 · 티몬 <br>
+                    위메프·신세계몰·올리브영·GS샵·롯데i몰·CJ온스타일
+                </div>
+            </td>
+        </tr>
+    </table>
+    <p style="font-size: small; padding: 0px 0px 0px 60px; ">
+        <a href="https://www.navercorp.com/">
+            회사소개</a> |
+        <a href="https://recruit.navercorp.com/naver/recruitMain">
+            인재채용</a> |
+        <a href="https://www.navercorp.com/naver/proposalGuide">
+            제휴제안</a> |
+        <a href="https://www.naver.com/policy/service.html">
+            이용약관</a> |
+        <a href="https://www.naver.com/policy/privacy.html">
+            개인정보처리방침</a> |
+        <a href="https://www.naver.com/policy/youthpolicy.html">
+            청소년보호정책</a> |
+        <a href="https://www.naver.com/policy/spamcheck.html">
+            네이버 정책</a> |
+        <a href="https://help.naver.com/">
+            고객센터</a> |
+        <a href="https://www.navercorp.com/">
+            Naver Corp.
+        </a>
+    </p>
+</body>
+</html>

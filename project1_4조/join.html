@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <link rel="icon" href="./img/whiskyicon.png">
+    <link rel="stylesheet" href="join.css" type="text/css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+  <div name="form" class="joinForm">
+    <h2>회원가입</h2>
+    <div class="textForm" id="idDiv">
+      <input name="userId" type="text" class="id" placeholder="아이디">
+    </div>
+
+    <div class="textForm" id="pwDiv">
+      <input name="loginPw" type="password" class="pw" placeholder="비밀번호">
+    </div>
+
+    <div class="textForm" id="checkPw">
+      <input name="password2" type="password" class="pw2" placeholder="비밀번호 확인">
+    </div>
+
+    <div class="textForm" id="nameDiv">
+      <input name="name" type="text" class="name" placeholder="이름">
+    </div>
+
+    <div class="textForm" id="emailDiv">
+      <input name="mail" type="text" class="email" placeholder="이메일">
+    </div>
+
+    <div class="textForm" id="identiDiv">
+        <input name="identi1" type="text" class="identi1" placeholder="주민등록번호"><b> ㅡ </b>
+        <input type="password" name="identi2" class="identi2">
+    </div>
+  
+    <input type="submit" class="btn" value="S U B M I T" onclick="joinFunc()">
+  </div>
+
+  <script src="join.js"></script>
+</body>
+</html>

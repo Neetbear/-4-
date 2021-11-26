@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--구구단 콘솔 출력 html에 찍어도 됨
+        세로 출력? 
+        1*1= 1부터
+        9*9= 81까지 새로 출력
+        단과 단 사이는 공백
+        
+        가로출력?
+        1 * 1 = 1__1 * 2 = 2.......1*9=9
+        ......
+        9 * 1 = 9......9 * 9 = 81 -->
+    <!--html창 출력은 그냥 document.write, onclick버튼, document.get~ 등등 있음-->
+    <div id="result1"></div> <br>
+    <div id="result2"></div>
+
+    <script>
+        let i, j; //i는 몇단 j는 몇을 곱할지
+        let txt1 = ""; //console 출력할거
+        let txt2 = ""; //HTML에 출력할거 -> 이렇게 쓴 이유 줄바꿈이 달라서 
+        for(i = 1; i < 10; i++) {
+            for(j = 0; j < 10; j++){ //0부터 시작한 이유 단과 단사이에 줄 쉽게 뛸라고
+                let k = 0; // 곱한값
+                if(j == 0 ) {
+                    txt1 += "\n"; //"\n" 콘솔창에서 줄바꿈
+                    txt2 += "<br>"
+                }
+                else {
+                    k = i*j;
+                    txt1 += i + " * " + j + " = " + k + "\n"; 
+                    txt2 += i + " * " + j + " = " + k + "<br>"
+                }  
+            }
+        }
+        console.log(txt1)
+        document.getElementById("result1").innerHTML = txt2;
+    
+
+        let n, m;
+        let text = "";
+        let text2 = "";
+        let l = "";
+        let o;
+        for(n = 1; n < 10; n++) {
+            for(m = 1; m < 10; m++) {
+                o = (n*m).toString();
+                l = o.padStart(2, "0") //padStart는 01 이런식으로 무조건 두자리로 쓰게 해줘서 줄맞추는 용도
+                text += n + " * " + m + " = " + l + "\t"; //"\t" 콘솔창에서 띄어쓰기
+                text2 += n + " * " + m + " = " + l + "&nbsp" + "&nbsp";
+            }
+            text += "\n";
+            text2 += "<br>";
+        }
+        console.log(text);
+        document.getElementById("result2").innerHTML = text2;
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제7대비 연습용</title>
+</head>
+<body>
+    <!--과제7문제
+    [a, b, c, d, e]라고 문자를 배열에 저장하고 
+    이것을 log.console()로 콘솔에 찍는데
+    다중for문 이용해서 
+       d
+      cde
+     bcdef
+    abcdefg 
+    이런모양으로 찍고 
+    끝나면 
+       d
+      cde
+     bcdef
+    abcdefg
+     bcdef
+      cde
+       d
+    까지 찍어보기-->
+
+    <script>
+        //1.문자배열에 문자 넣기
+        //2.for문으로 class로 쪼개서 만들기?
+        //key:item = n번째줄:n번째줄요소?
+        //3.consol.log()에 찍기?
+        const myArray = ["a", "b", "c", "d", "e", "f", "g"];
+        console.log(myArray);
+
+        const l = myArray.length
+        console.log(l)
+
+        const num = Math.floor(l/2); //parseInt써도 소숫점 제거가능
+        console.log(num);
+        
+        const tri = [];
+        //class array 만들기 
+        for(let n = 0; n < 4; n++){
+            tri.push(' ');
+            for(let i = 0; i < l ; i++) {
+                if((i >= (num - n)) && (i <= (num + n))) {
+                    tri[n] += myArray[i] + ', '; 
+                }
+                else {
+                    tri[n] += ' , ';
+                } 
+            }
+            console.log(tri[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+        }
+        
+        const diam = [];
+        for(let n = 0; n < l ; n++){
+            diam.push(' ');
+            const numx = Math.abs(Math.floor(l/2) - n)
+            for(let i = 0; i < l ; i++) {
+                if((i >= numx) && (i <= ((l-1) - numx))) {
+                    diam[n] += myArray[i] + ', '; 
+                }
+                else {
+                    diam[n] += ' , ';
+                } 
+            }
+            console.log(diam[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+        }
+    
+    </script>
+</body>
+</html>

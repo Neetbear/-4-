@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table spans</title>
+    <style>
+        table, th, td{
+            border: 1px solid purple;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cell that span two columns</h2>
+    <p>To make a cell span more than on column, use the colspan attribure.</p>
+    <table style="width: 50%;"> 
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Joel</td>
+            <td>Michael</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>Michael</td>
+            <td>Jackson</td>
+            <td>45</td>
+        </tr>
+    </table><p>
+    <!-- colspan="2"으로 두 열 합침-->
+    <h2>Cell span two rows</h2>
+    <table style="width: 50%;">
+        <tr>
+            <th>Name</th>
+            <th>Michael</th>
+        </tr>
+        <tr>
+            <th rowspan="2">Phone number</th>
+            <th>02-1234-5678</th>
+        </tr>
+        <tr>
+            <th>010-1234-5678</th>
+        </tr>
+    </table>
+    <!--rowspan 행2개 합침? 부분병합?-->
+    <p></p>
+    <table style="width: 50%;">
+        <thead>
+            <tr>
+                <th>title1</th>
+                <th>title2</th>
+                <th>title3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>sub1</td>
+                <td>sub2</td>
+                <td>sub3</td>
+            </tr>
+            <tr>
+                <td>sub1</td>
+                <td>sub2</td>
+                <td>sub3</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>footer1</td>
+                <td>footer2</td>
+                <td>footer3</td>
+            </tr>    
+        </tfoot>
+    </table>
+    <!--css로 head, body, foot 분류해서 사용하면 덜 헤깔리고 작업가능-->
+    <!--다른 사람들도 내용 채우는 부분 파악하기 쉬워서 좋음-->
+</body>
+</html>

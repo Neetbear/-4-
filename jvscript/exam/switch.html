@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+</head>
+<body>
+    <input id="myInput" type="text">
+    <button onclick="myFunction()">Click</button>
+    <div id="result"></div>
+
+    <script>
+        function myFunction() {
+            var text;
+            var fruits = document.getElementById("myInput").value;
+
+            switch(fruits) {
+                case "Banana":
+                    text = "Banana is good!!!"
+                    break;                      //break 없으면 다음 case 실행해버림
+                case "Orange":
+                    text = "I am not a fan of orange."
+                    break;
+                case "Apple":
+                    text = "How you like them apples?"
+                    break;
+                default:                        //디폴트문 있는게 좋다 
+                    text = "I have never heard of that fruit..."
+                    //다음게 없으므로 디폴트는 브레이크 없어도 됨
+            }
+
+            // if(fruits === "Banana"){
+            //     text = "Banana is good!!!"
+            // }else if(fruits === "Orange"){
+            //     text = "I am not a fan of orange."
+            // }else if(fruits === "Apple"){
+            //     text = "How you like them apples?"
+            // }else{
+            //     text = "I have never heard of that fruit..."
+            // } 이거랑 똑같음
+            document.getElementById("result").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

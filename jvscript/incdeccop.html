@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Decrement Operator</title>
+</head>
+<body>
+    <h1>Increment Decrement Operator</h1>
+    <script>
+        var x = 10, y = 10; 
+        document.write((++x - 3) + "<br>"); //++니까 x값이 1 먼저 커지고 -3 처리
+        document.write(x + "<br>");
+        document.write((y++ - 3) + "<br>"); //-3 처리 후에 출력까지하고 ++처리
+        document.write(y + "<br>"); //++처리까지 끝나서 8로 찍힘
+        var a = 10;
+        var b = a-- + 5 + --a; //(10 + 5) -1 + (10-1) 이런 순서 
+        document.write(a + "<br>"); //a는 -- 2번 되었으니 8
+        document.write(b);
+    </script>
+</body>
+</html>

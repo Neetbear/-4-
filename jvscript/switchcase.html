@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+<body>
+    <h1>Switch Case</h1>
+    <div id="result"></div>
+    <script>
+        let day;
+        switch(new Date().getDay())
+        {
+            case 0: 
+                day = "Sunday";  //서양식이라 0이면 일요일임 c#인가에서는 월요일이 0임 주의
+                break;        
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuseday";
+                break;
+            case 3:
+                day = "Wednseday"; //참고로 만든날 수요일임
+               break;              //-> 여기서 break안걸면 블록박스 못빠져나가고 바로 다음걸 적용받아서 Thursday나옴
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+                break;
+            default:
+                day = "None";
+                break;                   
+        }
+        document.getElementById("result").innerHTML = "Today is " + day;
+    </script>
+</body>
+</html>

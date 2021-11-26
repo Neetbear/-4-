@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function</title>
+</head>
+<body>
+    <!-- 비교용 이걸 arrow 함수로
+        <p id="result"></p>
+
+    <script>
+        var hello = "Hello World";
+
+        hello = function() {
+            return "Hello World";
+        }
+
+        document.getElementById("result").innerHTML = hello();
+    </script> -->
+
+    <p id="result"></p>
+
+    <script>
+        var hello;
+
+        // hello = () => {
+        //     return "Hello World!!!";
+        // }
+
+        // hello = () => "Hello World!!!"; 이것도 가능
+
+        // document.getElementById("result").innerHTML = hello();
+
+        hello = (val) => { return "Hello " + val; }
+
+        // hello = val => "Hello " + val; 이래도 먹음 하지만 모호하게 코딩하지말고 명시적으로 해주는게 좋음
+
+        document.getElementById("result").innerHTML = hello("World!!!");
+    </script>
+</body>
+</html>

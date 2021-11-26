@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Child</title>
+</head>
+<body>
+    <ul id="TeaList"><li>Coffee</li><li>MilkTea</li><li>Jasmin</li></ul>
+    <button onclick="myFunction()">Click</button>
+    <p>First create a new text nods called Water.<br> The replace the first child node of th e first list item, with the newly text node.</p>
+    <p><strong>Note : </strong> This example replace only the text node "Coffee" with a Text node "Water", not entrie Li element, which would also be an alternative when replacing nodes.</p>
+
+    <script>
+        function myFunction() {
+            var textnode = document.createTextNode("Water");
+            var item = document.getElementById("TeaList").childNodes[0];
+            item.replaceChild(textnode, item.childNodes[0]);
+        }
+    </script>
+</body>
+</html>

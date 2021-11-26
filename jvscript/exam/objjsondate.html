@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json date</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        const person = {
+            name: "John",
+            age: 25, //function() {return 25;}, 익명함수로 드갈라면 call메소드 필요? 안되나?
+            city: "New York",
+            today: new Date() 
+        };
+
+        document.getElementById("result").innerHTML = JSON.stringify(person); //다른 오브젝트들도 내용이 있는거면 가능?
+    </script>
+</body>
+</html>

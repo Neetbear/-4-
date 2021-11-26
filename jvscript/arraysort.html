@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array sort method</title>
+</head>
+<body>
+    <h1>Array sort method</h1>
+    <button onclick="myFunction()">Click</button>
+    <div id="res1"></div>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Grape"];
+        document.getElementById("res1").innerHTML = fruits;
+        
+        function myFunction()
+        {
+            fruits.sort();
+            document.getElementById("res1").innerHTML = fruits;
+        }
+    </script>
+</body>
+</html>

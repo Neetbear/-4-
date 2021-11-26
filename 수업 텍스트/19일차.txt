@@ -1,0 +1,40 @@
+19일차 
+close 다음부터 
+
+truncate a file 파일 자르기
+    fs.ftruncate(fd, len(잘린후 파일 길이/ 얼만큼을 남기고 잘라라), callback(err))
+
+파일 삭제
+    fs.unlink(path, callback(Err)) 구 삭제임 휴지통에도 안남음
+
+파일명 변경
+    fs.rename(path, 바꿀이름, callback(err))
+
+디렉토리 생성
+    fs.mkdir(path[, mode], callback(err)) path는 파일명을 포함한 경로? mode는 디렉토리 권한 윈도우는 안쓴다
+
+read 디렉토리 
+    fs.readdir(path[, options], callback(err, files(스트링배열로 가져옴))) 
+    파일은 .과 ..을 제외한 디렉토리에 있는 파일 이름의 배열 
+    options 디폴트값 utf8 
+
+디렉토리 remove
+    fs.rmdir(path, callback(err))
+
+copy ./*.txt ./temp
+
+http module
+    web server 
+        일반적으로 image, style sheet, script와 함께 html문서를 제공한다
+        asp jsp 요즘은 jsp
+        Apache/IIS Web Server
+    web application architecture
+        business layer와 통신하는 부분이 back
+        server 앞에 보여주는게 front?
+    
+    nodejs로 서버 생성
+        http module은 서버의 포트를 통해 수신하고 client에 대한 응답을 제공하는 http서버를 생성
+        createServer() 사용
+
+http에서 client가 직접 접속하게되면 안되니까 createserver.js랑 client.js 따로 만듬 사진 참고
+클라이언트와 데이터베이스 분리

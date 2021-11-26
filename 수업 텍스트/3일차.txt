@@ -1,0 +1,53 @@
+3일차
+입력 양식 
+  form 태그 입력값을 서버로 전송하거나 옵션 선택, 주문 버튼 등 입력 양식의 최상위 요소
+   이벤트 처리를 위해서는 자바스크립트와의 연동 필요 
+   예) 인터넷 쇼핑몰 배송지 입력 양식, 홈페이지 로그인창, 회원가입창
+   form 양식에 입력 -> 웹서버 -> 웹페이지 -> 데이터베이스 
+                                        -> 웰컴페이지
+    method 웹서버에 데이터를 전달하는 방법 지정 (http 프로토콜상의 전송방법)
+        전송할 폼 데이터는 name=value 쌍
+       get 서버에 요청해서 가져올때 (사용시 제추로딘 양식 데이터가 페이지 주소필드에 표시됨->중요한 데이터에 사용 금지)
+       post 데이터를 서버에 전송할때 (제출된 양식 데이터를 페이지 주소 필드에 표시 안함)
+       get은 자바스크립에서 받아쓸수있는데 post는 서버영역이라 백엔드할때 받아씀
+    action 입력 받은 값을 전송할 서버의 프로그램 url 지정
+    input  (입력창, 체크창, 숫자 선택 등) 정보 넣는 입력 양식 
+      (id는 css랑 같이 한번 더 다룸) name placeholder
+       type들
+        name으로 속성값 지정 value 기본입력값 placeholder 설명문
+        text 텍스트 입력필드
+        password 비밀번호
+        checkbox 복수선택 가능 체크박스
+        radio 복수선택 불가능
+      %select%는 input 아니고 select쓰고 목록을 option으로 줌
+        submit 입력 양식 서버 전송 버튼
+        reset 리셋 버튼
+        botton 일반 버튼
+        number 숫자 입력 (min max value)
+        date 날짜입력 (생일입력창 같은거) 닐짜도 범위 가능 min max
+         month쓰면 년월까지만 선택
+         week 그해의 몇번째주인지 나옴
+         time 시간 선택 
+        color 색상 선택 
+        range 볼륨 조절 같은거 
+        email 메일주소입력
+        tel 번호 입력 전화번호는 자리수 있으니 패턴씀
+        search 검색어 입력
+ 
+    output  
+    testarea
+    label
+    fieldset
+    legend
+    select
+    outg
+    option
+
+
+
+    %ui user interface 
+    %https의 s = ssl
+    %1bite = 8bit
+     2진수는 맨 밑에 바이트부터 계산
+             1111     1111
+     128 64 32 16     8 4 2 1 = 255 그래서 rgb 각 값은 최대 255임 

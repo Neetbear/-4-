@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>label break</title>
+</head>
+<body>
+    <button onclick="myFunction()">Click</button>
+    <div id="result"></div>
+
+    <script>
+        function myFunction() {
+            var text = "";
+            var i = 0, j = 0; //변수 지정할때 초기화 해주면 좋음
+            Loop1:
+            for(i = 0; i < 3; i++) {
+                text += "<br>" + "i = " + i + ", j = ";
+                Loop2:
+                for(j = 0; j < 5; j++) {
+                    if(j === 2) {
+                        break Loop1; //j가 2일때 loop1으로 빠져나간다
+                    }
+                    document.getElementById("result").innerHTML = text += j + " ";
+                } //end of for j
+            } //end of for i
+
+        }
+    </script>
+</body>
+</html>

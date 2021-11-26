@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제7차</title>
+</head>
+<body>
+        <!--과제7문제
+    [a, b, c, d, e]라고 문자를 배열에 저장하고 
+    이것을 log.console()로 콘솔에 찍는데
+    다중for문 이용해서 
+       d
+      cde
+     bcdef
+    abcdefg 
+    이런모양으로 찍고 
+    끝나면 
+       d
+      cde
+     bcdef
+    abcdefg
+     bcdef
+      cde
+       d
+    까지 찍어보기-->
+
+    <script>
+        //전체문자열 
+        const myArray = ["a", "b", "c", "d", "e", "d", "e", "d", "e", "d", "e", "d", "e" ];
+        console.log(myArray);
+
+        //배열 길이 l로 잡기
+        const l = myArray.length
+        console.log(l)
+        
+        //배열 요소가 개수가 홀수
+        if(l%2 != 0) {
+            //배열 가운데 index값 찾기
+            const num = (l-1)/2; 
+            console.log(num);
+
+            //이등변삼각형 꼴  
+            //빈배열에 채우는 방식으로 만듬
+            const tri = [];
+            //class array 만들기 
+            for(let n = 0; n < l-num; n++){
+                tri.push(' ');
+                for(let i = 0; i < l ; i++) {
+                    if((i >= (num - n)) && (i <= (num + n))) {  //어떤 형태든 범위의 합은 2num
+                        tri[n] += myArray[i] + ' '; 
+                    }
+                    else {
+                        tri[n] += '  ';
+                    } 
+                }
+                console.log(tri[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+            }
+            
+            //다이아몬드꼴
+            const diam = [];
+            for(let n = 0; n < l ; n++){
+                diam.push(' ');
+                const numx = Math.abs(num - n)
+                for(let i = 0; i < l ; i++) {
+                    if((i >= numx) && (i <= (2*num - numx))) {
+                        diam[n] += myArray[i] + ' '; 
+                    }
+                    else {
+                        diam[n] += '  ';
+                    } 
+                }
+                console.log(diam[n] + "\n"); 
+            }
+        
+            //역삼각형
+            const revtri = [];
+            for(let n = 0; n < l - num ; n++){
+                revtri.push(' ');
+                for(let i = 0; i < l ; i++) {
+                    if((i >= n) && (i <= (2*num - n))) {
+                        revtri[n] += myArray[i] + ' '; 
+                    }
+                    else {
+                        revtri[n] += '  ';
+                    } 
+                }
+                console.log(revtri[n] + "\n");  
+            }
+        } 
+        //배열 요소 개수가 짝수
+        else {
+            //가운데 index값 찾기 짝수일땐 2개
+            const num1 = l/2 -1, num2 = l/2;
+            console.log(num1, num2);
+
+            //이등변삼각형 꼴  
+            //빈배열에 채우는 방식으로 만듬
+            const tri = [];
+            //class array 만들기 
+            for(let n = 0; n < l-num2; n++){
+                tri.push(' ');
+                for(let i = 0; i < l ; i++) {
+                    if((i >= (num1 - n)) && (i <= (num2 + n))) {  //어떤 형태든 범위의 합은 2num
+                        tri[n] += myArray[i] + ' '; 
+                    }
+                    else {
+                        tri[n] += '  ';
+                    } 
+                }
+                console.log(tri[n] + "\n"); // \n 줄바꾸기 \t 띄어쓰기 
+            }
+            
+            //다이아몬드꼴
+            const diam = [];
+            for(let n = 0; n < num1 + num2 ; n++){
+                diam.push(' ');
+                const numx = Math.abs(num1 - n)
+                for(let i = 0; i < l ; i++) {
+                    if((i >= numx) && (i <= (num1 + num2 - numx))) {
+                        diam[n] += myArray[i] + ' '; 
+                    }
+                    else {
+                        diam[n] += '  ';
+                    } 
+                }
+                console.log(diam[n] + "\n"); 
+            }
+        
+            //역삼각형
+            const revtri = [];
+            for(let n = 0; n < l - num2; n++){
+                revtri.push(' ');
+                for(let i = 0; i < l ; i++) {
+                    if((i >= n) && (i <= (num1 + num2 - n))) {
+                        revtri[n] += myArray[i] + ' '; 
+                    }
+                    else {
+                        revtri[n] += '  ';
+                    } 
+                }
+                console.log(revtri[n] + "\n");  
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+express - routing 부터
+    app.method(path(경로), handler(콜백함수))
+        get,set,put,delete http 동사 중 하나에 적용할 수 있다.
+        경로는 라우팅 될 경로 (요청이 실행될 경로)
+    정규표현식
+
+    templete
+        pug는 express용 templete engige이다
+        필터, 포함, 상속, 보간 등을 포함한 다양한 기능을 가진 매우 강력한 엔진이다
+        npm install --save pug
+
+        p.greetings#people . class # id
+
+        render 그려준다 ejs나 pug 파일 읽어와서 직접 그린다?
+        send nodejs 만으로 작업?
+
+        div
+            | To insert multiline text,
+            | You can use the pipe operator.
+
+        pug css는 내부 스타일시트보단 그냥 외부 스타일시트 쓰자
+            헤드에 style. {} 하고 쓰면 먹긴함
+            
+        include ./header.pug
+        h1 Thi is main contents 
+        include ./footer.pug 
+            header footer 다른 파일에 만들수 있다 
+
+        npm install express body-parser multer qs pug cookie-parser --save 동시에 설치도 가능
+
+    bodyParser.urlencoded({extended: true}) query string을 qs라는 걸 쓸거라 
+
+    쿠키는 서버 요청과 함께 클라이언트로 전송되고 클라이언트 측에 저장되는 단순하고 작은 파일/데이터
+        자동로그인 기능 가능
+
+        authentification? 인증?
+        session? connection된거?
+        npm install --save dotenv session secret key 하고 .env 파일 만들기

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in loop</title>
+</head>
+<body>
+    <h1>For in loop</h1>
+    <div id="result"></div>
+    <script>
+        const person = {
+            fname:"John",
+            lname:"Doe",
+            age:25
+        };   // 이게 json
+ 
+        let txt = "";  
+        for(let x in person)    //key값 찾아서 찍은거임 x가 key값? 
+        {
+            txt +=  x + ": " + person[x] + " ";   //key값까지 같이 찍어라
+        }
+        document.getElementById("result").innerHTML = txt;
+    </script>
+</body>
+</html>

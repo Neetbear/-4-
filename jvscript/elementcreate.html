@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elementcreate</title>
+</head>
+<body>
+    <div id="result">Up text is dynamic adding!!!!</div>
+    <script>
+        document.body.onload = addElement; //바디가 로드될때 실행한다. 실행할거 넣어줘야 작동함?
+        function addElement() {
+            var newDiv = document.createElement("div");
+            var newContent = document.createTextNode("Welcome to Hell!!!!");
+            newDiv.appendChild(newContent);
+
+            var currentDiv = document.getElementById("result");
+            document.body.insertBefore(newDiv, currentDiv); //currentDiv에 추가한다
+        }
+    </script>
+</body>
+</html>

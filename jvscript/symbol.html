@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol type</title>
+</head>
+<body>
+    <h1>Symbol type</h1>
+    <div id="result"></div>
+    <script>
+       // var sym = Symbol("javascript");
+       // var symObj = Object(sym);
+
+       // document.getElementById("result").innerHTML = (typeof sym) + "<br>" + (typeof symObj);
+        //typeof는 그것의 타입은 뭐냐고 물어보는거 //+ 사용 이유 : 문자열을 이어서 쓰기위해
+        document.getElementById("result").innerHTML = (typeof 10) + "<br>";
+        document.getElementById("result").innerHTML += (typeof "stirg") + "<br>";
+        document.getElementById("result").innerHTML += (typeof true) + "<br>";
+        document.getElementById("result").innerHTML += (typeof undefined) + "<br>";
+        document.getElementById("result").innerHTML += (typeof null); 
+        // += 기존값에 +해서 대입해라
+        //메모리에 로딩될때를 인스턴스라고 부른다 
+    </script>
+</body>
+</html>

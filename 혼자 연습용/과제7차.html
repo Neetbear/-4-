@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //전체문자열 
+        const myArray = ["a", "b", "c", "d", "e"];
+        console.log(myArray);
+
+        //배열 길이 l로 잡기
+        const l = myArray.length
+        console.log(l)
+        
+     
+        //배열 가운데 index값 찾기
+        const num = (l-1)/2; 
+        console.log(num);
+
+        //이등변삼각형 꼴  
+        //빈배열에 채우는 방식으로 만듬
+        const tri = [];
+        //class array 만들기 
+        for(let n = 0; n < 3; n++){
+            tri.push(' ');
+            for(let i = 0; i < 5 ; i++) {
+                if((i >= (num - n)) && (i <= (num + n))) {  //어떤 형태든 범위의 합은 2num
+                    tri[n] += myArray[i] + ' '; 
+                }
+                else {
+                    tri[n] += '  ';
+                } 
+            }
+            console.log(tri[n]); // \n 줄바꾸기 \t 띄어쓰기 
+        }
+    </script>
+</body>
+</html>

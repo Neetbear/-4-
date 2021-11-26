@@ -1,0 +1,74 @@
+.center {
+    margin: auto;
+    width: 80%;
+    border: 5px solid green;
+    padding: 10px;
+    text-align: center;
+}
+
+.center2 {
+    padding: 79px 0;
+    border: 5px solid green;
+    text-align: center;
+}
+
+div.pimg {
+    text-align: center;
+}
+
+img.pg {
+    display: block;
+    margin: auto;
+/*  margin: auto; 랑 margin-right: auto; margin-left: auto;는 기능은 같음*/
+}
+
+/* div p {
+    background-color: yellow;
+} */
+
+div > p {
+    background-color: blue;
+}
+
+
+/* div + p {
+    background-color: yellow;
+} */
+
+div ~ p {
+    background-color: yellow;
+}
+
+div {
+    background-color: lemonchiffon;
+    color: limegreen;
+    text-align: center;
+    padding: 25px;
+}
+
+div:hover {
+    background-color: purple;
+}
+
+input:focus {
+    background-color: purple;
+}
+
+input:checked {
+    width: 50px;
+    height: 50px;
+}
+
+input[type=text]:enabled {
+    background-color: blueviolet;
+    color: white;
+}
+
+input[type=text]:disabled {
+    background-color: lightgray;
+    color: black;
+}
+
+p i:first-child {
+    color: blue;
+}

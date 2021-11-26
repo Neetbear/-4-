@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone number input form</title>
+</head>
+<body>
+    <h1>Phone number input form</h1>
+    <form action="./login.html" method="get">
+        <label for="pnum">Enter your phone number</label>
+        <input type="tel" id="pnum" name="pum" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required><br>
+        <small>Format : 010-12345-5678</small><br>
+        <input type="submit" value="Submit">
+    </form>
+    <!--pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" 자리수 정해주기임 / required는 반드시 요구된다는 뜻임-->
+    <!--small은 이렇게 쓰라고 알려주는 포맷 보여주기-->
+</body>
+</html>

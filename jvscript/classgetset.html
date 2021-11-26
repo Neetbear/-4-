@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter setter</title>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="result1"></div>
+    <script>
+        class Car {
+            constructor(brand) {
+                this.carname = brand;
+            }
+
+            get cname() {
+                return this. carname; //return조심
+            }
+
+            set cname(x) {
+                this.carname = x;
+            }
+        }
+
+
+        let myCar = new Car("Ford");
+        document.getElementById("result").innerHTML = myCar.cname;
+
+        //set 덕분에 property(속성값)처럼 사용 가능? 
+        myCar.cname = "Benz";
+        document.getElementById("result1").innerHTML = myCar.cname;
+    </script>
+</body>
+</html>

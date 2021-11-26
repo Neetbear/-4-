@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제4</title>
+</head>
+<body>
+    <!--피보나치 수를 구하는 함수를 생성한다
+    함수의 입력인자는 숫자이다
+    결과값을 선언하고 초기값이 [0,1]인 배열을 할당한다
+    입력인자가 0인경우(피보나치 수의 0번째 자리)와 1번째 수의 덧셈을 할 수 있기 때문에 
+    2번째 자리부터, 입력인자에 할당된 숫자까지 1씩 증가하는 반복 연산을 수행한다. 
+    반복이 순환될 때마다 출력되는 값을 배열인 결과값의 마지막 요소를 추가한다.
+    결과값을 출력한다.-->
+    <h1>과제4</h1>
+    <div id="result"></div>
+    <script>
+            function fibonacci(n) {
+                let fib = [0, 1];
+                let i = 1; 
+                let a = fib[0];
+                let b = fib[1];
+                if (n < 2) {
+                    return n;
+                }
+                else
+                {
+                    while (i < n) {
+                        let sum = a + b;
+                        fib.push(sum)
+                        a = b;
+                        b = sum;
+                        i++;
+                    }
+                }
+                return fib;
+            }
+            document.getElementById("result").innerHTML = fibonacci(Infinity).join(" & ");
+    </script>
+</body>
+</html>

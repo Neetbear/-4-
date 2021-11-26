@@ -1,0 +1,199 @@
+/* html, body {
+    margin: 0; padding: 0; */
+    /* width:100%;
+    height:100% */
+
+/* 
+.wrapper {
+    display: flex;
+    min-height: ;
+    flex-direction: column;
+    }
+
+.main-content {
+    flex: 1;
+    }
+     */
+     #footer {
+        clear: both;
+        margin: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        /* height:60px; */
+    }
+    
+    body {
+        /* margin-left: 20%;
+        margin-right: 20%; */
+        width:1200px; margin:0 auto;
+    }
+    
+    .home {
+        text-align: right;
+        margin: 20px;
+        font-size: 12px;
+    }
+    
+    .nsearch {
+        margin-left: 150px;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-left:90px;
+        /* margin-bottom: 2px; */
+        float: left;
+        vertical-align:middle;
+    }
+    
+    input[type=search] {
+        margin-top: 8px; margin-left: 10px;
+        width: 620px; height: 60px;    
+        padding: 12px;
+        box-sizing: border-box;
+        border: 5px solid rgb(25, 206, 96);
+        font-size: 20px;
+        /* float: left; */
+        /* vertical-align:middle; */
+        background-image: url(./search_icon.png);
+        background-size: 30px, contain;
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+    
+    nav {
+        /* border: 1px solid gray;
+        border-style: solid hidden solid hidden; */
+        padding: 10px 0;
+        margin-bottom: 0px;
+    }
+    
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .maincategory {
+        text-align: left;
+        color: rgb(25, 206, 96);
+    }
+    
+    section, aside {
+        /* border: 1px solid black; */
+        margin-top: 8px;
+        
+    }
+    
+    section {
+        float: left;
+        width: 69%;
+    }
+    
+    aside {
+        float: right;
+        width: 29%;
+    }
+    
+    #ad, #aside1 {
+        height: 200px;
+        /* text-align: center; */
+    }
+    
+    .imgad {
+        border: 1px solid #999;
+        height: 120px;
+        margin-top: 5px;
+        background-image: url(./광고.png);
+        background-size: cover;
+        background-repeat: no-repeat;   
+    }
+    
+    /* .nwsad {
+        height: 30px;
+        border: 1px solid black;
+        background-color: #999;
+    } */
+    
+    .adrside {
+        height: 40px;
+        border: 1px solid #999;
+        background-color: rgb(243, 243, 243);
+        padding-top: 15px; padding-left: 10px; padding-right: 10px;
+        display: flex;
+        justify-content: space-between;
+        /* vertical-align:middle; */
+    }
+    
+    .login {
+        height: 120px;
+        border: 1px solid #999;
+        background-color: rgb(243, 243, 243);
+        padding-top: 15px; padding-left: 15px; padding-right: 15px;
+        font-size: 13px;
+    }
+    
+    input[type=button] {
+        border-style: none;
+        background-color: rgb(25, 206, 96);
+        width: 320px; height: 50px;
+        padding: 8px;
+        font-size: 16px;
+        font-weight: 20px;
+        text-align: center;
+        color: white;
+    }
+    
+    .idpwj {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .stock {
+        height: 35px;
+        border: 1px solid #999;
+        padding-top: 15px; padding-left: 10px; padding-right: 10px;
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        border: 1px solid black;
+    }
+    
+    #news{
+        height: 350px;
+        padding-top: 10px; padding-bottom: 20px;
+        margin-bottom: 100%;
+    }
+    
+    #newscate{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    
+    /* table {
+        border-collapse: collapse;
+        text-align: center;
+        width: auto; height: 60px;
+        padding: 8px;
+    } */
+    
+    #newscom{
+        width: 100%; height: 95%;
+        margin-top: 10px;
+        border: 4px solid white;
+        background-color: rgb(206, 206, 206);
+        text-align: center;
+    }
+    
+    td, tr{
+        border: 4px solid white;
+    }
+    
+    #aside2 {
+        border: 1px solid black;
+        height: 200px;
+        margin-bottom: 100%;
+        background-image: url(./aside광고.jpg);
+        background-size: contain;
+    }

@@ -1,0 +1,46 @@
+13일차
+finally부터
+    trycatch + finally 
+        finally는 성공여부에 상관없이 무조건 실행된다 dowhile에 do 느낌
+    
+    reference 참조 선언안된 없는 변수 사용같은 상황에서 발생하는 에러
+    syntax  문법
+    type 데이터의 타입
+
+class
+    class 상속 extends와 super 사용
+
+    getter setter는 method가 아닌 property처럼 사용
+                   carname()     carname
+
+    캡슐화
+
+
+static method -> 주로 c++, c#에서 사용하는 방식
+    정적 메서드는 클래스의 인스턴스 없이 호출이 가능하며 클래스가 인스턴스화되면 호출할 수 없다
+    동일한 클래스 내의 다른 정적 메서드 내에서 정적 메서드를 호출하는 경우 키워드 this를 사용할 수 있다.
+
+
+콜백 한번 더
+    다른 함수에 변수로 전달되는 함수 
+    다른 함수 호출 
+    콜백 함수는 다른 함수가 완료된 후에 실행할 수 있다
+
+익명함수 -> json
+call() 메소드는 주어진 this 값 및 각각 전달된 인수와 함께 함수를 호출합니다
+apply()와 거의 동일하지만, call()은 인수 목록을, 반면에 apply()는 인수 배열 하나를 받는다는 점이 중요한 차이점입니다.
+
+object
+
+네비게이션
+    document.getElementById("result").innerHTML = document.documentElement.innerHTML 내용물 찾아다 출력?
+
+
+문자열안에 변수나 함수 받아와서 대입할때는 $사용
+    var num = 20;
+    var t = "Hello ${num} world!" 이런식으로
+
+함수 만들때
+    var aaa = function() {return "hello world"";}
+    function aaa() {return "hello world"}
+    같은거다

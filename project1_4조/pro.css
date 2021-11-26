@@ -1,0 +1,176 @@
+* {
+    margin: 0; padding: 0;
+}
+
+
+header {
+    background-color: #1F1F1F;
+    width: 100%;
+    height: 100px;
+}
+
+header h1 img{
+    height: 100px;
+    float: left;
+}
+
+.headright {
+    float: right;
+}
+
+header > nav {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    float: right;
+}
+
+ul {
+    list-style: none;
+}
+
+header nav {
+    position: absolute;
+    float: right;
+}
+
+span {
+    color: white;
+    font-size: 1;
+}
+
+.neonText{
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main #gnb .depth1 .depth1_tit {
+    color: #fff;
+    height: 25px;
+}
+
+#gnb .depth1 .depth1_tit {
+    font-size: 14px;
+    display: block;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+#gnb .depth1 > li {
+    line-height: 100px;
+    float: right;
+    margin-left: 27px;
+    margin-right: 40px;
+    
+}
+
+main {
+    max-width: 100%; padding: 0; margin: 0; height: 100%;
+    
+}
+
+.main-container-jack {
+    width: 100%;
+    height: 600px;
+    background: url(img/jackbc2.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    display: table;
+    
+}
+
+#jacklogo {
+    display: block;
+    margin: 0px auto;
+    padding-top: 160px;
+}
+
+
+
+.main-container-ballan {
+    width: 100%;
+    height: 600px;
+    background: url(img/ballanbc.jpeg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    display: table;
+    
+}
+
+#ballanlogo {
+    display: block;
+    margin: 0px auto;
+    padding-top: 130px;
+}
+
+.main-container-walker {
+    width: 100%;
+    height: 600px;
+    background: url(img/walkerbc.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /*배경을 뷰포트에 고정한다. 요소에 스크롤이 존재해도 배경은 함께 스크롤 되지않는다. background-clip : text 와 호환되지않는다.*/
+    margin: auto;
+    display: table;
+    
+}
+
+#walkerlogo {
+    display: block;
+    margin: 0px auto;
+    padding-top: 130px;
+}
+
+.main-container-glen {
+    width: 100%;
+    height: 600px;
+    background: url(img/glenbc.jpg) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+    display: table;
+    padding-top: 150px;
+    
+}
+
+#glenlogo {
+    display: block;
+    margin: 0px auto;
+}
+
+footer {
+    width: 100%;
+    height: 110px;
+    background-color: #1F1F1F;;
+}
+
+
+#footerimg {
+    margin-left: 40px;
+    margin-top: 16px;
+    float: left;
+
+}
+
+.footer2 {
+    margin-top: 16px;
+    float: right;
+    margin-right: 30px; 
+}
+
+
+.footer2 li{
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footerul p {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}

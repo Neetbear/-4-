@@ -1,0 +1,31 @@
+client이후로
+
+client
+on은 이벤트 
+
+query string 질의 문자열? 
+
+
+
+query string 분리? split 
+    parse 주의
+
+url모듈은 내장모듈 
+    웹주소를 읽을 수 있는 부분으로 분할
+
+file server
+    쿼리 문자열 + node.js가 서버처럼 구동 => client에게 제공
+
+event loop
+    nodejs는 single threaded application이지만 
+        event 및 callback 개념을 통해 동시성을 지원할 수 있다.
+    nodejs는 모든 api는 async이며 single thread이므로 비동기식 함수 호출을 사용하여 동시성을 유지?    
+    node thread는 트리거(이벤트 수신 기능이 실행되도록 신호를 보낸다?)
+
+    event(callback)주도로 다른 기술에 비해 빠르다.
+
+    on 이벤트 트리거드 됨
+    emit 이벤트 발생
+    eventEmitter class(new로 생성)
+
+    

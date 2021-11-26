@@ -1,0 +1,112 @@
+4일차 CSS 시작
+
+css 
+  잘설계하면 재사용가능 -> 템플릿/테마
+  레이아웃과 디자인 요소
+  html에서 디자인적 요소를 분리해 정의할 수 있다
+  내용과 상관없이 디자인만 바꿀때 특히 용이
+  다양한 기기에 맞게 탄력적으로 바뀌는 콘텐츠에 용이 -> 반응형 디자인
+  
+  선택자 + 선언부 
+    선택자{ 속성:값; 속성:값; .....}    
+    선택자는 h1, p 등등 선택
+    선언부는 {내부 내용}
+    /*css의 주석*/ -> html의 주석과 혼동 주의
+  
+  css는 (내부 외부 인라인) 스타일시트 3종류
+    내부는 헤드에 style로 작성 -> 재활용을 위해서 외부 스타일시트 권장
+    외부는 css문서 별도 작성 link로 가져와서 적용
+    인라인 경우 필요하면 html내부에 직접 적용하나 일관된 디자인 체계 유지에 방해 사용주의
+
+  css의 우선순위  
+    Cascaing 폭포처럼 떨어진다는 의미
+    Dom Tree구조에서 상위태그에서 정의한 디자인이 하위태그로 전달되는 상속개념으로 적용된다.
+    우선순의는 가장 나중에 정의되는 스타일이 우선 적용
+      인라인 내부 외부 브라우저디자인 
+
+  셀렉터 적용대상
+    .class(예 .intro) -> 유일한 대상에 걸땐 id 여러개에 걸땐 class 사용? 뭉치 
+    #id (예 #bannar) -> id는 페이지내에 유일한 값이므로 고유한 요소 선택하는데 사용
+    * (문서내 모든 요소에 적용)
+    태그 (p로하면 문서내 모든 p)
+    태그, 태그 (모든 태그와 태그)
+    태그1 태그2 (태그1 내의 모든 태그2)
+
+    태그의 특정 속성에만 지정도 가능함
+    input[type=text]{선언부} 이런식으로
+
+    동시 지정 태그, 태그 
+
+    태그와 클래스 결합 
+        .header {} / h1.header{} 이러면 같은 class여도 h1만 다른 식으로 지정가능
+
+    텍스트 속성 
+        color 
+        text-align
+    폰트    
+        font-family 나열된 순서대로 폰트 적용 공백있는 폰트이름은 ''로 감싸기
+        font-style normal italic, oblique(italic과 비슷) 등
+        font-weight 폰트 두께 (크기아님)
+        font-size 이게 글씨 크기 
+    
+    정렬
+        text-align 텍스트 정렬
+        vertical-align 인라인 혹은 테이블 셀에서 수직 정렬
+    
+    링크
+        a:link 방문한적 없는 기본 링크
+        a:visited 방문한 링크
+        a:hover 마우스가 링크위에 올라갔을때
+        a:active 링크를 클릭했을때 마우스로 누르고 있는 동안의 색
+
+    색 속성 
+        hex(16진수) 코드, rgb, hsl(색조, 채도, 밝기), rgbaid, hslaid -> aid는 투명도
+
+
+    배경 속성 (블럭태그안에 이미지 삽입가능)
+        background-color, opacity(투명도 0.0~1.0 사이)
+        background-image(배경에 이미지) url("이미지 위치or주소")
+            다른 설정안하면-> 이미지 사이즈 만큼해서 바둑판마냥 반복해서 드감
+        background-repeat(이미지반복이 어캐할건지 정해줌)
+        background-position 이미지 위치 left top 하면 좌측 상단
+        background-attachiment 이미지 어캐붙일래? 스크롤 픽스 등등
+        background-size 이미지 사이즈 조정
+
+    박스 모델 -> 2일차 과제 좀 더 쉽게 해줌
+        화면 배치(position), foalt 등등
+        테두리(border) 내용(content) 내부여백(pedding) 외부여백(margin)
+    박스개요 
+        contents box 텍스트 및 이미지의 실제영역
+        padding box 테두리와 콘텐츠 사이
+        border box 테두리
+        margin box 테두리와 바깥 사이
+    박스크기
+        width
+        박스 크기는 사실 컨텐츠 영역임 나머지 영역 더 한게 실제 크기임
+    border 속성
+        border-width 상하좌우 별개로 가능 (상우하좌 순서임)
+        border-style 실선 점선 등등
+        border-color
+        border-radius 테두리 모서리 둥글게
+    margin 속성
+        
+
+
+
+
+
+
+
+
+    %css에 사용하는 단위에는 절대 단위cm, mm, in, px, pt, pc
+                           상대 단위 em, ex, rem, vw, vh, vmin, vmax, %
+    %id는 하나만 지목 class는 그룹처럼 묶는 느낌
+    %class 하나로 css 만들어두고 적용하고 싶은 애들에 class 값 주는게 더 깔끔
+    %dom tree 
+    %사이트 드가서 다른 이름으로 저장하면 html파일로 저장되서 다 뜯어볼 수 있다.
+    %kr보단 ko쓰는게 좋음
+    % div는 투명한 액자라고 생각하고 거기다 채워넣는 느낌
+    %type="text/css"는 css 파일이 text로 작성되어 있다는 소리임 이미지에 적용하든 뭐든 같음
+    부트스트랩이라고 css 양식 주는 곳이 있는데 의존적으로 됨
+
+

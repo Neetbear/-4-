@@ -1,0 +1,55 @@
+과제 확인부터 시작
+
+streams 
+    스트림은 source에서 data를 읽거나 연속적인 방식으로 destination에 data를 쓸 수 있게 해주는 object다.
+    nodejs에서는 4종류 
+        Readable  읽기 작업
+        Writalbe  쓰기 작업
+        Duplex    읽기 및 쓰기 작업 모두에 사용
+        Transform 입력기반으로 출력이 계산되는 Duplex
+    각 유형은 eventemitter 인스턴스이며 서로 다른 instance에서 여러 event를 발생시킨다
+        data    읽을 수 있는 데이터가 있을 때 발생하는 이벤트
+        end     더 이상 읽을 데이터가 없을 때
+        error   데이터 수신 또는 쓰기 오류 발생시
+        finish  모든 데이터가 기본 시스템으로 flush(디스크에 데이터가 전부 써진것을 말한다)되면 시작
+
+    reading from a stream
+
+    input/output stream
+        *Stream은 단일 방향으로 연속적으로 흘러가는 것을 의미, 
+        데이터는 출발지에서 나와 도착지로 흘러간다는 개념
+
+        프로그램이 출발지/도착지인지에 따라 스트림의 종류가 결정됨.
+        데이터를 입력 받을 때 - InputStream
+        데이터를 출력 할 때 - OutputStream
+
+    piping the stream
+        하나의 stream 출력을 다른 stream의 입력으로 제공하는 메커니즘?
+        제한이 없다?
+        이걸로 과제12하면 그냥 됨
+
+    chaining the streams
+        multiple stream 작업의 chain을 만드는 메커니즘?
+        piping stream 이용 통상적으로 파이프 스트림 사용법임
+
+        //gz는 압축파일 일종?
+
+node.js 2번째 ppt 부터
+
+express 모듈에는 http가 내장되어 있다.
+express 모듈부터 
+    web및 mobile application 개발을 위한 강력한 기능 set을 제공하는 최소의 유연한 node.js web application framework이다.
+    http 요청에 응답하도록 middleware를 설정할 수 있다.
+    http method 및 url을 기반으로 다른 작업을 수행하는데 사용되는 routing table을 정의한다
+    template에 parameter를 전달하여 html 페이지를 동적으로 rendering 할 수 있다.
+    routing, rendering을 배우는게 중요
+
+    http요청 routing, middleware 구성, html rendering view 등....
+
+    app.get() 메서드는 상대적인 경로가 있는 http get 요청이 있을 때마다 호출될 callbakc function을 지정한다
+
+basic routing
+    routing은 url 및 특정 http 요청방법인 특정 끝점에 대한 클라이언트 요청에 애플리케이션이 응답하는 방식을 결정하는 것을 말한다.
+
+express는 이미지, css, js등과 같은 static file을 제공하는 내장 middleware express.static을 제공한다.
+

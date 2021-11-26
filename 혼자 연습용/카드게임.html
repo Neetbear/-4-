@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드게임 연구</title>
+</head>
+<body>
+    <!--카드게임 필요사항-->    
+    <!--1.일단 뒤집힌 카드들 깔아서 위치 잡아주고 onclick으로 뒤집히면 동작하게 잡아주기-->
+    <!--2.카드들에 뒤집었을때 보일 이미지 랜덤으로 할당해주기-->
+    <!--3.2장 뒤집어서 둘이 같은 카드면 냅두고 아니면 다시 뒤집히기-->
+    <!--4.카드 다 뒤집으면 끝내기-->
+    <!--5.셔플 버튼으로 초기화 해주기-->
+    <div>
+        <img id="img1" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img2" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img3" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img4" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img5" src="./back.jpg" class="cards" width="120px" height="180px">
+    </div>
+    <div>
+        <img id="img6" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img7" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img8" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img9" src="./back.jpg" class="cards" width="120px" height="180px">
+        <img id="img10" src="./back.jpg" class="cards" width="120px" height="180px">
+    </div>
+    <button type="button" id="shufflebutton" onclick="shuffleFucn()">Shuffle</button>
+
+    <script>
+        //카드할당, 카드 짝맞나 확인, 셔플 최소 3파트
+        //onclick은 잡아와서 사용하는 방법도 있다? card[i].onclick
+        //클론 배열 만들어서 저장용으로 사용?
+        const cardFrontSrcs = ["./a.jpg", "./a.jpg", "./2.jpg", "./2.jpg", "./3.jpg", "./3.jpg", "./4.jpg", "./4.jpg", "./5.jpg", "./5.jpg"];
+        const cards = document.getElementsByClassName("cards");
+        const Card = function(card, src) {
+            this.card = card;
+            this.src = src
+        }
+
+        
+    </script>
+</body>
+</html>

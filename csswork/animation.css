@@ -1,0 +1,23 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 5s;
+}
+
+/*  animation-name 이 애니 이름 지정
+    animation-duration 지속시간*/
+
+@keyframes example {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+/*  @keyframes example 이 애니매이션은 {이렇게 작동합니다} */
+/*  from {background-color: red;} 시작색
+    to {background-color: yellow;}  작동색 
+    끝나면 다시 빨간색 됨 */
+/*%로 걸면 그 %시간때마다 변함*/

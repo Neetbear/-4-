@@ -1,0 +1,22 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title SignUp
+        script(src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js")
+        script(src="./kakao.js")
+    body 
+        h2 SignUp
+        form(action="/info" method="POST")
+            input(name="id" type="text" require placeholder="User ID")
+            br
+            input(name="password" type="password" require placeholder="User Password")
+            br
+            input(name="username" type="text" require placeholder="User Name")
+            br
+            input(name="address" type="text" id="address_kakao" require placeholder="User Address" src="./kakao.js" readonly)
+            br
+            button(type="submit") Singup
+

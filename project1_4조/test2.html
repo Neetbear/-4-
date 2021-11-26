@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0 auto;
+            background-image: url("1.jpg");
+            background-size: 100%;
+        }
+
+               /*성인인증 완료 문구 넣어본거*/
+        #verificationOkay {
+            margin: 0;
+            padding: 0;
+            /* background: lightslategray; */
+            overflow: hidden;
+            font: 5vw/100vh "Finger Paint";
+            text-align: center;
+            color: transparent;
+            /* display: none; */
+        }
+
+        span {
+            display: inline-block;
+            text-shadow: 0 0 0 whitesmoke;
+            animation: smoky 5s 3s both;
+            }
+
+            span:nth-child(even){
+            animation-name: smoky-mirror;
+        }
+
+        @keyframes smoky {
+            60% {
+                text-shadow: 0 0 40px whitesmoke;
+            }
+            to {
+                transform:
+                translate3d(15rem,-8rem,0)
+                rotate(-40deg)
+                skewX(70deg)
+                scale(1.5);
+                text-shadow: 0 0 20px whitesmoke;
+                opacity: 0;
+            }
+        }
+
+        @keyframes smoky-mirror {
+            60% {
+                text-shadow: 0 0 40px whitesmoke; }
+            to {
+                transform:
+                translate3d(18rem,-8rem,0)
+                rotate(-40deg) 
+                skewX(-70deg)
+                scale(2);
+                text-shadow: 0 0 20px whitesmoke;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="verificationOkay">
+        <span>감</span>
+        <span>사</span>
+        <span>합</span>
+        <span>니</span>
+        <!-- <span>&nbsp;</span> -->
+        <span>다</span>
+        <span>.</span>
+    </div>
+</body>
+</html>

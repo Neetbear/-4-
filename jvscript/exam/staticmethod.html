@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+
+            static hello(x) {
+                return "Hello " + x.name; 
+                //this.name으로하면 class name이 나온다? 메모리에 올라가기 전이므로
+                //메모리 객체화 된 애를 객체로 받아쓰면 된다.
+            }
+        }
+
+        let myCar = new Car("BMW X5");
+        document.getElementById("result").innerHTML = Car.hello(myCar);
+    </script>
+</body>
+</html>

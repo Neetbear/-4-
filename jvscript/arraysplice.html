@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array splice method</title>
+</head>
+<body>
+    <h1>Array splice method</h1>
+    <button onclick="myFunction()">Click</button>
+    <div id="res1"></div>
+    <div id="res2"></div>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Grape"];
+        document.getElementById("res1").innerHTML = "Original Array :<br>" + fruits + "<br>";
+
+        function myFunction()
+        {
+            fruits.splice(2, 0, "Lemon", "Kiwi");
+            document.getElementById("res2").innerHTML = "New Array :<br>" + fruits;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just test</title>
+    <style>
+        h2, p{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <style>
+        table,tr,th,td{
+            border:1px solid slateblue;
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>금일 노동 현황</b></h2><p>
+    <a href="#현황표">직원 출근 현황표 바로가기</a><br>
+    <a href="#송파구">송파구 현황 바로가기</a><br>
+    <a href="#강남구">강남구 현황 바로가기</a><br>
+    <a href="#경기도">경기도 현황 바로가기</a><br>
+    <a href="#특이사항">특이사항 바로가기</a><br>
+    <a href="#작성자">작성자 바로가기</a><br>
+    <h2 id="현황표">현황표</h2>
+    <table style="width: 50%;">
+        <thead>
+            <tr>
+                <th colspan="2">지역</th>
+                <th>인원</th>
+                <th>소요시간</th>
+                <th>금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th rowspan="2">서울시</th>
+                <th>송파구</th>
+                <td>10명</td>
+                <td>3시간</td>
+                <td>250,000</td>
+            </tr>
+            <tr>
+                <th>강남구</th>
+                <td>8명</td>
+                <td>2시간 30분</td>
+                <td>300,000</td>
+            </tr>
+            <tr>
+                <th colspan="2">경기도</th>
+                <td>8명</td>
+                <td>4:20</td>
+                <td>300,000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">-</td>
+                <td>26명</td>
+                <td>-</td>
+                <td>850,000</td>
+            </tr>
+        </tfoot>
+    </table>
+    <article id="송파구">
+        <h3>송파구 작업 현황</h3>
+        <p>인원 13명중 3명 휴가 작업량 오류 잔업 필요</p>
+    </article><br>
+    <article id="강남구">
+        <h3>강남구 작업 현황</h3>
+        <p>인원 10명중 1명 휴가 1명 퇴사 작업량 오류 잔업 필요</p>
+    </article><br>
+    <article id="경기도">
+        <h3>경기도 작업 현황</h3>
+        <p>인원 8명중 8명 전원 출근 작업량 오류 잔업 필요</p>
+    </article><br>
+    <h2 id="특이사항">특이사항</h2>
+    <dl>
+        <dt>날씨변화에 따른 한파대비 필요</dt>
+        <dd>일교차에 따른 직원들 건강대비 필요<br>동파 대비 필요</dd>
+        <dt>코로나 방역대책</dt>
+        <dd>직원들 백신 접종 확인<br>거리두기&마스크 착용 주의</dd>
+    </dl>
+    <address id="작성자">
+        Written by <a href="mailto:flffkry@gmail.com">Noh Jin Hyeoung</a>
+        Visit us at :<br>
+        google.com<br>
+        Kumbog Building 
+        Seoul, Korea
+    </address>
+</body>
+</html>

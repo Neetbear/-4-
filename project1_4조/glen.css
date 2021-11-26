@@ -1,0 +1,279 @@
+*{
+    font-family: "dangdang";
+    list-style: none; /*리스트 기호 지우기*/
+    text-decoration: none; /*밑줄지우기*/
+    margin:0px;
+    padding: 0px;
+  }
+
+@font-face {
+    font-family: 'dangdang';
+    src: url(./font/Dangdanghae.ttf) format('truetype');
+}
+
+body {
+    min-height: 100%;
+}
+header > h1 {
+    text-align: center;
+}
+
+.sidebar > a > h1 {
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin: 20px;
+}
+
+header nav input[id="menuicon"] {
+    display: none;
+}
+header nav input[id="menuicon"] + label {
+    display:block; 
+    width: 60px; 
+    height: 50px; 
+    position: fixed;
+    left: 0;
+    top:calc(50% - 25px);
+    transition:all .35s;
+    cursor: pointer;
+    color: #000;
+}
+header nav input[id="menuicon"] + label span {
+    display: block; 
+    position: absolute; 
+    width: 100%; 
+    height: 5px; 
+    border-radius: 30px; 
+    background: #000; 
+    transition: all .35s;
+}
+header nav input[id="menuicon"] + label span:nth-child(1) {
+    top:0;
+}
+header nav input[id="menuicon"] + label span:nth-child(2) {
+    top: 50%; 
+    transform: translateY(-50%);
+}
+header nav input[id="menuicon"] + label span:nth-child(3) {
+    bottom: 0;
+}
+header nav input[id="menuicon"]:checked + label {
+    z-index:2;
+}
+header nav input[id="menuicon"]:checked + label span {
+    background: #fff;
+}
+header nav input[id="menuicon"]:checked + label span:nth-child(1) {
+    top: 50%; 
+    transform: translateY(-50%) rotate(45deg);
+}
+header nav input[id="menuicon"]:checked + label span:nth-child(2) {
+    opacity: 0;
+}
+header nav input[id="menuicon"]:checked + label span:nth-child(3) {
+    bottom: 50%; transform: translateY(50%) rotate(-45deg);
+}
+header div[class="sidebar"] {
+    width: 200px; 
+    height: 100%; 
+    background: #222; 
+    position: fixed; 
+    top: 0%; 
+    left: -300px; 
+    z-index: 1; 
+    transition: all .35s;
+}
+
+header nav input[id="menuicon"]:checked + label + div {
+    left: 0;
+}
+
+
+
+.bgvideo {
+    /* position: relative; */
+    /* position: absolute; */
+    min-height: 100%;
+    min-width: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    position: fixed;
+    opacity: 0.95;
+    
+}
+
+.bgvideo .glenvideo {
+    width: 100%;
+    opacity: 1;
+}
+
+main {  
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-right: 200px;
+    margin-left: 200px;
+    max-width: 1840px;
+    height: 100vh;
+}
+
+.container1_top { /*브랜드 소개*/
+    display: flex;
+    flex: 2;
+    flex-basis: 100%;  
+    flex-shrink: 0;
+    
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+.container1_img {
+    margin: 0;
+    
+}
+
+.container1_1 {
+    
+    height: 359px;
+    
+}
+
+.container1_p {
+
+    margin-top: -50px;
+    width: 600px;
+    margin-left: 50px;
+     
+}
+
+
+
+.contents1 { /*글*/
+    display: flex;
+    flex: 1;
+    width: 620px;
+    flex-basis: 50%;  
+    flex-shrink: 0;
+    height: 460px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(39, 11, 11);
+    
+}
+
+.contents2 { /*그림*/
+    display: flex;
+    flex: 1;
+    width: 620px;
+    flex-basis: 50%;  
+    flex-shrink: 0;
+    height: 460px;
+}
+
+
+
+
+.container1_p {
+    font-size: 23px;
+    color: rgb(39, 11, 11);
+}
+
+.contents1_p {
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+#blacklabel {
+    border-radius: 4%;
+    margin-left: 50px;
+    
+}
+
+.contents2_p {
+    font-size: 18px;
+    margin-top: 53px;
+}
+
+#goldlabel {
+    border-radius: 4%;
+    width: 740;
+    margin-left: 155px;
+}
+
+.contents3_p {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+#platlabel {
+    border-radius: 4%;
+    margin-left: 80px;
+}
+
+.contents4_p {
+    font-size: 20px;
+    margin-top: 60px;
+}
+
+#bluelabel {
+    border-radius: 4%;
+    margin-left: 140px;
+}
+
+#border { /*글부분 테두리*/
+    display: flex;
+    flex: 1;
+    flex-basis: 50%;
+    border: 5px solid rgb(31, 31, 30);
+    border-style: double;
+    text-align: center;
+    max-width: 590px;
+    height: 340px;
+    margin: 40px;
+    padding: 20px;
+}
+
+/* .contents2 > img {
+    width: 620px;
+    height: 460px;
+} 필요하면 사진크기조정용 */
+
+
+footer {
+    height: 120px;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 2488px;
+    left: 0px;
+    margin-top: 100px;
+}
+
+.footerbar {
+    margin-top: 10px;
+    margin-left: 500px;
+}
+
+#topBtn { 
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+    margin-left: 700px;
+    width: 60px;
+    height: 47px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    transition: all 200ms ease-out;
+    display: inline-block;
+    z-index: 10;
+}

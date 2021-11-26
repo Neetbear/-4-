@@ -1,0 +1,109 @@
+6일차
+css 고급활용부터
+
+css 고급활용
+    Flexbox 
+        박스요소들에 대한 효과적인 배치용  
+        부모요소를 기준으로 자식요소들의 배치하는 느낌
+        일반적으론 display, float, position 등의 속성을 사용하지만 구현 방법이 복잡, 레이아웃을 표현하는데 많은 한계
+
+        기본요소
+            flex container  정렬하려는 요소의 부모요소 , 플렉스 요소 하나 이상 포함해야함
+            flex item   정렬하려는 대상 , 플렉스 라인이라는 가상의 선을 기준으로 배열됨
+            main axis   좌우(inline방향)
+            cross axis  위아래(block방향)
+        작은 영역의 정밀한 레이아웃 조정하는데 유용 / 큰 레이아웃은 grid 사용 (display:grid)
+
+        다른 브라우저는 문제없으나 IE10(익스플로러) 이상에선 적용은 되나 잔 오류가 있을수 있다.
+
+        (display:flex) 
+        flex 수직, inline-flex 수평 정렬
+
+        flex-direction
+            플렉스 요소가 배치될 방향
+            row 기본설정 (왼쪽에서 오른쪽 위에서 아래쪽 배치)
+            row-reverse direction속성값이 왼에서오른이면 역으로 배치 
+                    / 수평 역순 배열
+                    / 123으로 작성하면 오른쪽부터 순서대로(볼땐 321이됨) 배열
+            column  쓰기 방식이 수평이면 수직방향으로 위에서 아래로 배치
+                    / 수직 배열
+            coumn-reverse 쓰기 방식 수평이면 아래에서 위로 수직배치
+                    / 수직 역순 배열
+
+        flex-wrap -> 반응형
+            줄바꿈 요소
+            nowrap 줄바꿈 없음(기본설정) 플렉스 요소의 너비를 줄여서 한 줄에 모두 배치
+            wrap 줄바꿈 있음
+            wrap-reverse 플렉스 요소 여유공간 없으면 담줄로 넘어가나 배치가 위쪽으로 넘어감
+
+        justify-content ->수평 건드리는 느낌
+            flex-start 앞쪽부터 배치
+            flex-end    뒤쪽부터 배치 -> row-reverse랑 다르게 역순배열은 아님
+            center  가운데 정렬
+            space-between   배열 요소들 사이만 여유공간
+            space-around    요소의 앞뒤와 요소들 사이에 모두 여유공간
+
+        align-item 플렉스 컨테이너에서 요소들이 수직으로 위 아래 가운데 등등 배열
+            플렉스 요소의 수직방향 정렬 방식 설정 / 2줄 이상일때만 의미 있음
+            stretch 기본설정
+            flex-start
+            flex-end
+            center
+            baseline 플렉스 컨테이너 기준선에 요소가 맞춰지게 배열됨 
+
+        align-content 
+            플렉스 요소 대신에 플렉스 라인 정렬 -> 수직배열 건드리는 느낌
+            stretch
+            flex-start
+            flex-end -> column-reverse랑 다르게 역순은 없는 느낌
+            center
+            space-between 
+            space-around
+
+    반응형 웹
+        콘텐츠는 사용자 기기의 화면크기, 해상도 등 요구 사항에 맞게 반응
+        레이아웃은 기기의 크기와 기능에 따라 변함
+        프로그램 요소가 아니고 html, css만으로 구성
+
+        viewport
+            사용자에게 보여지는 웹페이지 영역 ex 네이버 홈페이지 
+            meta 태그에 뷰포트 설정 
+            width=device-width 폭을 장치 폭에 맞추겠다 (보통은 width 기준으로 맞춤)
+            initial-scale 기본화면 배율 조정
+            minimum-scale 줄일 수 있는 최소 크기
+            maximum-scale 늘릴 수 있는 최대 크기
+            user-scalable 사용자가 확대/축소 할 수 있게 할지 말지
+            크기가 큰 fixed 요소 사용하지 말 것
+            특정 뷰포트 크기에 최적화 하지 말 것
+        
+        미디어 쿼리 
+            화면 크기가 다른 경우에 최적화된 스타일 적용
+            css2에선 @media 규칙을 통해 서로 다른 매체 유형을 위한 맞춤 식 스타일 시트를 지원
+            예)html 문서가 스크린에 표현될 때와 프린트할 때 서로 다른 스타일 적용가능
+            css3에선 더 발전시켜 매체 유형과 하나 이상의 표현식으로 구성된 미디어 쿼리 사용
+                화면 너비 높이 / 
+                매체 화면의 너비, 높이, 비율, 방향, 색상 비트 수, 표현 가능한 색상의 수, 해상도/ 
+                흑백 매체에서의 픽셀 당 비트 수
+            
+            mobile first (모바일 우선)
+                작은 가로 폭부터 큰 가로 폭 순서로 만드는 것 -> min-width부터 지정
+                대부분의 css 라이브러리는 모바일 우선
+
+            desktop first (데스크탑 우선)
+                큰 가로 폭부터 작은 가로 폭 순서로 -> max-width부터 지정
+
+    애니메이션 태그
+        animation-name 이 애니 이름 지정
+        animation-duration 지속시간 
+                infinite 걸면 무한 재생
+        @keyframes example 이 애니매이션은 {이렇게 작동합니다}
+        from {background-color: red;} 시작색
+        to {background-color: yellow;}  작동색  끝나면 다시 원래색
+        %로 걸면 그 %시간때마다 변함
+
+
+
+
+
+
+과제 3 의문사항 transform-translate로 만들수 있는가?

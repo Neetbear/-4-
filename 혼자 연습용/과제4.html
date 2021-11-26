@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <!-- <script>
+            function fibonacci(n) {
+                let fib = [0, 1];
+                if (n < 2) {
+                    return n;
+                }
+                let i = 1; 
+                let a = fib[0];
+                let b = fib[1];
+                while (i < n) {
+                    let sum = a + b;
+                    fib.push(sum)
+                    a = b;
+                    b = sum;
+                    i++;
+                }
+                return fib;
+            }
+            document.getElementById("result").innerHTML = fibonacci(10);
+    </script> -->
+    <script>
+        function fibonacci(n) {
+            let result = [0, 1];  
+            let i = 1
+            let num1 = result[0];
+            let num2 = result[1] ;
+            if (n < 2) { 
+                return n;
+            }
+            else 
+            {
+                while (i < n) {  
+                    let sum = num1 + num2;
+                    result.push(sum)  
+                    num1 = num2;
+                    num2 = sum;
+                    i++;
+                }
+            }
+            return result;
+        }
+        document.getElementById("result").innerHTML = fibonacci(100);
+    </script>
+</body>
+</html>

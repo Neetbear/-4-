@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ani ver.transform</title>
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #div1 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        #div2 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+
+        #div3 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
+        }
+
+        #div4 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        #div5 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+        }
+
+        /* #div6 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out, step-start;
+        }
+
+        #div7 {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out, step-end;
+        } */
+
+        @keyframes assignment {
+            0% {transform: translate(0px, 0px); background-color: lightgray;}
+            100%{transform: translate(300px, 0); background-color: lightgray;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Animation</h2>
+    <p>The transition-timing-function property specifies the speed of an animation should run.</p>
+        <div id="div1">div1</div>
+        <div id="div2">div2</div>
+        <div id="div3">div3</div>
+        <div id="div4">div4</div>
+        <div id="div5">div5</div> 
+        <!-- <div id="div6">div6</div>
+        <div id="div7">div7</div> -->
+</body>  
+</html>

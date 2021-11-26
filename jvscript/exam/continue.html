@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue</title>
+</head>
+<body>
+    <button onclick="myFunction()">Click</button>
+    <div id="result"></div>
+
+    <script>
+        function myFunction() {
+            var text = "";
+            var i = 0;
+            for(i = 0; i < 5; i++) {
+                if (i === 3) {
+                    continue; 
+                    //continue는 break와 다르게 다음 작업만 하지 말고 for문 바닥으로 바라는거다
+                    //나머지 for문 루프는 계속 돈다.
+                }
+                text += "The number is " + i + "<br>";
+            }
+            document.getElementById("result").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

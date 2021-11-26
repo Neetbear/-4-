@@ -1,0 +1,115 @@
+11일차
+
+class 이어서
+    상속개념 
+        extends
+        super
+        get
+        set 
+
+
+이벤트와 DOM
+    사용자 이벤트 처리하는 방법과 동적인 콘텐츠 핸들링을 위한 문서 행동 객체 (DOM)
+
+    이벤트 
+        클릭이벤트, 마우스오버 이벤트 등 
+        사용작의 동작 혹은 프로그램에서 발생하는 특정한 상황
+        이벤트 발생시 보통 사전에 정의된 특정 코드가 실행되고 그에 따라 기능이 동작or화면이 변경 등등
+
+    html이벤트 예시말고 더 있음
+        click
+        change  변동이 있을시
+        focus   포커스를 얻었을때? input박스에 focus가 갔을때 등
+        keydown/up keydown이 키 누를때 keyup하면 눌렀다가 땔때
+        load
+        unload
+        resize  윈도우 크기 변경될 때
+        mouseover/down/out/move/up
+        select
+        submit
+
+    이벤트 핸들러
+        이벤트 발생을 감지하고 처리할 코드를 수행하는 역할
+        태그의 속성으로 지정하거나 DOM엘리먼트의 속성에 콜백 함수를 정의하여 사용된다
+        
+        앞의 이벤트 이름의 앞에 on을 붙여서 사용 onmouseover등
+
+        html속성으로 정의
+            <input onclick="alert('버튼 클릭됨')"></div> 이런식
+
+        자바스크립에서 정의
+            document.getElementById('Id').onclick = function() {}; 이런식
+
+        DOM은 일종의 인터페이스
+        DOM을 이용해서 html의 태그, 속서, 스타일 등을 추가/삭제/변경 가능
+
+        document node - document 객체 dom 트리에 접근하기 위한 최상위 노드 시작점
+        element node
+        attribute node
+        text node
+
+        태그이름, 아이디, 클래스, 이름 등을 이용해 특정 노드 객체를 선택하여 사용 - css의 셀렉터와 비슷
+
+        getElementByxxx(id 등등) 동일 조건의 모든 노드를 목록으로 가져옴 class나 tag등 
+            name 속성도 가능
+
+        querySelector 쿼리 셀렉터
+            document.querySelector("#title") 같은 식으로 css 셀렉터 사용?
+            선택자를 만족하는 모든 요소의 목록 필요시 querySelectorAll()
+
+            %selector가 ID 선택자인데, 해당 ID를 잘못 사용하여 문서 내에 여러 번 사용했으면 첫 번째로 그 ID를 사용한 요소를 반환합니다.
+
+        createElement 
+        removeChild
+        appendChild
+        replaceChild 등등 다른 기능도 가능 
+
+        html 요소의 속성값 변경 attribute (set, get, remove)
+            동적으로 내용만 변경 -> html 소스는 그대로임 
+            
+        html 이벤트핸들러 추가
+            이벤트 속성에 콜백함수를 할당하는 형식으로 
+
+        addEventHandler()를 이용한 이벤트 핸들러 추가
+            eventlistner 이벤트 기다리는 애들 
+                EventTarget 객체로부터 발생한 이벤트를  처리하기 위한 오브젝트를 말합니다.
+            더 좋은 방법임
+
+        text node 변경
+            element.innerHTML = '<tag>text</tag>';
+            element.innerText = 'text'; 이런식으로도 가능하다
+            innerHTML을 권장
+
+        디자인요소 변경 
+            css의 디자인 속성 변경 
+
+            style 속성변경 setattribute 등으로 변경
+
+            style 객체변경 속성 대신 요소의 style 객체의 속성값들을 변경 
+                css와 다르게 -대신에 camel사용
+
+        클래스 지정
+            .className
+
+        화면숨기기
+            화면 구성요소 상황에 따라 숨기거나 보여주기 다
+            display:none    -> 요소가 차지하는 공간도 함께 사라진
+            visibility:hidden -> 요소가 차지하는 공간유지
+
+자바스크립트 문법 끝
+----------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

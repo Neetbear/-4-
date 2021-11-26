@@ -1,0 +1,70 @@
+17일차
+    read
+    eval 
+    print 
+    loop
+
+기존의 스크립트처럼 변수를 사용하여 값을 저장하고 나중에 인쇄할 수 있다.
+var 키워드를 사용하지 않으면 값이 변수에 저장되고 인쇄된다.
+var 키워드 사용하면 값이 저장되지만 인쇄되지는 않는다. -> undefined라고 인쇄됨
+
+> do{
+... x++; 이때 ...은 공백 표시임 ;줄끝
+...
+
+do while문 가능 for문도 가능 
+_결과값 얻기 가능
+
+값 초기화 방법은 없다? clear하는게 빠름
+
+이 과정에선 디버깅할때나 사용해본다?
+
+npm(node package manager)
+    node.js package/module용 online repository.저장소
+    node.js package를 설치하고 node.js package의 버전 관리 및 dependency 관리를 수행하는 command line 유틸리티
+번들로 제공된다
+
+npm install <module name> --save 로 인스톨 
+
+global vs local 
+    local은 node application이 있는 folder에 있는 node_modules directory에 package 설치를 한다. -> 용량 차지 심하다
+    global은 전역적으로 설치됨 항상 사용가능 -> 비추천
+
+mkdir 폴더 생성
+dir 폴더 정보
+rmdir 폴더 삭제
+cd (폴더명) 경로상 다음 폴더로 이동
+cd .. 상위폴더로 나가기
+install uninstall 
+
+고유한 모듈 만들기 
+    모듈 파일 외부에서 사용하려면 exports 필요
+
+assert 기본 제공 모듈중 테스트용 함수 용도
+    assert()는 인자로 넘어온 값이 true랑 같은 지 비교한 후, 같지 않으면 에러를 발생시킨다
+
+assert.deepEqual 비교로 참거짓
+
+assert.deepStrictEqual ===느낌임
+
+assert.ok 참거짓 뿐 아니라 숫자까지 먹음 
+    0일때도 에러로 봄
+
+assert.equal 은 진짜 같냐만 판단 ==느낌임
+
+buffer abc찍으면 <Buffer 61 62 63> 출력되는데 아스키코드에서 16진수값임
+    .alloc 메모리를 잡아줄래 라는 뜻
+    , 'a'이부분이 초기값주는거 fill 역할
+    allocunsafe는 00으로 초기화하지 않는다
+    byteLength
+    Buffer.compare(buf1, buf2); 같으면 0 buf1이 크면 1 buf2가 크면 -1
+    array요소가 buffer일때 sort 기준을 Buffer.compare로 가능
+    buf2.copy(buf1, 2, 0, 5); // buf1의 index 2에 붙이는데 0~4까지만(5는 길이 index아님) 붙인다.
+    buf.entries() index와 값 모두 빼옴
+    console.log(buf1.equals(buf2)); // true false 찍음
+    buf.includes('welcome') 포함하고 있냐고 물어보는거
+    buf.indexOf('welcome') 포함하고 있는 애 인덱스 위치 찾기 // 많으면 제일 첫번째 인덱스 찾음
+    Buffer.isBuffer(buf) // 버프가 맞냐고 물어보는거
+    Buffer.isEncoding('utf-8') 인코딩이거 맞냐고 물어보는거
+
+데이터 들어올때 캐시값등등 저장에 buffer 많이 사용

@@ -1,0 +1,17 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Hello Pug
+        style
+            include pug.css
+    body 
+        h1 Hello h1!!!!
+        p.greetings#people Hello World!!!
+        div.container.column.main#division
+            | To insert multiline text,
+            br
+            | You can use the pipe operator. 
+        

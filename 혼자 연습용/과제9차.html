@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--구구단 콘솔 출력 html에 찍어도 됨
+        세로 출력? 
+        1*1= 1부터
+        9*9= 81까지 새로 출력
+        단과 단 사이는 공백
+        
+        가로출력?
+        1 * 1 = 1__1 * 2 = 2.......1*9=9
+        ......
+        9 * 1 = 9......9 * 9 = 81 -->
+    <div id="result2"></div>
+    <button onclick="calFunc2">구구단가로줄출력</button>
+
+    <script>
+        function calFunc2() {
+            let n, m;
+            let text = "";
+            let text2 = "";
+            let l = "";
+            let o;
+            let count=0;
+            count++
+            if(count%2 != 0){
+                for(n = 1; n < 10; n++) {
+                    for(m = 1; m < 10; m++) {
+                        o = (n*m).toString();
+                        l = o.padStart(2, "0") 
+                        text += n + " * " + m + " = " + l + "\t"; 
+                        text2 += n + " * " + m + " = " + l + "&nbsp" + "&nbsp";
+                    }
+                    text += "\n";
+                    text2 += "<br>";
+                }
+                console.log(text);
+                document.getElementById("result2").innerHTML = text2;
+                document.getElementById("result2").style.backfaceVisibility = "visible";
+            }
+            else{
+                document.getElementById("result2").style.backfaceVisibility = "hidden";
+            }
+        }
+    </script>
+</body>
+</html>

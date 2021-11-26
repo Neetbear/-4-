@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal and Strict Equal</title>
+</head>
+<body>
+    <h1>Equal and Strict Equal</h1>
+    <script>
+        var x = 3, y= '3', z = 3; // y는 타입 문자열임
+        document.write((x == y) + "<br>"); //강제로 형변환 -> 이거 때문에 자바스크립트는 ===사용
+        document.write((x === y) + "<br>"); //타입까지 비교라 형변환 없이 정상적으로 비교
+        document.write((x === z) + "<br>");
+    </script>
+</body>
+</html>

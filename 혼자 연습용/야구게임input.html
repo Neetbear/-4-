@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>숫자를 입력하시오</h1>
+    <form>
+        <input type="text" id="input" placeholder="3자리 숫자를 입력하시오" onblur="inputValue()"></input>
+        <button onclick="baseballFunction()">버튼</button>
+    </form>
+    <div id="res"></div>
+    <script>
+        //두 값을 배열로 비교하겠다
+        //배열 틀 만들기
+        const com = [];
+        const ans = [];
+
+        //입력값 배열에 넣기
+        function inputValue()
+        {
+            const input = document.getElementById('input').value;
+            ans = input;
+        }
+
+        //두 배열 비교
+
+        function baseballFunction()
+        {
+            //랜덤 숫자 잡기
+            do
+            {
+                com.push(Math.floor(Math.random() * 9));
+                com.push(Math.floor(Math.random() * 9));
+                com.push(Math.floor(Math.random() * 9));
+            } while(com[2] == com[1] && com[2] == com[0] && com[1] == com[0])
+
+            //스트라이크와 볼 갯수 측정
+            let strike = 0, ball = 0; 
+            let i = 0, j = 0;
+            if (com[0] == ans[1])
+            {
+
+            }
+            else if ()
+            
+                //출력
+            if(strike == 3)
+            {
+                document.getElementById("res").innerHTML = "HomeRun";
+            }
+            else
+            {
+                document.getElementById("res").innerHTML = strikes + "strike" + balls + "ball";
+            }
+        }
+
+    </script>
+</body>
+</html>

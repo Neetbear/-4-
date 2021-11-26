@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <script>
+        const car = {
+            type:"Flat",
+            model:"500",
+            color:"red"
+        };       //이게 object define해서 생성한거
+        const person = {
+            firstname:"David",
+            lastname:"Doe",
+            age:20,    //숫자로 받기 type 달라도 받음
+            eyeColor:"gray",
+            fullname: function() {  //method (중에서 함수)
+                return this.firstname + " " + this.lastname;
+            } //this는 person임 오브젝트가 자신을 가르킬때 this 사용
+        };
+
+        document.getElementById("result").innerHTML = "The car type is " + car.type; 
+        //key로 value값 찾은거 
+        document.getElementById("result1").innerHTML = person.firstname + " is " + person.age + "years old.";
+        document.getElementById("result2").innerHTML = person.fullname();
+    </script>
+</body>
+</html>

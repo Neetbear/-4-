@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ani ver.transform</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: gray;
+            animation-name: assignment;
+            animation-duration: 5s;
+            animation-iteration-count: 5;
+        }
+        @keyframes assignment {
+            0% {transform: translate(0px, 0px); background-color: lightgray;}
+            25% {transform: translate(100px, 0px); background-color: lightcoral;}
+            50% {transform: translate(100px, 100px); background-color: lightgreen;}
+            75% {transform: translate(0px, 100px); background-color: lightsalmon;}
+            100% {transform: translate(0px, 0px); background-color: lightgray;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Animation</h2>
+    <p>The animation-interation-count property specifies the number of times an animation should run. The following example wil run the animation 5 times before it stops
+    </p>
+    <div></div>
+</body>
+</html>

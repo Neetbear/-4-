@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object display</title>
+</head>
+<body>
+    <p id="result"></p>
+    <p id="result1"></p>
+
+    <script> 
+        //Json타입임
+        const person = {
+            name: "John",
+            age: 25,
+            city: "New York" 
+        };
+
+        document.getElementById("result").innerHTML = person;
+        console.log(person);
+        //html에는 오브젝트라고만 찍히고 콘솔에는 다 찍힘
+        //뭘찍을지 키값으로 정확히 찍어줘야한다
+        document.getElementById("result").innerHTML = person.name + ", " + person.age + ", " + person.city;
+    </script>
+</body>
+</html>
