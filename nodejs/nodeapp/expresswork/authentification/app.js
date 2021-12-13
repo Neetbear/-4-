@@ -57,6 +57,7 @@ app.post('/signup', (req, res) => {
 app.get("/protected_page", (req, res) => {
     res.render("protected_page", {
         id: req.session.user.id,
+        password: req.session.password,
         message: "Protected_page"
     });
 })

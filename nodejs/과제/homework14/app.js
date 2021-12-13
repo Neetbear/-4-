@@ -47,11 +47,10 @@ app.post('/info', (req, res) => {
     Users.push(newUser);
     req.session.users = newUser;
     console.log(JSON.stringify(newUser));
-    res.redirect('/result');
+    res.redirect('result');
 });
 
-app.get('/result', (req, res) => {
-    
+app.get('/result', (req, res) => {0
     const result = JSON.parse(newUser.toString(newUser));
     res.render('result', JSON.stringify(newUser)); 
 

@@ -32,5 +32,4 @@ con.connect(function(err) {
         // console.log(fields);
     });
 });
-
-// con.end();
+con.end();
