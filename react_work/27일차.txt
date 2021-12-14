@@ -1,0 +1,113 @@
+react
+    npm install -g create-react-app
+    npm install -g yarn
+    npx create-react-app hello
+    cd hello
+    npm start (또는 yarn start)
+    npm run build
+
+    npm install -g serve
+    npx serve -s build -> 
+
+npx의 경우 한 번만 실행시킬 서버를 다운로드 하는 것이고, serve는 
+
+배포할때 build디렉토리만 배포해도 실행된다.
+
+    react-create-app 툴체인은 react-scripts package를 사용하여 application을 build하고 실행
+    application이 작업을 시작하면 npm install react-scripts@latest로 최신버전으로 업뎃
+
+    npm install react-scripts@latest
+
+    react의 디렉토리는 퍼블릭과 src 2개
+
+    react를 하면서 여러 컴포넌트를 만들어나가지만 div id=root로 약속
+
+    root라는 아이디 아래 class app과 App-header등이 들어가는거 확인 가능 src 디렉토리 파일들로 수정 진입경로는 index.js에 있다
+
+app.js -> index.js -> index.html
+
+index.html app.js index.js 서로 관계 구조 잘보기
+
+react 배포
+    react를 새로 고침하면 그냥 hello react 문자만 존재하는데 1.8mb
+    현재 react는 편의성을 위해서 여러 기능이 추가된 상태
+    그대로 사용시 유저들한테는 무겁고 느리다
+    해결을 위해서 npm run build로 배포 (build가 생성) -> 소스 수정시마다 build로 수정해서 저장?
+
+    index.html이 한줄로 작성된 이유는 불필요한 공백같은 불필요한 용량 제거 -> 유저 입장에서 가볍게 사용 가능
+
+react는 memory에 vitual dom을 생성한다.
+browser의 dom을 직접 조작하는 대신 react는 browser의 dom을 변경하기 전에 필요한 모든 조작을 수행하는 memory에 vitual dom을 생성한다
+react는 병경해야 할 사항만 변경한다.(어떤 변경 사항이 있는지 찾아내고 변경해야 할 부분만 변경한다)
+
+helloreact.html 설치하지 않고 react사용방법?
+    react가 무엇인지 보기 위해서 html로 react 코드 작성
+    
+react directly in html 
+    include three CDN's in your html files
+
+    cdn(content delivery network) 곳곳에 분산되어 있는 서버 그룹 
+        올바르게 구성하면 ddos 공격과 같은 일부 악의적인 공격으로부터 보호에 도움이 된다
+
+        로딩 시간 개선
+        대역폭 비용 절감(캐싱및 기타 최적화로 원본 서버를 제공해야하는 데이터 양을 줄여 호스팅 비용 줄인다)
+        콘텐츠 가용성 및 이중화 증가
+
+min.js 용량 줄이려고 미니마이즈된 파일
+babel 일종의 컴파일 스크립트?
+
+메모리에 렌더링 한 다음에 다시 렌더링해서 화면에 띄운다?
+
+modify the react application
+    html 내용을 변경하고 저장한다 
+    서버 켜두면 nodemon 느낌? 변경하고 저장하면 자동 재실행?
+
+react architecture?
+    react library는 견고한 기반(solid foundation)위에 구축
+    간단하고 유연하며 확장 가능
+    react는 web application에서 user interface를 생성하기 위한 library이다
+    개발자가 순수한 javascript를 사용하여 userinterface를 만들 수 있도록 하는 것이다
+
+    react elements
+        html dom의 javascript표현
+        react element를 생성하기 위한 api(react.createElement를 제공)
+    jsx
+        자바스크립트 확장
+        수정이 거의 없는 html 구문을 지원하는 xml 기반의 확장 가능한 언어
+        jsx는 react elements로 컴파일하고 ui 만드는데 사용할 수 있다.
+    react component
+        리엑트 애플리케이션의 기본 빌딩 블록
+        react 요소와 jsx를 사용하여 user interface를 design
+        기본적으로 자바스크립트 클래스 또는 순수 자바스크립트 함수
+        속성, 상태 관리, 수명주기 등
+
+workflow
+    React.createElement
+        세가지 parameter 필요
+            element tag
+            object로써의 element attribute {}이부분
+            element content
+    ReactDOM.render
+        2개의 parameter 필요
+            jsx or react element(어떤거 드갈지)
+            react document (어디에 쓸지)
+
+react 라이브러리는 ui 라이브러리일뿐 특정한거 필요로 하지 않는다
+
+this.props.name
+props는 속성을 나타내는 데이터입니다
+
+<input type="text"/> 이렇게 닫으면 </input> 안써도 된다
+
+class 말고 classname이라고 쓰는건 jsx 스타일
+
+<React.StrictMode> </React.StrictMode> 일종의 디버깅 모드 같은거 빌드하면 빠짐 
+    기존의 콜백같은거 검사? dom node에서 지원하던 기능?
+
+export default Garage; import Car from './Car'; // 사실 명시적으로 export하는거지 어차피 car.js파일을 땡겨오니까 되긴한다
+
+<></> 쓰이는 부분에 대한 영역 표시를 위해서 빈 태그 사용 (return문 안에서 줄바꿈용?)
+<>
+    <h1>My Garaege in the wich car!!!</h1>
+    <Car />
+</>
