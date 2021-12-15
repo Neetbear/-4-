@@ -2,20 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Gundam from './Gundam';
+import Archangel from './Archangel';
 import reportWebVitals from './reportWebVitals';
-import Headercomp from './Headercomp';
+import Headercomp from './HeadercompF';
 import Container from './Container';
+import Car from './Car';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Headercomp newTitle="new title!!!!"/>
+//   </React.StrictMode>,
+//   document.getElementById('header')
+// );
 
 ReactDOM.render(
   <React.StrictMode>
     <Headercomp newTitle="new title!!!!"/>
-  </React.StrictMode>,
-  document.getElementById('header')
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Container />
   </React.StrictMode>,
   document.getElementById('root')
 );
