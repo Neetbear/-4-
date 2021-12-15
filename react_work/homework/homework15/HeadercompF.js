@@ -31,7 +31,11 @@ function Headercomp (props) {
             setShow(true);
         }, 2000);
     }, [])
-
+    
+    // getSnapshotBeforeUpdate이나 componentDidUpdate 둘다
+    // update 후랑 관련되니까 그냥 한번에 처리
+    // 업데이트 후라는거 알려주는 방법 함수형일때꺼 못찾아서 
+    // show라는 꼼수 쓴거임
     useEffect(()=>{
         if(show) {
             document.getElementById("div1").innerHTML = 
