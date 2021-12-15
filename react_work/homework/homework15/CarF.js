@@ -1,3 +1,4 @@
+// 이거 날먹이라 이번 과제 쉬운줄...
 function Car() {
     const state = {color: "red"}
     return (

@@ -1,3 +1,4 @@
+// 참고로 useEffect, useState 이거 쓸라고 import하는 거임
 import React, { useEffect, useState } from 'react';
 
 function Child () {

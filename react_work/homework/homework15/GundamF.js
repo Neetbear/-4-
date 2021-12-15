@@ -1,3 +1,4 @@
+// useState는 this.setState를 대신하는 용도
 import React, { useState } from 'react';
 
 function Gundam (props) {

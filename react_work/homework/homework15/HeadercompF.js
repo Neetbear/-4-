@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef  } from 'react';
 
 // useEffect로 lifecycle 메소드들 대신한다
+// ComponentDidUpdate 대신할땐 useEffect(()=>{})
+// ComponentDidMount 대신할땐 useEffect(()=>{},[]) 
+// ComponentWillUnmount 대신할땐 useEffect(()=>{return ()=>{}},[])
 // function Headercomp () {
 //     const [headertitel, setMessage] = useState("This is My page of header");
     
@@ -20,6 +23,7 @@ function Headercomp (props) {
     // show는 개빡쳐서 쓴 꼼수 정상적인 방법 찾아보기
     // setstate진행후에 변하고 나서 나타나는 componentDidUpdate를 사용할라는데
     // this.setState라는 반응 후에 나타나게 하는 방법을 못찾아서 쓴 꼼수
+    // 근데 setMessage 예약어 아니었네...
     const [show, setShow] = useState(false);
     useEffect(()=>{
         setTimeout(() => {
