@@ -17,4 +17,31 @@ component는 자바스크립트의 함수처럼 작동하지만 render안에서 
 
     function보단 class가 정보전달이나 이런 측면에서 좋긴한데 function으로 써야하는 경우도 있다
 
-index.js에 class 직접 만들어도 된다
+*index.js에 class 직접 만들어도 된다
+
+    state랑 props 둘다 써서 서로 다른 정보들 사용가능 (state는 내장 props는 외부에서 가져오는 느낌)
+
+*changeModel 잘봐두기
+onClick={this.changeModel} 콜백처럼 끌고오기
+
+react.component로 호출(메모리의 인스턴스화될때)할때 기본 4가지 
+    constructor()               class의 생성자라 가장 먼저 호출(실행) (super(props)나 this.state 사용 super를 가장 먼저)
+    getDerivedStateFromProps()  props가 부모로부터 상속되었다 (클래스로부터 props와 state를 받아오는 메소드)
+        props, stete를 받아다 쓴다 -> setstate와 다른점
+        static 붙여서 쓰면 render전에 먼저 실행되서 바뀐다 (static쓰면 정적이라 this 사용불가)
+            static쓰면 정적이라 메모리에 headercomp가 할당되기도 전에 정적 메모리에 먼저 할당되어서 못쓴다
+            static은 전체에서 글로벌하게 사용하려고 쓰는거 (전체 어플리케이션에서)
+            즉 class 내부에 있지만 class한테는 관리만 받는다
+    render()                    실질적으로 reactdom에 출력해주는 함수(reactdom의 render랑 다른느낌?)
+    componentDidMount()         컴포넌트를 dom에 넣는다 (이미 출력된 후에 실행? render 다음에?) 재정의
+        위에서 static getDerivedStateFromProps() 으로 static 처리 된 애는 실행안된다
+        
+component 상태 또는 property가 업데이트 될때 호출되는 5개도 있다?
+    getDerivedStateFromProps()  이거가 업데이트 될때마다 static으로 처리 되니까 setstate 일반적으론 안먹음(업데이트할때 가장 먼저임)
+    shoudComponentUpdate()      return true;false로 업데이트 될지말지 컨트롤 가능 (static처리보다 이게 좋을지도)
+                                (일반적인 방법은 아님 잘 안쓰임 공식사이트도 다른 방식을 우선적으로 쓰길 추천함)
+    render()
+    getSnapshotBeforeUpdate()  업데이트 이전 값 
+    componentDidUpdate()?????
+
+

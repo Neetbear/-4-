@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Gundam from './Gundam';
 import reportWebVitals from './reportWebVitals';
+import Headercomp from './Headercomp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Gundam />
+    <Headercomp newTitle="new title!!!!"/>
+  </React.StrictMode>,
+  document.getElementById('header')
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Gundam cargo="Acrhangel" />
   </React.StrictMode>,
   document.getElementById('root')
 );
