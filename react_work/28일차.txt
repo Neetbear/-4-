@@ -43,5 +43,9 @@ component 상태 또는 property가 업데이트 될때 호출되는 5개도 있
     render()
     getSnapshotBeforeUpdate()  업데이트 이전 값 
     componentDidUpdate()?????
+        getSnapshotBeforeUpdate() componentDidUpdate()약간 세트같이 쓰는 애들
 
 
+// reactDom에 마운팅 시킨거까지 함
+
+componentWillUnmount 컴포넌트가 DOM 상에서 제거될 때에 호출됩니다.

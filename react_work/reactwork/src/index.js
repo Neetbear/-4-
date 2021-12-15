@@ -4,6 +4,7 @@ import './index.css';
 import Gundam from './Gundam';
 import reportWebVitals from './reportWebVitals';
 import Headercomp from './Headercomp';
+import Container from './Container';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,7 +15,7 @@ ReactDOM.render(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Gundam cargo="Acrhangel" />
+    <Container />
   </React.StrictMode>,
   document.getElementById('root')
 );
