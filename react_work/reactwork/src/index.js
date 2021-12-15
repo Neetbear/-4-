@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Car from './Car';
+import Gundam from './Gundam';
 import reportWebVitals from './reportWebVitals';
+import Archangel from './Archangel';
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -19,14 +21,20 @@ import reportWebVitals from './reportWebVitals';
 
 // ReactDOM.render(
 //   <React.StrictMode>
-//     <Car />
+//     <Gundam model="Freedom"/>
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // );
 
 ReactDOM.render(
   <React.StrictMode>
-    <Car color="red"/>
+    <Archangel />
   </React.StrictMode>,
   document.getElementById('root')
 );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Car color="red"/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );

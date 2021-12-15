@@ -1,0 +1,18 @@
+react 3일차
+component는 자바스크립트의 함수처럼 작동하지만 render안에서 써야한다
+
+오늘은 class component부터 class car
+    constructor() 객체생성? function에서 argument 받아서 하는거랑 비슷함
+    car.js
+        this.state = {color: "red"};해서 this.state.color 받아쓰는거나 this.props.color해서 props 주면서 출력하는거나 같음
+    gundam.js
+        constructor에 argument로 받아쓰는법도 있음
+
+    overloading 개념 중복선언, 재정의 개념? react 컴포넌트를 extend해서 render를 재정의?
+        class의 render는 컴포넌트꺼의 render라 reactdom의 render랑 다른애?
+
+        reactdom은 virtualdom 연결된게 아니고 컴포넌트랑 좀 다르다?
+
+    React.Component도 결국엔 class다 
+
+    function보단 class가 정보전달이나 이런 측면에서 좋긴한데 function으로 써야하는 경우도 있다
