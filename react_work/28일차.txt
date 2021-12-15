@@ -16,3 +16,5 @@ component는 자바스크립트의 함수처럼 작동하지만 render안에서 
     React.Component도 결국엔 class다 
 
     function보단 class가 정보전달이나 이런 측면에서 좋긴한데 function으로 써야하는 경우도 있다
+
+index.js에 class 직접 만들어도 된다
