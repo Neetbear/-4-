@@ -1,0 +1,43 @@
+react 4일차
+
+props 함수형에서 쓸때 주의 잘땡겨쓰기
+    변수처럼 쓰지않고 오브젝트처럼
+    <Gundam ginfo={gundamInfo} /> 담아서 넘기기
+
+event onClick등등
+    event도 camelcase로     
+    이벤트 헨들러는 중괄호 안에서 실행? onClick = {shoot}
+
+    react가 트리거(방아쇠) 당겨줄수가 있다?
+     onClick={(event) => shoot("The tremendese Goal Son!!!", event)} event처리하기 위한 사용법
+     event방식을 eventhendler에게 전달할때 사용하는 방식
+
+조건부 렌더링 if
+        return (
+            <>
+                <h1>Fate Characters!!!</h1>
+                {
+                    characters.length <= 0 ||
+                    <h2>
+                        {characters.length} characters in Fate Stay Night Animation
+                    </h2>
+                } if문 대신에 이렇게 쓴다?
+            </>
+        );
+    
+삼항연산자 렌더링
+        return (
+            <>
+                {isGoal ? <MadeGoal /> : <MissGoal />}
+            </>
+        );
+
+*<> </> 주의
+
+list 관리?
+    list를 렌더링할때는 루프형태로?
+    map()을 가져다 사용하는 방식이 선호된다?
+    <ul>
+        {gundamList.map((robot) => <Gundam model={robot} />)}
+    </ul>
+key value 사용
