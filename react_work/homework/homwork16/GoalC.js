@@ -1,3 +1,5 @@
+import React from 'react';
+
 function MissGoal() {
     return <h1>Missed Goal Ronaldo</h1>
 };

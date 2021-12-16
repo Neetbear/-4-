@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Fate (props) {
     const characters = props.characters;
 

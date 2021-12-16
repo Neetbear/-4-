@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Gundam (props) {
     return (<li>This is {props.id + " " + props.model}</li>);
 }
