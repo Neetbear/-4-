@@ -1,27 +1,38 @@
 import React from 'react';
 
-function MissGoal() {
-    return <h1>Missed Goal Ronaldo</h1>
+class MissGoal extends React.Component {
+    render() {
+        return (
+            <h1>Missed Goal Ronaldo</h1>
+        );
+    }
 };
 
-function MadeGoal() {
-    return <h1>The tremendese Goal Son!!!</h1>
+class MadeGoal extends React.Component {
+    render() {
+        return (
+            <h1>The tremendese Goal Son!!!</h1>
+        );
+    }
 };
 
-function Goal (props) {
-    const isGoal = props.isGoal;
-
-    // if(isGoal) {
-    //     return (<MadeGoal/>);
-    // }
-    // else {
-    //     return (<MissGoal/>);
-    // }
-    return (
-        <>
-            {isGoal ? <MadeGoal /> : <MissGoal />}
-        </>
-    );
+class Goal extends React.Component {
+    constructor(props) {
+        super(props)
+    };
+    render() {
+        // if(isGoal) {
+        //     return (<MadeGoal/>);
+        // }
+        // else {
+        //     return (<MissGoal/>);
+        // }
+        return (
+            <>
+                {this.props.isGoal ? <MadeGoal /> : <MissGoal />}
+            </>
+        );
+    };
 };
 
 export default Goal;

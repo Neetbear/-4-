@@ -15,7 +15,7 @@ const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
 
 ReactDOM.render(
   <React.StrictMode>
-    <Archangel/>
+    <Gundam />
   </React.StrictMode>,
   document.getElementById('header')
 );
