@@ -1,25 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Gundam from './Gundam';
-import Archangel from './Archangel';
-import reportWebVitals from './reportWebVitals';
-import Headercomp from './Headercomp';
-import Container from './Container';
-import Car from './Car';
-import Football from './Football';
-import Goal from './Goal';
-import Fate from './Fate';
-import Gundamform from './Gundamform';
-import Hordform from './Hordform';
-import Wow from './Wow';
-import App from './App';
+// import Gundam from './Gundam';
+// import Archangel from './Archangel';
+// import reportWebVitals from './reportWebVitals';
+// import Headercomp from './Headercomp';
+// import Container from './Container';
+// import Car from './Car';
+// import Football from './Football';
+// import Goal from './Goal';
+// import Fate from './Fate';
+// import Gundamform from './Gundamform';
+// import Hordform from './Hordform';
+// import Wow from './Wow';
+// import App from './App';
+import Homework from './homwork17';
 
-const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
+// const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Homework />
   </React.StrictMode>,
   document.getElementById('header')
 );
