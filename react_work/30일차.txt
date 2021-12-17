@@ -52,4 +52,13 @@ jsx
     react의 form은 일반적으로 component 처리
     component에서 데이터를 처리할때는 component state에 input한 내용이 저장됨
     onchange 이벤트 핸들러를 추가해서 변경사항을 저장할 수 있다.
-    hooking으로 다룰수 있다.?(이벤트 후킹?)
+    hooking으로 다룰수 있다.?(이벤트 후킹?) onChange도 후킹의 일종임
+
+    ... 멀티플 input이라 여러개 받는다고 ...쓰는거임
+    setInputs(values => ({...values, [name]: value})); 에서 [name] []쓰는거 jsx 문법임 그냥 외워야할듯
+
+    useState에서 setStateAction하는 콜백함수 부분 return되는 부분 주의 값 수정해서 넣는거라  = 해서 처리는 안됨
+
+    참고로 state 상태값 변경은 업데이트 된 후임
+
+    component 상태 갱신 (state랑 props를 통해서)

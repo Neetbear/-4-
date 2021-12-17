@@ -12,12 +12,14 @@ import Goal from './Goal';
 import Fate from './Fate';
 import Gundamform from './Gundamform';
 import Hordform from './Hordform';
+import Wow from './Wow';
+import App from './App';
 
 const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
 
 ReactDOM.render(
   <React.StrictMode>
-    <Hordform />
+    <App />
   </React.StrictMode>,
   document.getElementById('header')
 );
