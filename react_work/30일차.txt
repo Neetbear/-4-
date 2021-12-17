@@ -1,0 +1,55 @@
+react 5일차
+
+jsx
+    앞에서 배웠듯이 react jsx는 javascript 구문의 확장입니다.
+    개발자는 xml 구문을 사용하여 가상 dom을 만들 수 있습니다.
+    순수한 javascript(react.createElement 함수) 호출로 컴파일 됩니다.
+    javascrip로 컴파일 되기 때문에 모든 유효한 javascript 코드 내에서 사용할 수 있습니다.
+
+    ex1)
+    var greeting = <h1>hello react!</h1>
+
+    ex2)
+    function Greeting() {
+        return <h1>hello react!</h1>
+    }
+
+    greeting= Greeting()
+
+    ex)3
+    function Greet(message) {
+        ReactDOM.render(message, document.getElementById('react-app'))
+    }
+    Greet(<h1>Hello React!</h1>)
+
+    ex4)
+    <style>
+        .red{color:red}
+    </style>
+    <script type="text/babel">
+        function getCurrentTime() {
+            return new Date().toTimeString();
+        }
+        ReactDOM.render(
+            <div>
+                <p>The current time is <span className="red">{getCurrentTime()}</span></p>
+            </div>
+            document.getElementById('react-app')
+        );
+    </script>
+
+    xml 마크업 {isGoal? <MadeGoal/> : <MissGoal/>} 이런거임
+        xml은 다른 목적의 마트업 언어를 만드는 데 사용되는 다목적 마크업 언어입니다.
+        xml은 다른 시스템끼리 다양한 종류의 데이터를 손쉽게 교환할 수 있도록 해줍니다.
+        xml은 새로운 태그를 만들어 추가해도 계속해서 동작하므로, 확장성이 좋습니다.
+        xml은 데이터를 보여주지 않고, 데이터를 전달하고 저장하는 것만을 목적으로 합니다.
+        xml은 텍스트데이터 형식의 언어로 모든 xml문서는 유니코드 문자로만 이루어집니다.
+        
+        문법    <요소이름 속성1="속성값"....>내용</요소이름>
+                <요소이름 속성1="속성값"/>
+        dom모델 트리형식
+    
+    react의 form은 일반적으로 component 처리
+    component에서 데이터를 처리할때는 component state에 input한 내용이 저장됨
+    onchange 이벤트 핸들러를 추가해서 변경사항을 저장할 수 있다.
+    hooking으로 다룰수 있다.?(이벤트 후킹?)

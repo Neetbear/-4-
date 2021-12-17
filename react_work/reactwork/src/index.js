@@ -10,12 +10,14 @@ import Car from './Car';
 import Football from './Football';
 import Goal from './Goal';
 import Fate from './Fate';
+import Gundamform from './Gundamform';
+import Hordform from './Hordform';
 
 const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
 
 ReactDOM.render(
   <React.StrictMode>
-    <Gundam />
+    <Hordform />
   </React.StrictMode>,
   document.getElementById('header')
 );
