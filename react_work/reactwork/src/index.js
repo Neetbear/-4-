@@ -14,7 +14,7 @@ import './index.css';
 // import Hordform from './Hordform';
 // import Wow from './Wow';
 // import App from './App';
-import Homework from './homwork17';
+import Homework from './homwork17_2';
 
 // const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
 
