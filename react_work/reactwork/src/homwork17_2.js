@@ -13,10 +13,10 @@ function Homework() {
     // };
 
     // 극단적인 이해를 돕기위한 구조
-    // onchange 생략 usestete 간단히 
+    // onchange 생략 usestete 간단히
     // 이런식으로 만들었던 것들 더 잘써먹을라고 react에선 구조가 변한거임
     // 참고로 name은 selector 역할 불가능해서 id로 바꿔둔거임 -> 즉 찾아도 selector 아니라서 value값을 못읽음
-    // name쓰면 그냥 읽는게 아니라 name:value 세트로 읽어오게 해줘야된다
+    // name쓰면 그냥 읽는게 아니라 name:v-alue 세트로 읽어오게 해줘야된다
     const onAddString = (event) => {
         event.preventDefault();
         console.log(document.getElementById("text1").value)

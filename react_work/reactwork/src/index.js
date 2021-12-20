@@ -13,14 +13,14 @@ import './index.css';
 // import Gundamform from './Gundamform';
 // import Hordform from './Hordform';
 // import Wow from './Wow';
-// import App from './App';
-import Homework from './homwork17_2';
+import App from './App';
+// import Homework from './homwork17_2';
 
 // const characters = ['Siro', 'Saber', 'Archer', 'Tosaka', 'Verserker']
 
 ReactDOM.render(
   <React.StrictMode>
-    <Homework />
+    <App />
   </React.StrictMode>,
   document.getElementById('header')
 );

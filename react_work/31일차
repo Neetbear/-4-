@@ -1,0 +1,50 @@
+react 2주차 시작
+Jsxtest.js부터
+    여러 div등 같은 항목있을때 <></>이거 쓰는거 주의 (어디든)
+    return(
+        <div>
+            <Jsxtest />
+            <Wow />
+        </div>
+    )
+    이런식으로도 가능해서 index.js는 건드리지 않아도 괜찮음
+
+    fragment?
+        Fragments는 DOM에 별도의 노드를 추가하지 않고 여러 자식을 그룹화할 수 있습니다.
+        render() {
+            return (
+                <React.Fragment>
+                    <ChildA />
+                    <ChildB />
+                    <ChildC />
+                </React.Fragment>
+            );
+        } -> 빈태그랑 비슷함 short sytax
+
+        불필요한 dom 노드를 막기 때문에 메모리 소모를 막는다? css 등 틀이 깨지는것도 방지 해준다?
+
+    자바스크립트 줄때는 백틱쓰듯이 중괄호 사용
+
+    jsx에서 css 등 설정방법
+        이벤트 핸들러 줄때처럼 카멜캐이스코딩방법 사용
+        const style = {
+            backgroundColor: 'blue',
+            color: 'white'
+        }
+    
+    {/*==jsc 주석==*/}
+
+router
+    npm install -s react-router-dom ???
+    import { BrowserRouter, Routes, Route } from "react-router-dom";
+    block4.js파일이랑 pages 폴더 잘보기
+    <BrowserRouter> 중첩된 라우터를 쓰려고 할때 브라우저라우터 사용
+    -> <Routes> 예전엔 routes 대신에 스위치 사용했음 
+        -> <Route path="/" element={<Layout />}> 
+            ->  <Route index element={<메인페이지 />} />
+                <Route path="각페이지" element={<각페이지 />}
+
+    <Outlet />은 중첩된 라우터 쓸때 부모요소에 써주는거? (하위 경로가 렌더링될 때 중첩된 UI가 표시될 수 있습니다)
+
+    <Route path="각페이지" component={메인페이지} /> component는 옛날버전 이젠 element사용하기
+        -> 신버전에서 BrowserRouter에 통합됨 (Router로 할라면 BrowserRouter as Router 로 해야된다)
