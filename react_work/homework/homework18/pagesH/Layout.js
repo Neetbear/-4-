@@ -23,6 +23,9 @@ const Layout = () => {
                     <li>
                         <Link to="/Archangel">Archangel</Link>
                     </li>
+                    <li>
+                        <Link to="/Headercomp">Headercomp</Link>
+                    </li>
                 </ul>
             </nav>
 

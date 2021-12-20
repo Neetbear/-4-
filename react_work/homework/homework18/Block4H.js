@@ -6,9 +6,10 @@ import Home from "./pagesH/Home";
 import Contact from "./pagesH/Contact";
 import CalcH from "./pagesH/CaleH";
 import Archangel from "./pagesH/Archangel";
+import Headercomp from "./pagesH/Headercomp";
 import NoPage from "./pagesH/NoPage";
 
-export default function Block4() {
+export default function Block4H() {
     return(
         <BrowserRouter>
             <Routes>
@@ -18,6 +19,7 @@ export default function Block4() {
                     <Route path="contact" element={<Contact />} />
                     <Route path="calcH" element={<CalcH />} />
                     <Route path="archangel" element={<Archangel />} />
+                    <Route path="Headercomp" element={<Headercomp />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
