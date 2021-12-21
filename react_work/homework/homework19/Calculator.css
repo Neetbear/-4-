@@ -1,0 +1,23 @@
+.hassle-box {
+    background: rgb(82, 82, 82);
+    display: flex;
+    width: 100%; 
+    height: 30vh; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.display {
+    background: grey;
+    text-align: right;
+    width: 10rem;
+}
+
+.hassle {
+    flex-direction: row;
+}
+
+.hassleBtn {
+    flex-direction: row;
+}

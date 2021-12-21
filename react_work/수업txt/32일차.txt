@@ -1,0 +1,10 @@
+react 이어서
+    
+    getElementById
+    querySelector 
+    특정 DOM 선택하는 상황에선 이런 셀렉트 방식을 사용했는데 react에서는 ref 사용
+
+    ref => uesRef(hook 함수임)
+    클래스형 component => 콜백함수 또는 React.createRef 사용
+    
+    
