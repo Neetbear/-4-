@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 // import InputExam from './InputExam';
-import Calculator from './Calculator';
+// import UserList from './UserList';
+// import UserManage from './UserManage';
+// import Box from './Box';
+// import ReactCss from './ReactCss';
+import CircleDiv from './CircleDiv';
 
 // function App() {
 //   return (
@@ -26,13 +30,17 @@ import Calculator from './Calculator';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header2">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <Calculator />
-      {/* <h1>Hello World!!!</h1> */}
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header2">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+        {/* <h1>Hello World!!!</h1> */}
+      </div>
+      <div>
+        <CircleDiv color='grey'>바보</CircleDiv>
+      </div>
+    </>
   );
 }
 

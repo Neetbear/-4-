@@ -1,0 +1,55 @@
+DOM select ref 다음부터
+배열로 list 같은거 만들기(rendering)
+
+    그냥 단순하게 다 찍을수도 있지만 재사용할 수 있게 짜는게 좋다 => map이나 반복문?
+    1. 그냥 단순하게 찍기 
+        <div>
+            <b>{users[0].username}</b> <span>({users[0].email})</span>
+        </div> 
+    2. 이부분을 따로 빼서 만들고(모듈이나 함수처럼 만들고 콜백해서 쓰는 느낌) 아이에 user.js 파일로 따로 만들어도 됨
+        <div>
+            <b>{user.username}</b> <span>({user.email})</span>
+        </div>
+      이부분만 찍기
+        <User user={users[0]} />
+    3. map사용 (2번에서 따로 빼둔 user 활용한 버전임)
+        {
+            users.map(user => ( //(user)로 적는거랑 똑같음 jsx문법
+                <User user={user} key={user.id} />
+            ))
+        } => map에서는 key라는 property를 설정하는게 원칙임? 
+            function이라기보단 property를 설정하는거다
+
+      key 값이 없으면 맨뒤에만 넣을수 있는데 키값이 있으면 중간에 삽입도 되나 키값이 중복되면 오류나니까 주의라고는 한다
+      =>    state로 배열을 관리한다면, map 사용시 key로 index를 사용하지 말자. 
+            key로 index를 사용한다면 배열의 처음이나 중간에 새로 데이터가 삽입될 시 그 부분만을 캐치하지 못한다. 삭제될 때도 마찬가지!
+            라고한다 즉 key: 0,  {id:4, title: 'add!', content:'yeah!'} 같이 중간에 삽입해도 ㅄ같이 이해한다.
+
+    파일순서 기억안나면 import보고 찾아가자
+
+    concat 배열합치기용도로 사용(배열이나 스트링 합치기 함수)
+    filter 필터링용 함수 (filter() 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열을 반환)
+    onToggle Toggle 컴포넌트는 사용자가 “ON”과 “OFF” 상태를 토글 할 수 있는 버튼을 렌더링
+    react.memo? 프로퍼티스가 바뀌지 않았다면 안건드려서? 리랜더링 성능 최적화?
+        컴퍼넌트가 React.memo()로 래핑 될 때, React는 컴퍼넌트를 렌더링하고 결과를 메모이징(Memoizing)한다. 
+        그리고 다음 렌더링이 일어날 때 props가 같다면, React는 메모이징(Memoizing)된 내용을 재사용한다.
+        export default React.memo(CreateUser);
+    useEffect 일종의 hook함수로 컴포넌트가 마운트(첨 나타날때), 언마운트(사라질때), 업데이트될때 특정 작업처리할때 사용하는 함수
+        useEffect(() => {}, [user]); -> 이런식으로 특정값을 담으면 특정 값이 마운트 언마운트 업데이트 될때 호출됨
+                                        ,[] 이부분 생략하면 이 컴포넌트가 rerendering될때마다 호출
+                                        요소 하나만 변해도 전체가 rerendering된다? => React.memo로 방지?
+    https://react.vlpt.us/basic/16-useEffect.html
+
+    css 줄때 <div className={Styles.Box}>라고주면 css파일에서 참조해서 적용함 className도 알아서 자동으로 중복안되게 생성해줌
+    cra create react app으로 만든 프로젝트에서는 css 모듈을 사용할때는 "./Box.module.css"처럼 .module.css를 사용한다?
+
+    label 사용이유 특별한건 없고 css용이었음
+
+    yarn add react-icons
+    
+    className={Styles.icon} 만약에 - 드가면 Styles['icon-tr']로 적는다?
+    여러개 중복 적용시 className={${one} ${two}} 이런식으로 적용
+
+    yarn add classnames (classname 아님 주의)
+
+    yarn add styled-components 그냥 npm install -s로 하자 components에 style 주는 모듈?
