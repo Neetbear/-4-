@@ -53,3 +53,14 @@ DOM select ref 다음부터
     yarn add classnames (classname 아님 주의)
 
     yarn add styled-components 그냥 npm install -s로 하자 components에 style 주는 모듈?
+
+
+    %배열 다루는 함수 -일반 for문 대신 쓸만한 애들
+
+        foreach(배열의 모든 item들을 item단위로 다룰때 사용 반환값은 없다)
+        map(어떤 배열을 조건에 맞는 배열로 수정하는 용도 foreach랑 다르게 배열을 반환)
+        filter (조건인 애들 다 찾아서 배열로 줌)
+        some (조건 만족하는 애들이 있어? true false로 반환)
+        every(모두가 조건 만족해?)
+        find(조건인 첫번째 애만 string으로 반환)
+        findindex(찾아서 index뱉음)

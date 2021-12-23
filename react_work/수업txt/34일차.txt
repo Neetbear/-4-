@@ -1,0 +1,34 @@
+리덕스 전?
+
+To Do List -> 씹고 뜯고 맛보자
+
+%npx create-react-app cra 대문자드가면 생성 못함
+
+3단계 진행
+1.component 만들기
+2.context api? -> 상태관리라는걸 해야 가능?
+3.기능구현?
+
+npm install -s react-icons
+npm install -s styled-components
+
+
+context dispatch와 todos 사용
+
+useState 사용자 정의 state hook?
+useReducer 여러 상태 추적중일때 사용? 
+    (이 Hook 함수를 사용하면 컴포넌트의 상태 업데이트 로직을 컴포넌트에서 분리시킬 수 있습니다. 
+    상태 업데이트 로직을 컴포넌트 바깥에 작성 할 수도 있고, 심지어 다른 파일에 작성 후 불러와서 사용 할 수도 있지요.)
+    단순한 값을 추적할수도 있지만 일반적으론 오브젝트다
+
+createContext 출력되는 하나의 덩어리
+    .Provider context에 사용할 값 지정할때 사용
+
+dispatch는 reducer를 따라다니고 reducer는 state를 변경하고 state는 dispatch를 바라보는 삼각관계?
+reducer
+    state 데이터의 수정방법을 미리 정의하는 함수이다.
+    state 초기값과 데이터 수정방법을 넣는다. function reducer(state = 초기값, 액션)
+dispatch
+    dispatch()를 사용하면 HTML 안에서 reducer함수를 동작시킬 수 있다. 
+    데이터 수정방법을 실행하는 것을 명령하기 위해 사용하는 함수이다.
+    dispatch({ type:데이터수정방법 }) 만 잘 지정해주면 된다.
