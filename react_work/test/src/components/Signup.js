@@ -2,19 +2,6 @@ import React from "react";
 import DaumPostCode from 'react-daum-postcode';
 
 function Signup() {
-    const handleComplete = (data) => {
-        let fullAddress = data.address;
-        let extraAddress = '';
-        if (data.addressType === 'R') {
-            if (data.bname !== '') {
-                extraAddress += data.bname;
-            }
-            if (data.buildingName !== '') {
-                extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
-            }
-            fullAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
-        }
-    }
     return(
         <>
             <h2>회원가입</h2>
@@ -31,7 +18,7 @@ function Signup() {
                 <br />
                 <input type="text" name="userid" placeholder="핸드폰 번호를 입력하세요" />
                 <br />
-                <input type="text" name="userid" placeholder="주소를 입력하세요" onClick={handleComplete} readOnly/>
+                <input type="text" name="userid" placeholder="주소를 입력하세요" readOnly/>
                 <br />
                 <input type="text" name="userid" placeholder="세부 주소를 입력하세요" />
                 <br />

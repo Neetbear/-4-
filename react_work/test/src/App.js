@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Signup from './components/Signup';
+import Post from './components/Post';
 
 class App extends React.Component{
   constructor(props) {
@@ -25,8 +26,9 @@ class App extends React.Component{
           <div>
             {this.state.title ? <h1>{this.state.title}</h1> : <h1>loading...</h1>}
           </div>
+          <Signup/>
+          <Post/>
         </header>
-        <Signup/>
       </div>
     );
   }
