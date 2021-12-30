@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState }  from "react";
+import { useDispatch } from 'react-redux'
 import DaumPostCode from 'react-daum-postcode';
 
 function Signup() {
+    const [userid, setUserid] = useState('');
+    const onUseridHandler = (event) => {
+        setUserid(event.currentTarget.value)
+    }
+    const onSignupSubmitHandler = (event) => {}
     return(
         <>
             <h2>회원가입</h2>
-            <form action='signin'>
-                <input type="text" name="userid" placeholder="ID를 입력하세요" />
+            <form action='signin' onSubmit={onSignupSubmitHandler}>
+                <label>ID : </label>
+                <input type="text" value={userid} onChange={onUseridHandler} placeholder="ID를 입력하세요" />
                 <br />
+
                 <input type="password" name="userpassword" placeholder="비밀번호를 입력하세요" />
                 <br />
                 <input type="password" name="checkpassword" placeholder="비밀번호를 입력하세요" />
