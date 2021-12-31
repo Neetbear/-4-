@@ -4,31 +4,71 @@ import DaumPostCode from 'react-daum-postcode';
 
 function Signup() {
     const [userid, setUserid] = useState('');
+    const [userpassword, setUserpassword] = useState('');
+    const [checkpassword, setUsercheckpassword] = useState('');
+    const [usernickname, setUsernickname] = useState('');
+    const [useremail, setUseremail] = useState('');
+    const [userphonenumber, setUserphonenumber] = useState('');
+    const [useraddress, setUseraddress] = useState('');
+    const [useraddressdetail, setUseraddressdetail] = useState('');
+    // const [usercategory, setUsercategory] = useState('');
+
     const onUseridHandler = (event) => {
         setUserid(event.currentTarget.value)
     }
+    const onUserpasswordHandler = (event) => {
+        setUserpassword(event.currentTarget.value)
+    }
+    const onCheckpasswordHandler = (event) => {
+        setUsercheckpassword(event.currentTarget.value)
+    }
+    const onUsernicknameHandler = (event) => {
+        setUsernickname(event.currentTarget.value)
+    }
+    const onUseremailHandler = (event) => {
+        setUseremail(event.currentTarget.value)
+    }
+    const onUserphonenumberHandler = (event) => {
+        setUserphonenumber(event.currentTarget.value)
+    }
+    const onUseraddressHandler = (event) => {
+        setUseraddress(event.currentTarget.value)
+    }
+    const onUseraddressdetailHandler = (event) => {
+        setUseraddressdetail(event.currentTarget.value)
+    }
+    // const onUsercategoryHandler = (event) => {
+    //     setUsercategory(event.currentTarget.value)
+    // }
+
     const onSignupSubmitHandler = (event) => {}
     return(
         <>
             <h2>회원가입</h2>
             <form action='signin' onSubmit={onSignupSubmitHandler}>
-                <label>ID : </label>
-                <input type="text" value={userid} onChange={onUseridHandler} placeholder="ID를 입력하세요" />
+                <label>아이디 : </label>
+                <input type="text" value={userid || ''} onChange={onUseridHandler} placeholder="아이디를 입력하세요" />
                 <br />
-
-                <input type="password" name="userpassword" placeholder="비밀번호를 입력하세요" />
+                <label>비밀번호 : </label>
+                <input type="password" value={userpassword || ''} onChange={onUserpasswordHandler} placeholder="비밀번호를 입력하세요" />
                 <br />
-                <input type="password" name="checkpassword" placeholder="비밀번호를 입력하세요" />
+                <label>비밀번호 확인 : </label>
+                <input type="password" value={checkpassword || ''} onChange={onCheckpasswordHandler} placeholder="비밀번호를 다시 입력해주세요" />
                 <br />
-                <input type="text" name="userid" placeholder="닉네임을 입력하세요" />
+                <label>닉네임 : </label>
+                <input type="text" value={usernickname || ''} onChange={onUsernicknameHandler} placeholder="닉네임을 입력하세요" />
                 <br />
-                <input type="text" name="userid" placeholder="이메일을 입력하세요" />
+                <label>이메일 : </label>
+                <input type="text" value={useremail || ''} onChange={onUseremailHandler} placeholder="이메일 입력하세요" />
                 <br />
-                <input type="text" name="userid" placeholder="핸드폰 번호를 입력하세요" />
+                <label>전화번호 : </label>
+                <input type="text" value={userphonenumber || ''} onChange={onUserphonenumberHandler} placeholder="전화번호를 입력하세요" />
                 <br />
-                <input type="text" name="userid" placeholder="주소를 입력하세요" readOnly/>
+                <label>주소 : </label>
+                <input type="text" value={useraddress || ''} onChange={onUseraddressHandler} placeholder="주소를 입력하세요" />
                 <br />
-                <input type="text" name="userid" placeholder="세부 주소를 입력하세요" />
+                <label>상세주소 : </label>
+                <input type="text" value={useraddressdetail || ''} onChange={onUseraddressdetailHandler} placeholder="상세 주소를 입력하세요" />
                 <br />
                 <label>
                     가구/인테리어
