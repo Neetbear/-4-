@@ -11,6 +11,7 @@ function Signup() {
     const [userphonenumber, setUserphonenumber] = useState('');
     const [useraddress, setUseraddress] = useState('');
     const [useraddressdetail, setUseraddressdetail] = useState('');
+    const [isDaumPost, setIsDaumPost] = useState(false);
     // const [usercategory, setUsercategory] = useState('');
 
     const onUseridHandler = (event) => {
@@ -31,15 +32,32 @@ function Signup() {
     const onUserphonenumberHandler = (event) => {
         setUserphonenumber(event.currentTarget.value)
     }
-    const onUseraddressHandler = (event) => {
-        setUseraddress(event.currentTarget.value)
-    }
     const onUseraddressdetailHandler = (event) => {
         setUseraddressdetail(event.currentTarget.value)
     }
     // const onUsercategoryHandler = (event) => {
     //     setUsercategory(event.currentTarget.value)
     // }
+
+    const onOpenPosthandler = () => {
+        setIsDaumPost(true)
+    }
+    const onAddresshandler = (data) => {
+        let AllAddress = data.address;
+        let extraAddress = ''; 
+        
+        if (data.addressType === 'R') {
+            if (data.bname !== '') {
+                extraAddress += data.bname;
+            }
+            if (data.buildingName !== '') {
+                extraAddress += (extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName);
+            }
+            AllAddress += (extraAddress !== '' ? ` (${extraAddress})` : '');
+        }
+        setUseraddress(AllAddress);
+        setIsDaumPost(false)
+    }
 
     const onSignupSubmitHandler = (event) => {}
     return(
@@ -65,7 +83,19 @@ function Signup() {
                 <input type="text" value={userphonenumber || ''} onChange={onUserphonenumberHandler} placeholder="전화번호를 입력하세요" />
                 <br />
                 <label>주소 : </label>
-                <input type="text" value={useraddress || ''} onChange={onUseraddressHandler} placeholder="주소를 입력하세요" />
+                <input type="text" value={useraddress || ''} onClick={onOpenPosthandler} placeholder="주소를 입력하세요" readOnly/>
+                {
+                    isDaumPost ?
+                        <DaumPostCode
+                            onComplete={onAddresshandler}
+                            autoClose
+                            // width={width}
+                            // height={height}
+                            // style={modalStyle}
+                            isDaumPost={isDaumPost}
+                        />
+                    : null
+                }
                 <br />
                 <label>상세주소 : </label>
                 <input type="text" value={useraddressdetail || ''} onChange={onUseraddressdetailHandler} placeholder="상세 주소를 입력하세요" />

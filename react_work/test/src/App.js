@@ -22,12 +22,12 @@ class App extends React.Component{
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* <img src={logo} className="App-logo" alt="logo" />
           <div>
             {this.state.title ? <h1>{this.state.title}</h1> : <h1>loading...</h1>}
-          </div>
+          </div> */}
           <Signup/>
-          <Post/>
+          {/* <Post/> */}
         </header>
       </div>
     );

@@ -80,8 +80,8 @@ class Signup extends Component {
                               <DaumPostCode
                                   onComplete={this.handleAddress}
                                   autoClose
-                                //   width={width}
-                                //   height={height}
+                                  width={width}
+                                  height={height}
                                   style={modalStyle}
                                   isDaumPost={isDaumPost}
                           		/>
