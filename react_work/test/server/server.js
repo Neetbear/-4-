@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use("/api", api);
 const pool = require("./mysqlcon");
 
-app.post('/api/signup', (req, res) => {
+app.post("/api/signup", (req, res) => {
     const text = req.body.name;
 
     pool.getConnection((err, connection) => {

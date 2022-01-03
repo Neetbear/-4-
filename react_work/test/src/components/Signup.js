@@ -61,7 +61,7 @@ function Signup() {
     }
 
     const onSignupSubmitHandler = (event) => {
-        if(checkpassword == userpassword) {
+        if(checkpassword !== userpassword) {
             event.preventDefault();
             alert("비밀번호가 다릅니다.")
         } else{
@@ -70,7 +70,7 @@ function Signup() {
         }
     }
     const fetchsignup = async() => {
-        const response = await axios('http://localhost:5000/signup', {
+        const response = await axios('http://localhost:5000/api/signup', {
             userid: userid,
             userpassword: userpassword,
             usernickname: usernickname,
@@ -80,11 +80,11 @@ function Signup() {
             useraddressdetail: useraddressdetail
         });
         console.log(response.data);
-      };
+    };
     return(
         <>
             <h2>회원가입</h2>
-            <form action='signin' onSubmit={onSignupSubmitHandler}>
+            <form action='signin' onSubmit={onSignupSubmitHandler} method="post">
                 <label>아이디 : </label>
                 <input type="text" value={userid || ''} onChange={onUseridHandler} placeholder="아이디를 입력하세요" />
                 <br />
