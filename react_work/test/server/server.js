@@ -35,7 +35,7 @@ app.post("/api/signup", (req, res) => {
                     console.log(result); 
                 });
                 connection.release();
-                res.send("<script>alert('회원가입이 완료되었습니다.'); window.close();</script>");
+                res.send("<script>alert('회원가입이 완료되었습니다.');</script>");
             };
         });
     });
