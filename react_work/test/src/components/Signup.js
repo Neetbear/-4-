@@ -1,6 +1,7 @@
 import React, { useState }  from "react";
 import { useDispatch } from 'react-redux'
 import DaumPostCode from 'react-daum-postcode';
+import axios from 'axios';
 
 function Signup() {
     const [userid, setUserid] = useState('');
@@ -59,7 +60,27 @@ function Signup() {
         setIsDaumPost(false)
     }
 
-    const onSignupSubmitHandler = (event) => {}
+    const onSignupSubmitHandler = (event) => {
+        if(checkpassword == userpassword) {
+            event.preventDefault();
+            alert("비밀번호가 다릅니다.")
+        } else{
+            fetchsignup();
+            alert("회원가입완료?")
+        }
+    }
+    const fetchsignup = async() => {
+        const response = await axios('http://localhost:5000/signup', {
+            userid: userid,
+            userpassword: userpassword,
+            usernickname: usernickname,
+            useremail: useremail,
+            userphonenumber: userphonenumber,
+            useraddress: useraddress,
+            useraddressdetail: useraddressdetail
+        });
+        console.log(response.data);
+      };
     return(
         <>
             <h2>회원가입</h2>
