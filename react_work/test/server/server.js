@@ -17,10 +17,9 @@ app.post("/api/signup", (req, res) => {
         if(err) throw err;
 
         var password = req.body.password;
-        const encryptResult = encrypt(password);
-        var sQuery = `INSERT INTO userinfo (userid, userpassword, usernickname, useremail, userphonenumber, useraddress, useraddressdetail, usercategory) 
+        var sQuery = `INSERT INTO signuptestdb  (userid, userpassword, usernickname, useremail, userphonenumber, useraddress, useraddressdetail, usercategory) 
             VALUES ('${req.body.id}', '${req.body.password}', '${req.body.usernickname}', '${req.body.useremail}', '${req.body.userphonenumber}', '${req.body.useraddress}', '${req.body.useraddressdetatil}', '')`;
-        var checkQuery = `SELECT userid FROM userinfo where userid='${req.body.id}'`;
+        var checkQuery = `SELECT userid FROM signuptestdb where userid='${req.body.id}'`;
         // var sQuery2 = `SELECT * FROM userboard WHERE userid=${req.session.uid}`;
         
 

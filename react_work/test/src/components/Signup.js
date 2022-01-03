@@ -83,8 +83,8 @@ function Signup() {
     };
     return(
         <>
-            <h2>회원가입</h2>
-            <form action='/api/signup' onSubmit={onSignupSubmitHandler} method="post">
+            <h2>회원가입</h2>"/api/signup"
+            <form action="http://localhost:5000/api/signup" onSubmit={onSignupSubmitHandler} method="post">
                 <label>아이디 : </label>
                 <input type="text" value={userid || ''} onChange={onUseridHandler} placeholder="아이디를 입력하세요" />
                 <br />
