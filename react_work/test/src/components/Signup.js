@@ -83,7 +83,7 @@ function Signup() {
     };
     return(
         <>
-            <h2>회원가입</h2>"/api/signup"
+            <h2>회원가입</h2>
             <form onSubmit={onSignupSubmitHandler} method="POST">
                 <label>아이디 : </label>
                 <input type="text" value={userid || ''} onChange={onUseridHandler} placeholder="아이디를 입력하세요" />
@@ -110,9 +110,6 @@ function Signup() {
                         <DaumPostCode
                             onComplete={onAddresshandler}
                             autoClose
-                            // width={width}
-                            // height={height}
-                            // style={modalStyle}
                             isDaumPost={isDaumPost}
                         />
                     : null

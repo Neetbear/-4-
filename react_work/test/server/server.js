@@ -16,7 +16,7 @@ app.post("/api/signin", (req, res) => {
 
         var sQuery = `SELECT userid, userpassword FROM testmypage where userid='${req.body.id}'`;   
         connection.query(sQuery, (err, result, fields) => {
-            if(err) return err;
+            if(err) throw err;
 
             console.log(result[0]);
             if(result.length == 0) {
@@ -41,7 +41,6 @@ app.post("/api/signin", (req, res) => {
 })
 
 app.post("/api/signup", (req, res) => {
-
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
