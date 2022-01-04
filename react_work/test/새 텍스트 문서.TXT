@@ -1,0 +1,33 @@
+리액트 리덕스 nodejs mysql 사용하기
+필수 로그인 게시판 댓글 등
+기타 기능 자유
+실질적으로 사용자들이 사용가능한 사이트
+
+-리액트 노드js 연동
+https://baegofda.tistory.com/210
+concurrently 리액트서버와 노드서버를 동시에 실행 시키기위한 모듈
+https://baegofda.tistory.com/211
+리액트와 노드서버간의 데이터를 주고 받기 위해서는 프록시 모듈을 설치해야한다.
+프록시 설정을 위해 client의 src에 setupProxy.js를 생성한다.
+
+yarn add http-proxy-middleware
+
+설치완료 후 setupProxy.js에 설정을 해준다.
+target의 내용은 통신할 서버의 도메인주소를 기입하고 해당 도메인을 /api로 호출을 한다.
+
+통신을 위한 Axios 라이브러리 설치를 위한 명령어를 실행해준다.
+
+yarn add axios
+
+-실시간 채팅기능
+https://blog.naver.com/PostView.nhn?isHttpsRedirect=true&blogId=bkcaller&logNo=221366361792
+
+지도 api, 댓글창, 좋아요, 관심카테고리, 알림, 회원가입&로그인, 실시간채팅, 검색, 거래 확정시 문자나 메일로 알림 서비스?
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=choseyoung45&logNo=221535788764
+https://m.blog.naver.com/choseyoung45/221547246756
+
+https://www.inflearn.com/course/%EB%94%B0%EB%9D%BC%ED%95%98%EB%A9%B0-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EB%85%B8%EB%93%9C-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EA%B8%B0%EB%B3%B8/lecture/37095?tab=curriculum
+
+https://velog.io/@taeung/Express%EC%99%80-React-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0React%EC%97%90%EC%84%9C-Express%EB%A1%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B4%EB%82%B4%EA%B8%B0
+https://ddeck.tistory.com/27
