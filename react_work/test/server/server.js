@@ -15,10 +15,9 @@ app.post("/api/signup", (req, res) => {
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        var password = req.body.password;
-        var sQuery = `INSERT INTO signuptestdb  (userid, userpassword, usernickname, useremail, userphonenumber, useraddress, useraddressdetail, usercategory) 
+        var sQuery = `INSERT INTO testmypage  (userid, userpassword, usernickname, useremail, userphonenumber, useraddress, useraddressdetail, usercategory) 
             VALUES ('${req.body.userid}', '${req.body.userpassword}', '${req.body.usernickname}', '${req.body.useremail}', '${req.body.userphonenumber}', '${req.body.useraddress}', '${req.body.useraddressdetatil}', '')`;
-        var checkQuery = `SELECT userid FROM signuptestdb where userid='${req.body.userid}'`;
+        var checkQuery = `SELECT userid FROM testmypage where userid='${req.body.userid}'`;
         // var sQuery2 = `SELECT * FROM userboard WHERE userid=${req.session.uid}`;
         
 

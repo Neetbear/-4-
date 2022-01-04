@@ -70,7 +70,7 @@ function Signup() {
         }
     }
     const fetchsignup = async() => {
-        const response = await axios('http://localhost:5000/api/signup', {
+        const response = await axios.post("http://localhost:5000/api/signup", {
             userid: userid,
             userpassword: userpassword,
             usernickname: usernickname,
@@ -84,7 +84,7 @@ function Signup() {
     return(
         <>
             <h2>회원가입</h2>"/api/signup"
-            <form action="http://localhost:5000/api/signup" onSubmit={onSignupSubmitHandler} method="post">
+            <form onSubmit={onSignupSubmitHandler} method="POST">
                 <label>아이디 : </label>
                 <input type="text" value={userid || ''} onChange={onUseridHandler} placeholder="아이디를 입력하세요" />
                 <br />
@@ -121,7 +121,7 @@ function Signup() {
                 <label>상세주소 : </label>
                 <input type="text" value={useraddressdetail || ''} onChange={onUseraddressdetailHandler} placeholder="상세 주소를 입력하세요" />
                 <br />
-                <label>
+                {/* <label>
                     가구/인테리어
                     <input type="checkbox" name="checkbox1" value="가구/인테리어" />
                 </label>
@@ -175,7 +175,7 @@ function Signup() {
                     기타중고물품
                     <input type="checkbox" name="checkbox11" value="기타중고물품" />
                 </label>
-                <br />
+                <br /> */}
                 <button type="submit">회원가입</button>
             </form>
         </>

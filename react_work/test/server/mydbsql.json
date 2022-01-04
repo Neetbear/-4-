@@ -2,6 +2,6 @@
     "host": "localhost",
     "user": "root",
     "password": "85354351",
-    "database": "signuptestdb",
+    "database": "testmypage",
     "connectionLimit": 10
 }
