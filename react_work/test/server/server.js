@@ -10,6 +10,36 @@ app.use(bodyParser.json());
 app.use("/api", api);
 const pool = require("./mysqlcon");
 
+app.post("/api/signin", (req, res) => {
+    pool.getConnection((err, connection) => {
+        if(err) throw err;
+
+        var sQuery = `SELECT userid, userpassword FROM testmypage where userid='${req.body.id}'`;   
+        connection.query(sQuery, (err, result, fields) => {
+            if(err) return err;
+
+            console.log(result[0]);
+            if(result.length == 0) {
+                connection.release();
+                res.send('<script>alert("아이디를 확인해주세요");</script>');
+            }
+            else if(req.body.id == result[0].userid) {
+                const decryptResult = decrypt(result[0].userpassword);
+                if(req.body.pwd == decryptResult) {
+                    console.log("로그인 성공");
+                    connection.release();
+                    res.send("<script>alert('환영합니다!');</script>");
+                }
+                else {
+                    console.log("비밀번호 오류");
+                    connection.release();
+                    res.send('<script>alert("비밀번호를 확인해주세요");</script>');
+                }
+            }; 
+        });
+    });
+})
+
 app.post("/api/signup", (req, res) => {
 
     pool.getConnection((err, connection) => {
