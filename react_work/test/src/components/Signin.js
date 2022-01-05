@@ -1,6 +1,7 @@
 import React, { useState }  from "react";
 import { useDispatch } from 'react-redux'
 import axios from 'axios';
+import { history } from "../redux/configureStore";
 
 function Signin() {
     const [signinid, setSigninid] = useState('');
@@ -36,6 +37,7 @@ function Signin() {
                 <input type="password" value={signinpassword || ''} onChange={onSigninpasswordHandler} placeholder="비밀번호를 입력하세요" />
                 <br />
                 <button type="submit">로그인</button>
+                <button onclick={() => {history.push("/signup");}}>회원가입 하러가기</button>
             </form>
         </>
     );

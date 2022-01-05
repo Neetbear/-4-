@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import { useDispatch } from 'react-redux'
 import DaumPostCode from 'react-daum-postcode';
 import axios from 'axios';
+import { history } from "../redux/configureStore";
 
 function Signup() {
     const [userid, setUserid] = useState('');
@@ -174,6 +175,7 @@ function Signup() {
                 </label>
                 <br /> */}
                 <button type="submit">회원가입</button>
+                <button onclick={() => {history.push("/signin");}}>로그인 하러가기</button>
             </form>
         </>
     );
