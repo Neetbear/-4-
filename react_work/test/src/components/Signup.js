@@ -82,10 +82,12 @@ function Signup() {
         });
         console.log(response.data);
     };
+
     let navigate = useNavigate();
     function signinClick() {
         navigate("/signin");
     }
+    
     return(
         <>
             <h2>회원가입</h2>

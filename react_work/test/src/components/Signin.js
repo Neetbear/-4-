@@ -25,6 +25,7 @@ function Signin() {
         });
         console.log(response.data);
     };
+    
     let navigate = useNavigate();
     function signupClick() {
         navigate("/signup");

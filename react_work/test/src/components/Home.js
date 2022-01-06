@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 function Home () {
     let navigate = useNavigate();
-    function signupClick() {
-        navigate("/signup");
-    }
     function signinClick() {
         navigate("/signin");
+    }
+    function signupClick() {
+        navigate("/signup");
     }
     return (
         <div>
