@@ -2,7 +2,7 @@ import React, { useState }  from "react";
 import { useDispatch } from 'react-redux'
 import DaumPostCode from 'react-daum-postcode';
 import axios from 'axios';
-import { history } from "../redux/configureStore";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
     const [userid, setUserid] = useState('');
@@ -82,6 +82,10 @@ function Signup() {
         });
         console.log(response.data);
     };
+    let navigate = useNavigate();
+    function signinClick() {
+        navigate("/signin");
+    }
     return(
         <>
             <h2>회원가입</h2>
@@ -175,7 +179,7 @@ function Signup() {
                 </label>
                 <br /> */}
                 <button type="submit">회원가입</button>
-                <button onclick={() => {history.push("/signin");}}>로그인 하러가기</button>
+                <button onclick={signinClick}>로그인 하러가기</button>
             </form>
         </>
     );

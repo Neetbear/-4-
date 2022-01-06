@@ -1,32 +1,26 @@
 import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "./components/Layout";
+import NoPage from "./components/Nopage";
 import Home from "./components/Home";
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 
-class App extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: null
-    }
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:5000/api')
-      .then(res => res.json())
-      .then(data => this.setState({title: data.title}));
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <Signup/>
-          <Signin/>
-        </header>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="signin" element={<Signin />} />
+            <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 };
+
 export default App;

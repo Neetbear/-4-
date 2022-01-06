@@ -1,7 +1,7 @@
 import React, { useState }  from "react";
 import { useDispatch } from 'react-redux'
 import axios from 'axios';
-import { history } from "../redux/configureStore";
+import { useNavigate } from "react-router-dom";
 
 function Signin() {
     const [signinid, setSigninid] = useState('');
@@ -25,7 +25,10 @@ function Signin() {
         });
         console.log(response.data);
     };
-
+    let navigate = useNavigate();
+    function signupClick() {
+        navigate("/signup");
+    }
     return(
         <>
             <h2>로그인</h2>
@@ -37,7 +40,7 @@ function Signin() {
                 <input type="password" value={signinpassword || ''} onChange={onSigninpasswordHandler} placeholder="비밀번호를 입력하세요" />
                 <br />
                 <button type="submit">로그인</button>
-                <button onclick={() => {history.push("/signup");}}>회원가입 하러가기</button>
+                <button onclick={signupClick}>회원가입 하러가기</button>
             </form>
         </>
     );
