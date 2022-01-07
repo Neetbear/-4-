@@ -22,17 +22,19 @@ app.post("/api/signin", (req, res) => {
             if(result.length == 0) {
                 console.log("아이디 오류");
                 connection.release();
+                res.send('');
             }
             else if(req.body.signinid == result[0].userid) {
                 if(req.body.signinpassword == result[0].userpassword) {
                     console.log("로그인 성공");
-                    consol.log(result[0])
+                    console.log(result[0])
                     connection.release();
                     res.send(result[0]);
                 }
                 else {
                     console.log("비밀번호 오류");
                     connection.release();
+                    res.send('');
                 }
             }; 
         });
@@ -54,13 +56,15 @@ app.post("/api/signup", (req, res) => {
             if(result[0]) {
                 connection.release();
                 console.log("이미 존재하는 아이디");
+                res.send('');
             } else {
                 connection.query(sQuery, (err, result, fields) => {
                     if(err) throw err;
                 
-                    console.log("회원가입성공"); 
+                    console.log("회원가입성공");
                 });
                 connection.release();
+                res.send('');
             };
         });
     });

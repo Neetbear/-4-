@@ -24,8 +24,7 @@ function Signin() {
         const request = await axios.post("http://localhost:5000/api/signin", {
             signinid: signinid,
             signinpassword: signinpassword,
-        })
-            .then(navigate("/"))
+        }).then(navigate("/"))
     };
     
     return(

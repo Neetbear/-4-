@@ -6,7 +6,6 @@ const Layout = () => {
     };
     return(
         <>
-            <AuthStatus />
             <nav>
                 <ul style={ulStyle}>
                     <li>
@@ -17,9 +16,6 @@ const Layout = () => {
                     </li>
                     <li>
                         <Link to="/Signin">Signin</Link>
-                    </li>
-                    <li>
-                        <Link to="/Mypage">Mypage</Link>
                     </li>
                 </ul>
             </nav>
