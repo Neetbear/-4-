@@ -73,7 +73,7 @@ function Signup(props) {
         }
     }
     const fetchsignup = async() => {
-        const response = await axios.post("http://localhost:5000/api/signup", {
+        const request = await axios.post("http://localhost:5000/api/signup", {
             userid: userid,
             userpassword: userpassword,
             usernickname: usernickname,
@@ -81,8 +81,7 @@ function Signup(props) {
             userphonenumber: userphonenumber,
             useraddress: useraddress,
             useraddressdetail: useraddressdetail
-        }).then(console.log(response.data))
-        .then(navigate("/signin"));
+        }).then(navigate("/signin"));
     };
     
     return(

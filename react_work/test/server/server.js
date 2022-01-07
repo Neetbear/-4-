@@ -22,7 +22,6 @@ app.post("/api/signin", (req, res) => {
             if(result.length == 0) {
                 console.log("아이디 오류");
                 connection.release();
-                res.send("");
             }
             else if(req.body.signinid == result[0].userid) {
                 if(req.body.signinpassword == result[0].userpassword) {
@@ -34,7 +33,6 @@ app.post("/api/signin", (req, res) => {
                 else {
                     console.log("비밀번호 오류");
                     connection.release();
-                    res.send("");
                 }
             }; 
         });
@@ -50,14 +48,12 @@ app.post("/api/signup", (req, res) => {
         var checkQuery = `SELECT userid FROM signuptestdb where userid='${req.body.userid}'`;
         // var sQuery2 = `SELECT * FROM userboard WHERE userid=${req.session.uid}`;
         
-
         connection.query(checkQuery, (err, result, fields) => {
             if(err) throw err;
 
             if(result[0]) {
                 connection.release();
-                console.log("이미 존재하는 아이디")
-                res.send("");
+                console.log("이미 존재하는 아이디");
             } else {
                 connection.query(sQuery, (err, result, fields) => {
                     if(err) throw err;
@@ -65,7 +61,6 @@ app.post("/api/signup", (req, res) => {
                     console.log("회원가입성공"); 
                 });
                 connection.release();
-                res.send("");
             };
         });
     });

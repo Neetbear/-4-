@@ -8,7 +8,6 @@ function Signin() {
 
     const [signinid, setSigninid] = useState('');
     const [signinpassword, setSigninpassword] = useState('');
-    const [loginstate, setLoginstate] = useState('false');
 
     const onSigninidHandler = (event) => {
         setSigninid(event.currentTarget.value)
@@ -22,11 +21,10 @@ function Signin() {
         fetchsignin();
     }
     const fetchsignin = async() => {
-        const response = await axios.post("http://localhost:5000/api/signin", {
+        const request = await axios.post("http://localhost:5000/api/signin", {
             signinid: signinid,
             signinpassword: signinpassword,
         })
-            .then(setLoginstate("true"))
             .then(navigate("/"))
     };
     

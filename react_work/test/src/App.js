@@ -10,6 +10,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -17,15 +18,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="signup" element={<Signup />} />
             <Route path="signin" element={<Signin />} />
+            <Route path="mypage" element={<Mypage />} />
             <Route path="*" element={<NoPage />} />
-            <Route
-              path="mypage"
-              element={
-                <RequireAuth>
-                  <Mypage />
-                </RequireAuth>
-              }
-            />
         </Route>
       </Routes>
     </BrowserRouter>
