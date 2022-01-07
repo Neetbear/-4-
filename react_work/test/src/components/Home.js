@@ -1,22 +1,11 @@
-import React, { Component }  from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import {Routes, Route, Link, useNavigate, useLocation, Navigate, Outlet} from "react-router-dom";
 
-function Home () {
-    let navigate = useNavigate();
-    function signinClick() {
-        navigate("/signin");
-    }
-    function signupClick() {
-        navigate("/signup");
-    }
+function Home (loginstate) {
     return (
         <div>
-            <button onClick={signinClick}>
-                로그인
-            </button>
-            <button onclick={signupClick}>
-                회원가입
-            </button>
+            <h1>Home</h1>
+            
         </div>
     );
 }

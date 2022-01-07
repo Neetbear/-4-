@@ -4,8 +4,11 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function Signin() {
+    let navigate = useNavigate();
+
     const [signinid, setSigninid] = useState('');
     const [signinpassword, setSigninpassword] = useState('');
+    const [loginstate, setLoginstate] = useState('false');
 
     const onSigninidHandler = (event) => {
         setSigninid(event.currentTarget.value)
@@ -15,21 +18,18 @@ function Signin() {
     }
 
     const onSigninSubmitHandler = (event) => {
+        event.preventDefault();
         fetchsignin();
-        alert("로그인완료?")
     }
     const fetchsignin = async() => {
         const response = await axios.post("http://localhost:5000/api/signin", {
             signinid: signinid,
             signinpassword: signinpassword,
-        });
-        console.log(response.data);
+        })
+            .then(setLoginstate("true"))
+            .then(navigate("/"))
     };
     
-    let navigate = useNavigate();
-    function signupClick() {
-        navigate("/signup");
-    }
     return(
         <>
             <h2>로그인</h2>
@@ -41,7 +41,6 @@ function Signin() {
                 <input type="password" value={signinpassword || ''} onChange={onSigninpasswordHandler} placeholder="비밀번호를 입력하세요" />
                 <br />
                 <button type="submit">로그인</button>
-                <button onclick={signupClick}>회원가입 하러가기</button>
             </form>
         </>
     );

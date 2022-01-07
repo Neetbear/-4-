@@ -1,15 +1,14 @@
-import { Navigate, Outlet } from "react-router-dom";
-
-function PrivateOutlet() {
-    const auth = useAuth();
-    return auth ? <Outlet /> : <Navigate to="/login" />;
-}
-
-function PrivateRoute({ children }) {
-    const auth = useAuth();
-    return auth ? children : <Navigate to="/login" />;
-}
-
-function useAuth() {
-    return true;
-}
+// const fakeAuthProvider = {
+//     isAuthenticated: false,
+//     signin(callback: VoidFunction) {
+//         fakeAuthProvider.isAuthenticated = true;
+//         setTimeout(callback, 100); // fake async
+//     },
+//     signout(callback: VoidFunction) {
+//         fakeAuthProvider.isAuthenticated = false;
+//         setTimeout(callback, 100);
+//     }
+// };
+  
+// export { fakeAuthProvider };
+  

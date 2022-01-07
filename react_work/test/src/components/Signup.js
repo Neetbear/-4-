@@ -4,7 +4,9 @@ import DaumPostCode from 'react-daum-postcode';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-function Signup() {
+function Signup(props) {
+    let navigate = useNavigate();
+
     const [userid, setUserid] = useState('');
     const [userpassword, setUserpassword] = useState('');
     const [checkpassword, setUsercheckpassword] = useState('');
@@ -62,8 +64,8 @@ function Signup() {
     }
 
     const onSignupSubmitHandler = (event) => {
+        event.preventDefault();
         if(checkpassword !== userpassword) {
-            event.preventDefault();
             alert("비밀번호가 다릅니다.")
         } else{
             fetchsignup();
@@ -79,14 +81,9 @@ function Signup() {
             userphonenumber: userphonenumber,
             useraddress: useraddress,
             useraddressdetail: useraddressdetail
-        });
-        console.log(response.data);
+        }).then(console.log(response.data))
+        .then(navigate("/signin"));
     };
-
-    let navigate = useNavigate();
-    function signinClick() {
-        navigate("/signin");
-    }
     
     return(
         <>
@@ -181,7 +178,6 @@ function Signup() {
                 </label>
                 <br /> */}
                 <button type="submit">회원가입</button>
-                <button onclick={signinClick}>로그인 하러가기</button>
             </form>
         </>
     );
