@@ -3,12 +3,23 @@ const app = express();
 const api = require("./routes/index");
 const cors = require("cors");
 const bodyParser = require('body-parser');
+const session = require("express-session");
+// const dotenv = require('dotenv').config();
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/api", api);
 const pool = require("./mysqlcon");
+app.use(session({
+    secure: false,
+    secret: "1234",
+    resave: false,
+    saveUninitialized: false,
+    cookie : {
+        maxAge:(1000 * 60 * 30)
+    },
+}));
 
 app.post("/api/signin", (req, res) => {
     pool.getConnection((err, connection) => {
@@ -28,6 +39,8 @@ app.post("/api/signin", (req, res) => {
                 if(req.body.signinpassword == result[0].userpassword) {
                     console.log("로그인 성공");
                     console.log(result[0])
+                    req.session.uid = result[0].userid;
+                    console.log(req.session.uid);
                     connection.release();
                     res.send(result[0]);
                 }
@@ -73,8 +86,7 @@ app.get("/api/mypage", (req, res) => {
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        var sQuery = `SELECT * FROM signuptestdb where userid='${req.body.signinid}'`;
-     
+        var sQuery = `SELECT * FROM signuptestdb where userid='${req.session.uid}'`;
         connection.query(sQuery, (err, result, fields) => {
             if(err) res.send({err: err});
 

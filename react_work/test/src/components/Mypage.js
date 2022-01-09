@@ -5,9 +5,7 @@ export default function Mypage() {
   const [usermyPage, setUsermyPage] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/api/mypage", {
-      signinid: window.localStorage.getItem("loginUser")
-    }).then((response)=>{
+    axios.get("http://localhost:5000/api/mypage").then((response)=>{
       setUsermyPage(response.data);
     })
   },[usermyPage])
