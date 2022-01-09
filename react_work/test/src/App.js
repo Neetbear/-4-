@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import {BrowserRouter, Routes, Route, Link, useNavigate, useLocation, Navigate, Outlet} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Layout from "./components/Layout";
 import NoPage from "./components/Nopage";
 import Home from "./components/Home";
 import Signup from './components/Signup';
 import Signin from './components/Signin';
+import Mypage from './components/Mypage';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="signup" element={<Signup />} />
             <Route path="signin" element={<Signin />} />
+            <Route path="mypage" element={<Mypage />} />
             <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

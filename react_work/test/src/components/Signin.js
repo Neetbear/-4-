@@ -21,10 +21,14 @@ function Signin() {
         fetchsignin();
     }
     const fetchsignin = async() => {
-        const request = await axios.post("http://localhost:5000/api/signin", {
+        axios.post("http://localhost:5000/api/signin", {
             signinid: signinid,
             signinpassword: signinpassword,
-        }).then(navigate("/"))
+        })
+            .then(window.localStorage.setItem("loginStatus", JSON.stringify({ status: "success" })))
+            .then(window.localStorage.setItem("loginUser", signinid))
+            .then(window.location.replace("/"))
+            // .then(navigate("/"))
     };
     
     return(

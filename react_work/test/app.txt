@@ -1,0 +1,41 @@
+import React, { useState } from 'react';
+import './App.css';
+import {BrowserRouter, Routes, Route, Link, useNavigate, useLocation, Navigate, Outlet} from "react-router-dom";
+
+import Layout from "./components/Layout";
+import NoPage from "./components/Nopage";
+import Home from "./components/Home";
+import Signup from './components/Signup';
+import Signin from './components/Signin';
+import Auth from './hoc/auth';
+
+function App() {
+  const NewLayout = Auth(Layout, null);
+  const NewNoPage = Auth(NoPage, null);
+  const NewHome = Auth(Home, null);
+  const NewSignup = Auth(Signup, false);
+  const NewSignin = Auth(Signin, false);
+
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NewLayout />}>
+            <Route index element={<NewHome />} />
+            <Route path="signup" element={<NewSignup />} />
+            <Route path="signin" element={<NewSignin />} />
+            <Route path="*" element={<NewNoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+
+=============================
+
+const request = await axios.post("http://localhost:5000/api/signin", {
+            signinid: signinid,
+            signinpassword: signinpassword,
+        })

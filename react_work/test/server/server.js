@@ -5,7 +5,7 @@ const cors = require("cors");
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use("/api", api);
 const pool = require("./mysqlcon");
@@ -16,13 +16,13 @@ app.post("/api/signin", (req, res) => {
 
         var sQuery = `SELECT userid, userpassword FROM signuptestdb where userid='${req.body.signinid}'`;   
         connection.query(sQuery, (err, result, fields) => {
-            if(err) throw err;
+            if(err) res.send({err: err});
 
             console.log(result[0]);
             if(result.length == 0) {
                 console.log("아이디 오류");
                 connection.release();
-                res.send('');
+                res.send({message: "id error"});
             }
             else if(req.body.signinid == result[0].userid) {
                 if(req.body.signinpassword == result[0].userpassword) {
@@ -34,7 +34,7 @@ app.post("/api/signin", (req, res) => {
                 else {
                     console.log("비밀번호 오류");
                     connection.release();
-                    res.send('');
+                    res.send({message: "password error"});
                 }
             }; 
         });
@@ -51,12 +51,12 @@ app.post("/api/signup", (req, res) => {
         // var sQuery2 = `SELECT * FROM userboard WHERE userid=${req.session.uid}`;
         
         connection.query(checkQuery, (err, result, fields) => {
-            if(err) throw err;
+            if(err) res.send({err: err});
 
             if(result[0]) {
                 connection.release();
                 console.log("이미 존재하는 아이디");
-                res.send('');
+                res.send({message: "ID already exist"});
             } else {
                 connection.query(sQuery, (err, result, fields) => {
                     if(err) throw err;
@@ -64,8 +64,23 @@ app.post("/api/signup", (req, res) => {
                     console.log("회원가입성공");
                 });
                 connection.release();
-                res.send('');
             };
+        });
+    });
+});
+
+app.get("/api/mypage", (req, res) => {
+    pool.getConnection((err, connection) => {
+        if(err) throw err;
+
+        var sQuery = `SELECT * FROM signuptestdb where userid='${req.body.signinid}'`;
+     
+        connection.query(sQuery, (err, result, fields) => {
+            if(err) res.send({err: err});
+
+            console.log(result[0]);
+            res.send(result[0]);
+            connection.release();
         });
     });
 });
