@@ -13,6 +13,8 @@ function Home () {
             <div>
                 <h1>Home</h1>
                 <b>{window.localStorage.getItem("loginUser")}님이 로그인 중입니다</b>
+                <br/>
+                <b>{window.localStorage.getItem("loginUserAddr")}</b>
             </div>
         );
     } else {

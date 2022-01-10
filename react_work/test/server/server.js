@@ -8,14 +8,18 @@ const session = require("express-session");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+const corsOptions = {
+    origin : "http://localhost:3000",
+    credentials : true
+};
+app.use(cors(corsOptions));
 app.use("/api", api);
 const pool = require("./mysqlcon");
 app.use(session({
     secure: false,
     secret: "1234",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie : {
         maxAge:(1000 * 60 * 30)
     },
@@ -25,7 +29,7 @@ app.post("/api/signin", (req, res) => {
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        var sQuery = `SELECT userid, userpassword FROM signuptestdb where userid='${req.body.signinid}'`;   
+        var sQuery = `SELECT userid, userpassword, useraddress FROM signuptestdb where userid='${req.body.signinid}'`;   
         connection.query(sQuery, (err, result, fields) => {
             if(err) res.send({err: err});
 
@@ -82,17 +86,18 @@ app.post("/api/signup", (req, res) => {
     });
 });
 
-app.get("/api/mypage", (req, res) => {
+app.post("/api/mypage", (req, res) => {
+    console.log(req.body.signinid);
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        var sQuery = `SELECT * FROM signuptestdb where userid='${req.session.uid}'`;
+        var sQuery = `SELECT * FROM signuptestdb where userid='${req.body.signinid}'`;
         connection.query(sQuery, (err, result, fields) => {
             if(err) res.send({err: err});
 
             console.log(result[0]);
-            res.send(result[0]);
             connection.release();
+            res.send(result[0]);
         });
     });
 });

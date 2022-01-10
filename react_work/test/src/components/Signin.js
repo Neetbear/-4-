@@ -24,7 +24,7 @@ function Signin() {
         axios.post("http://localhost:5000/api/signin", {
             signinid: signinid,
             signinpassword: signinpassword,
-        })
+        }).then((response) => window.localStorage.setItem("loginUserAddr", response.data.useraddress))
             .then(window.localStorage.setItem("loginStatus", JSON.stringify({ status: "success" })))
             .then(window.localStorage.setItem("loginUser", signinid))
             .then(window.location.replace("/"))
