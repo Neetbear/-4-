@@ -3,6 +3,8 @@ const app = express();
 const api = require("./routes/index");
 const cors = require("cors");
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const path = require('path');
 
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
@@ -157,20 +159,28 @@ app.get("/api/goodsboard", (req, res)=> {
   })
 })
 
-// app.get('/api/goodsupload', function(req, res) {
-//   res.sendFile(path.join(__dirname, '../src/pages/GoodsUpload/GoodsUpload.js'))
-// });
+//multer
+var storage  = multer.diskStorage({ // 2
+  destination(req, file, cb) {
+    cb(null, 'uploadedFiles/');
+  },
+  filename(req, file, cb) {
+    cb(null, `${Date.now()}__${file.originalname}`);
+  },
+});
+var uploadWithOriginalFilename = multer({ storage: storage });
 
 app.post("/api/goodsupload", (req, res)=> {
+  uploadWithOriginalFilename.array("goods_img")
   const title = req.body.title;
   const price = req.body.price;
   const description = req.body.description;
-  const img = req.body.img
+  const imgs = `/uploadFiles/${req.file.name}`;
   const sqlQuery = `INSERT INTO testgoods (goods_title, goods_img, goods_price, goods_description) values (?, ?, ?, ?);`
   pool.getConnection((err, connection) => {
     if(err) throw err;
     
-    connection.query(sqlQuery, [title, img, price, description], (err, result) => {
+    connection.query(sqlQuery, [title, imgs, price, description], (err, result) => {
       if(err) throw err;
 
       console.log(result);

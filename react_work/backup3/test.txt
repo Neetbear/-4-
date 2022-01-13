@@ -1,0 +1,40 @@
+try {
+  fs.readdirSync('uploads');
+} catch (error) {
+  console.error('uploads 폴더가 없어 uploads 폴더를 생성합니다.');
+  fs.mkdirSync('uploads');
+}
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    const ext = path.extname(file.originalname);
+    cb(null, path.basename(file.originalname, ext) + "-" + Date.now() + ext);
+  },
+});
+
+var upload = multer({ storage: storage });
+
+router.post('/uploadmusic', upload.single('mp3'), function(req, res, next){
+    var tn = req.body.titlename;
+    var singer = req.body.singer;
+    var img = `/uploads/cd.jpg`;
+    var mp3 = `/uploads/${req.file.filename}`;
+    var seal = req.body.seal;
+    var passwod = req.body.passwod;
+    var price = req.body.price;
+    var datas = [tn, singer, img,mp3, seal, passwod, price]; // 모든데이터를 배열로 묶기
+    // req 객체로 body 속성에서 input 파라미터 가져오기
+    console.log(datas)
+    var sql = "insert into music(titlename, singer, img, mp3, seal, passwod, hit, price) values(?,?,?,?,?,?, 0, ?);";  // ? 는 매개변수
+    connection.query(sql, datas, function(err,rows){ // datas 를 매개변수로 추가
+        if (err) {
+        console.error("err : " + err);
+        } else{
+        console.log("rows: " + JSON.stringify(rows));
+        res.redirect('/music/selling/1')
+        }
+    });
+});
