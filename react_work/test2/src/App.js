@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
-import GoodsUpload from './GoodsUpload/GoodsUpload';
+import GoodsUpload from './components/GoodsUpload/GoodsUpload';
 
 function App() {
 

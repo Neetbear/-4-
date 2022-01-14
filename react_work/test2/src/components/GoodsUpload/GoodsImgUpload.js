@@ -1,6 +1,5 @@
 import React from "react";
 import { IoIosCamera } from 'react-icons/io';
-import { TiDelete } from 'react-icons/ti'
 
 function GoodsImgUpload(props) {
   const handleImgChange = (e) => {
@@ -8,14 +7,14 @@ function GoodsImgUpload(props) {
       const filesArray = Array.from(e.target.files).map((file) =>
         URL.createObjectURL(file, {autoRevoke: false})
       );
-
+      
       if (filesArray.length + props.selectedFiles.length <= 10) {
-        props.setSelectedFiles((prevImages) => prevImages.concat(filesArray));
+        props.setSelectedFiles(filesArray);
         Array.from(e.target.files).map(
           (file) => URL.revokeObjectURL(file) // avoid memory leak
         );
         console.log(Array.from(e.target.files)[0]);
-        props.setDownFiles((prevImages2) => prevImages2.concat(Array.from(e.target.files)));
+        props.setDownFiles(Array.from(e.target.files));
       } else {
         alert("10개 이하로 올려주세요")
       }
@@ -23,19 +22,11 @@ function GoodsImgUpload(props) {
     console.log(props.selectedFiles);
   };
 
-  const removeSelectedImage = (e) => {
-    console.log(e.target.id);
-  };
-
   const renderPhotos = (source) => {
     console.log("source: ", source);
     return source.map((photo) => {
       return (
         <div>
-          <TiDelete className="deleteIcons"
-            onClick={removeSelectedImage}
-            id={source.indexOf(photo)}
-          />
           <img src={photo} alt="" key={photo} />
         </div>
       );
@@ -67,4 +58,4 @@ function GoodsImgUpload(props) {
   )
 }
 
-export default React.memo(GoodsImgUpload);
+export default GoodsImgUpload;

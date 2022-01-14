@@ -204,5 +204,5 @@ app.get("/api/goodspage/:goods_number", (req, res)=> {
   })
 });
 
-const port = 5001;
+const port = 5002;
 app.listen(port, () => console.log(`express is running on ${port}`));

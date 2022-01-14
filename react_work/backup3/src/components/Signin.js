@@ -1,5 +1,7 @@
 import React, { useState }  from "react";
+import {Link} from 'react-router-dom';
 import axios from 'axios';
+import Singup from './Signup';
 
 function Signin() {
     const [signinid, setSigninid] = useState('');
@@ -43,6 +45,7 @@ function Signin() {
                 <input type="password" value={signinpassword || ''} onChange={onSigninpasswordHandler} placeholder="비밀번호를 입력하세요" />
                 <br />
                 <button type="submit">로그인</button>
+                <Link to="/Signup">Signup</Link>
             </form>
         </>
     );

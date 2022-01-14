@@ -1,9 +1,12 @@
 import {Outlet, Link} from 'react-router-dom';
+import './Layout.css'
+
 
 const Layout = () => {
-    const ulStyle = {
-        display: 'inline'
-    };
+    // const ulStyle = {
+    //     display: 'flex'
+        
+    // };
     const onLogoutHandler  = () => {
         window.localStorage.clear("loginUser")
         window.location.replace("/")
@@ -13,9 +16,12 @@ const Layout = () => {
         return(
             <>
                 <nav>
-                    <ul style={ulStyle}>
+                    <ul>
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">Genie Market</Link>
+                        </li>
+                        <li>
+                            <input type="search" />
                         </li>
                         <li>
                             <Link to="/mypage">Mypage</Link>
@@ -34,18 +40,15 @@ const Layout = () => {
     } else {
         return(
             <>
-                <nav>
-                    <ul style={ulStyle}>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/Signup">Signup</Link>
-                        </li>
-                        <li>
-                            <Link to="/Signin">Signin</Link>
-                        </li>
-                    </ul>
+                <nav className='layoutNav'>
+                    <div className='navLeft'>
+                        <div><Link to="/">Genie Market</Link></div>       
+                        <div><input type="search" /></div>
+                    </div>
+                    <div className='navRight'>
+                        <div><Link to="/Signup">Signup</Link></div>
+                        <div><Link to="/Signin">Signin</Link></div>
+                    </div>
                 </nav>
                 <Outlet />
             </>
