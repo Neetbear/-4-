@@ -13,13 +13,12 @@ function GoodsImgUpload(props) {
         Array.from(e.target.files).map(
           (file) => URL.revokeObjectURL(file) // avoid memory leak
         );
-        console.log(Array.from(e.target.files)[0]);
+        console.log(Array.from(e.target.files));
         props.setDownFiles(Array.from(e.target.files));
       } else {
         alert("10개 이하로 올려주세요")
       }
     }
-    console.log(props.selectedFiles);
   };
 
   const renderPhotos = (source) => {

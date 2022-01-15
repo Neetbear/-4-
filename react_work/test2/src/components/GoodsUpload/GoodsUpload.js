@@ -25,13 +25,16 @@ function GoodsUpload() {
   }
 
   let formData = new FormData();
-  formData.append("title", title);
-  formData.append("price", price);
-  formData.append("description", description);
-  formData.append("file", downFiles);
+  
 
   const submitGoods = async() => {
-    console.log(downFiles);
+    formData.append("title", title);
+    formData.append("price", price);
+    formData.append("description", description);
+    for (let i = 0; i < downFiles.length; i++) {
+      formData.append('images', downFiles[i]);
+    }
+
     axios.post('http://localhost:5001/api/goodsupload', formData).then(()=> {
       alert('등록 완료!');
     })
