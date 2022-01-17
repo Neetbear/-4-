@@ -1,0 +1,4 @@
+1.vs2022 설치
+2.developer command prompt for 2022
+  code . (하면 visual studio code 실행됨)
+3.extension에서 c/c++ 설치
