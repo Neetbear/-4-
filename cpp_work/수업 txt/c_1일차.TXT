@@ -1,0 +1,14 @@
+1.vs2022 설치
+    c++ 사용한 데스크톱 개발
+    visual stuido 확장개발
+    개별 구성 요소에 
+        windows 10 SDK
+        C++빌드도구핵심기능
+
+2.developer command prompt for 2022
+  code . (하면 visual studio code 실행됨)
+  
+3.extension에서 c/c++ (extension pack은 권장만)설치 (맥북은 code runner인가도 필요)
+
+https://code.visualstudio.com/docs/cpp/config-msvc 이거 보면서 진행
+terminal > configure default build task
