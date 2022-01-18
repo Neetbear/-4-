@@ -14,6 +14,7 @@ int main()
     gVar = a + b;
 
     std::cout << "c = a + b = " << c << std::endl;
+    
     std::cout << "gVar = " << gVar << std::endl;
 
     return 0;
