@@ -1,0 +1,110 @@
+오늘부터 visual studio 2022 사용
+시작프로그램으로 설정하고 사용해야함
+
+c++ constants(상수)
+    다른 사람이 기존 변수 값을 재정의하지 않도록 하려면 const 키워드를 사용한다
+    이는 변수를 변경할 수 없고 읽기 전용을 의미하는 constant로 선언한다
+    변경될 가능성이 없는 값이 있는 경우 항상 변수를 상수로 선언하는 것이 합리적이다
+#define WIDTH 1024 이렇게 미리 선언하고 사용하는것도 상수임 전역적으로 사용
+
+%#include <stdio.h> 안써도 왜 printf가 되는가? iostream에 추가되었나?
+
+    리터럴 상수? => 우리가 개입못하고 바로 찍히는 애들? 얘들도 상수임
+
+헤더파일 .h (cpp라고 표시하고 싶으면 .hpp)
+    #pragma once
+    #include "Variables_exam.hpp" -> 헤더파일은 이렇게 표준파일들은 <>이걸로 -> export import 느낌
+
+%int main(int argc, char* argv[]) === int main(int argc, char** argv) 배열도 포인터라 같은거
+%visual stdio는 디버깅할때 아규먼트 줄때 속성페이지 열고 디버깅에 명령 인수에 적어주면 된다
+
+c++ data type
+    변수에서 설명한 대로 c++의 변수는 지정된 데이터 유형이어야 한다 => 변수 타입과 다른 값이 들어가면 안된다
+
+basic data types 
+    데이터 유형은 변수가 저장할 정보의 크키와 유형을 지정한다
+    int     4bytes(stores whole number, without decimals)
+    float   4bytes(stores fractional numbers, containing one or more decimals. Sufficient for storing 7decimals digits)
+    double  8bytes(stores fractional numbers, containing one or more decimals. Sufficient for storing 15decimals digits)
+        <Numeric data types> 
+            소수 없는 정수의 숫자면 int, 소숫점 길이 따라서 float나 double
+            double이 소수점 15자리까지 가능하니까 정밀도가 더 높아서 대부분의 계산에는 double을 사용하는 것이 더 안전하다
+        scientific numbers
+            부동 소수점 숫자는 10의 거듭제곱을 나타내는 e가 있는 과학적 숫자일 수도 있다.
+    boolean 1bytes(stores ture of false values)
+        true는 1 false는 0
+    char    1bytes(stores a single character/letter/number, or ASCII values)
+        char는 ''로 씀 ""주의 내가 사용하는 숫자가 255 안쪽이면 cha 사용 가능?
+        ASCII값을 사용해서 숫자로 문자찍기 가능
+    string  일련의 문자열을 저장하는데 사용 ""로 묶어서 사용
+        원래는 #include <string>인데 iostream에 드가있음
+
+\n(줄바꿈) b(하나지우기) t(띄우기) v(버티컬 tal) a(pc 비프음)등등 여러개 있음 
+
+float나 double에서 만약 자리수 넘치게 적어주면
+    cout.precision(7);
+	cout << "float = " << fixed <<fNum << endl;
+
+%debug모드는 느려서 유저한테는 release로 해서 배포?
+
+%cout은 출력 cin 입력 << >> 방향 주의
+%(int)A 형변환
+    
+Modifier types 
+    char, int, double data type 앞에 Modifier를 가질수 있도록 허용한다
+    modifier는 base type의 의미를 수정하는데 사용되며, 그래서 다양한 상황에 대한 요구를 더 정확하게 만족시킨다
+    signed, unsigned, long, short 4종류 
+        integer base type들에 적용될 수 있으며 signed, unsigned는 char에, long은 double에 사용가능
+        signed, unsigned는 long이나 short앞에 사용 가능
+        int 없이 단순히 unsigned, long, short만을 사용할 수 있다(이때 int는 내포되어 있다)
+            signed 는 default
+            unsigned하면 범위가 음수부터가 아니라 0부터 양수범위로 바뀜 ex) -128~127 -> 0~255
+            short 2bytes? –32,768 ~ 32,767
+            unsigned short 0 ~ 65,535 (2^16)
+            long  4bytes? –2,147,483,648 ~ 2,147,483,647 (2^32)
+            long long 8 bytes? –9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807
+                short int i;
+                short unsigned int j;
+                j = 50000;
+                i = j; -> -15536
+
+type qualifier 
+    const
+        const type의 개체는 프로그램 실행 동안 변경될 수 없다 -> 대부분 이거 씀
+    volatile
+         volatile 은 컴파일러에게 변수의 값이 프로그램에 의해서 명시적으로 지정되지 않은 방식으로 변경될 수 있음을 통보한다.
+    restrict
+        restrict 에 의한 pointer qualifier 는 초기에 단지 그것이 가리키는 개체에 의해서만 접근 가능하다는 것을 의미한다. C99 에서만  restrict 라 불리는 새로운 유형의 qualifiler 가 추가되었다
+
+operators(연산자)
+    산술연산자(arithmetic)
+        + - * / % ++ --
+    
+    대입연산자(assignment)
+        변수에 값을 할당하는데 사용 =
+        산술연산자를 붙여서 사용가능 += (& | ^ < > 도 붙여서 쓰나?)
+
+    비교연산자(comparsion)
+        == != > < >= <= 
+        두 값을 비교하는데 사용되며 비교의 반환은 true(1) or false(0)이다
+        단, ===는 javascript에만 있는 연산자라 c++에 없다
+
+    논리연산자(logical)
+        && || !
+        and or not의 연산자 not의 경우 반환값은 비교연산자와 같이 true(1) or false(0)이다
+
+    비트연산자(bitwise)
+        &(and) |(or) ^(xor) ~(not) <<(SHL) >>(SHR)
+        논리 연산자와 비슷하지만 비트 단위로 논리 연산을 할 때 사용
+        또한, 비트 단위로 왼쪽이나 오른쪽으로 전체 비트를 이동하거나, 1의 보수를 만들 때도 사용된다
+            음수 계산때 혼동 주의 2의 보수 계산임 1111 1111이 -1이고, 1000 0000은 -128임 
+    
+    기타연산자
+
+c++ iostream
+input/output class
+    사용자가 프로그램과 대화하기 위해서는 사용자와 프로그램 사이의 입출력을 담당하는 수단이 필요하다
+    C++의 모든것은 object로 표현되므로, 입출력을 담당하는 수단 또한 C언어의 함수와는 달리 모두 object이다 
+    C언어의 printf()함수나 scanf()함수처럼 C++에서도 iostream Header file(헤더 파일)에 표준 입출력 클래스를 정의하고 있다
+    C++에서는 cout object로 출력 작업을, cin 객체로 입력 작업을 수행하고 있다
+    c++에서는 기존의 c언어 스타일처럼 printf()함수나 scanf() 함수로도 입출력 작업을 수행할 수 있다

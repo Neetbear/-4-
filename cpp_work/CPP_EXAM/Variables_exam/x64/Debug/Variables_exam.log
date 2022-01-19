@@ -1,0 +1,3 @@
+﻿  Variables_exam.cpp
+C:\Users\정종애\Documents\GitHub\-4-\cpp_work\CPP_EXAM\Variables_exam\Variables_exam.cpp(14,25): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+  Variables_exam.vcxproj -> C:\Users\정종애\Documents\GitHub\-4-\cpp_work\CPP_EXAM\x64\Debug\Variables_exam.exe
