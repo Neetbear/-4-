@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7ad76439-60a6-4691-bebe-7561dfb167dc": {
+      "ProjectGuid": "7ad76439-60a6-4691-bebe-7561dfb167dc",
+      "DisplayName": "CPP_EXAM2",
+      "ColorIndex": 0
+    },
+    "757acbb8-ba14-4a9a-bf37-5afd30b77466": {
+      "ProjectGuid": "757acbb8-ba14-4a9a-bf37-5afd30b77466",
+      "DisplayName": "CPPIOExam",
+      "ColorIndex": 1
+    },
+    "8bd3258c-0cdd-4458-96e8-f494cdda174a": {
+      "ProjectGuid": "8bd3258c-0cdd-4458-96e8-f494cdda174a",
+      "DisplayName": "CIOExam",
+      "ColorIndex": 2
+    },
+    "a2a0537f-d0fa-4ead-8d6e-25ded30b433e": {
+      "ProjectGuid": "a2a0537f-d0fa-4ead-8d6e-25ded30b433e",
+      "DisplayName": "CPPStringExam",
+      "ColorIndex": 3
+    },
+    "21b0f5dd-d7d8-4db6-ab0b-d1d18dce7513": {
+      "ProjectGuid": "21b0f5dd-d7d8-4db6-ab0b-d1d18dce7513",
+      "DisplayName": "CPPondition",
+      "ColorIndex": 4
+    },
+    "7940ea6d-3b39-4a4e-a4dd-ea6bdc9b860e": {
+      "ProjectGuid": "7940ea6d-3b39-4a4e-a4dd-ea6bdc9b860e",
+      "DisplayName": "CPPConditionExam",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
