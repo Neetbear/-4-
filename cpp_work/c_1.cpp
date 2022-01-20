@@ -13,7 +13,7 @@ int main()
         {
             cout << danNum << " * " << i << " = " << danNum*i <<endl;
         }
-        cout << "Enter Number for Gugudan What You Want to See : ";
+        cout << "Enter Next Number for Gugudan What You Want to See : ";
         cin >> danNum; cout << endl;
     }
     return 0;
