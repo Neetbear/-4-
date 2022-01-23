@@ -1,0 +1,143 @@
+standard input/output -> console?
+    사용자가 프로그램과 대화하기 위해서는 사용자와 프로그램 사이의 입출력을 담당하는 수단이 필요하다
+    C++의 모든것은 object로 표현되므로, 입출력을 담당하는 수단 또한 C언어의 함수와는 달리 모두 object이다
+        -> c언어는 함수단위?
+    C언어의 printf()함수나 scanf()함수처럼 C++에서도 iostream Header file(헤더 파일)에 표준 입출력 클래스를 정의하고 있다
+    C++에서는 cout object로 출력 작업을, cin 객체로 입력 작업을 수행하고 있다
+        cout object도 클래스?
+    c++에서는 기존의 c언어 스타일처럼 printf()함수나 scanf() 함수로도 입출력 작업을 수행할 수 있다
+
+c++ output (print text)
+    cout 객체는 << 연산자와 함께 값을 출력하거나 텍스트를 출력하는데 사용된다
+    std::cout << "output string";
+    출력 연산자 <<는 오른쪽에 위치한 출력할 데이터를 출력 스트림에 삽입한다
+    이렇게 출력 스트림에 삽입되는 데이터는 스트림을 통해 출력 장치로 전달되어 출력된다
+
+new lines
+    줄바꿈을 삽입하려면 \n 문자를 사용할 수 있다
+    또한 endl을 사용하여 줄바꿈을 삽입한다
+
+c++ user input
+    cout이 값을 출력하는데 사용된다면 이제 cin을 사용하여 사용자 입력을 받는다
+    cin은 추출연산자(extraction operator) >>를 사용하여 키보드에서 데이터를 읽는 미리 정의된 입력 스트림을 나타내는 객체이다
+    std::cin >> 저장할 변수;
+
+% cin >> x; cout << endl; 에서 만약에 12 12로 쓰면 값이 2개 드간걸로 인식한다
+    ->  cin >> strName >> age; cout << endl; 이런 느낌
+
+%char strErr[] string 없을땐 이렇게 배열로 사용했음
+%cerr 이것도 출력? cout과 차이는 stream에 실어주는게 아니라 바로 출력? 즉시출력
+%clog 로그성 메세지? 로그가 유지되는 동안만 유지? 뭐지? 뭘까?
+%cerr clog는 주로 디버깅용? 
+
+%stdio.h c에서는
+    int c;
+    printf("Enter a value : ");
+    c = getchar(); -> int지만 getchar라서 문자 받아짐 단 뭐든 앞에 한글자만
+    printf("\nYour entered value : ");
+    putchar(c);
+%string의 경우는 gets인데 마이크로소프트가 맘대로 고쳐서 gets_s임
+    단 puts는 puts로 받음
+    char strVar[100] = {0,} => 배열을 이렇게 적으면 초기값으로 싹 0이 드간다?
+%scanf("%s %d", &strVar, &iVar); 메모리에 직접 입력을 받는다?
+
+C++ string
+    문자열을 저장할때 사용.
+    스탠다드 라이브러리 #include <string>해줘야 사용가능
+
+    문자열 합치기 concatenation
+        단 공백 하나는 문자 하나 크기니까 ' '로 가능 
+        +말고도 .append() 함수도 사용가능
+            append함수가 더 빠르다
+%보이지 않지만 사실 문자열의 끝은 null이다
+
+C++은 덧셈과 문자열 연결 모두 +연산자를 사용한다
+    단 숫자는 덧셈 문자열은 연결로 적용된다
+
+C++ string length
+    문자열의 길이를 얻으려면 length()함수 사용
+    string의 길이를 얻기 위해 size() 함수를 사용하는 일부 c++프로그램을 볼수 있다
+    단지 size는 length의 별칭이다 기능은 똑같다?
+
+C++ access strings
+    대괄호[] 안의 index를 참조하여 문자열의 문자에 access할 수 있다
+     ->배열처럼 사용할 수 있다
+
+omitting namespace
+    using namespace std; 
+
+control flow statements(제어문)
+    C++ 프로그램이 원하는 결과를 얻기 위해서는 프로그램의 순차적인 흐름을 제어해야만 할 경우가 생긴다
+    이때 사용하는 명령문을 제어문이라고 하며, 이러한 제어문에는 조건문, 반복문 등이 있다
+    이러한 제어문에 속하는 명령문(statements)들은 중괄호({})로 둘러싸여 있으며, 이러한 중괄호 영역을 블록이라고 한다
+
+조건문(conditional statements)
+    c++는 수학의 일반적인 논리 조건을 지원한다
+        less than a<b
+        less than or equal to
+        greater than
+        greater than or equal to
+        equal to
+        not equal to
+    이러한 조건을 사용하여 다른 결정에 대해 다른 작업을 수행할 수 있다
+    C++에는 다음과 같은 조건문이 있다
+        if
+            if(condition) {condition이 참인 경우 실행}
+        else
+            else{if문의 condition이 거짓인 경우 실행}
+        else if
+            else if(condition) { if의 condition이 거짓이고 else if의 condition이 참인 경우 실행}
+        삼항연산자(ternary operator)
+            variable = (condition) ? 참인경우(expressionTrue) : 거짓인경우(expressionFalse)
+        switch
+            switch(expression) {
+                case x:
+                    expression이 x인경우 
+                    break; 일치하는 항목이 발견되고 작업이 완료되면 break로 switch문 끝내기
+                case y:
+                    ....
+                default:
+                    어디에도 안걸리는 경우 실행할 code 마지막이므로 break가 필요하지 않다
+            }
+
+while loop문
+    루프는 지정된 condition(조건)에 만족할 때까지 블록을 실행할 수 있다
+    루프는 시간을 절약하고 오류를 줄이며 코드를 더 읽기 쉽게 만들기 때문에 편리하다
+    while 루프는 지정된 condition이 true인경우에 code block을 반복한다
+    condition이 사용된 변수에 내용이 변경되는 것을 알아야한다. 그렇지 않으면 무한 loop가 될 것이다
+    while (condition) {condition이 true인동안 실행}
+do/while loop
+    while문의 변형으로 while문과 다르게 condition이 true지 확인하기 전에 반드시 한번 실행해야 한다
+    do {}
+    while(condition); -> do while 문은 마지막에 ;써줘야 한다
+for loop
+    특정 횟수만큼 실행해야 하는 loop를 효율적으로 작성할 수 있는 반복 제어 구조이다
+    for (init; condition; increment) {
+        statement(s)
+    } init 초기식, condition 조건식, increment 증감식 특정 횟수 조정
+  %순서 초기식의 조건식 true이면 statement(s) 실행후 증감식 실행
+range-based for loop
+    for(declaration:range) statement;
+    범위 기반의 for문는 새로운 형태의 반복문이 추가되었다
+    이러한 종류의 for 루프는 범위의 모든 요소를 반복한다 
+    여기서 선언은 이 범위의 요소값을 취할 수 있는 일부 변수를 선언한다
+    범위는 배열, 컨테이너의 시작 및 종료 기능을 지원하는 기타 유형을 포함하는 요소의 sequences이다
+        int nArr[5] = { 1, 3, 5, 7, 9 };
+        for (int i : nArr)
+        {
+            cout << "Range-Based for loop i = " << i << endl;
+        }
+        return 0;
+
+% string 쓸때
+    string str = "Hello_World";
+    string str { "Hello_World" }; 17버전 // 그 전버전은 string str("Hello_World");
+    char str[] = "Hello_World";  
+    셋다 가능한데 char 배열로 쓰면 마지막에 null값 들어감
+
+break;
+    loop내에서 사용하여 해당 loop에서 빠져 나온다
+    즉 루프내에서 조건식의 판단 결과와 상관없이 반복문을 완전히 빠져나가고 싶을 때 사용한다.
+continue;
+    loop 내에서 사용하여 해당 루프의 나머지 부분을 건너뛰고, 바로 다음 조건식의 판단으로 넘어가게 해준다
+     보통 loop 내에서 특정 조건에 대한 예외 처리를 하고자 할 때 자주 사용된다.
