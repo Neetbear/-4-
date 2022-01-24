@@ -9,9 +9,8 @@ int main()
 {
     srand(time(NULL));
     int sNums[] = { 0,1,2,3,4,5,6,7,8,9 };
-    int Nums[3];
     string solutionNum;
-    string answerNum;
+    string* answerNum = new string;
     
     for(int i = 0; i < 100; i++)
     {
@@ -29,18 +28,18 @@ int main()
     {    
         int strikeNums = 0, ballNums = 0;
         cout << "Input 3 Numbers : ";
-        cin >> answerNum; cout << endl;
+        cin >> *answerNum; cout << endl;
         bool Game = true;
 
-        if( answerNum.length() != 3 )
+        if( (*answerNum).length() != 3 )
         {
             cout << "Please enter a 3-digit number" << endl;
         }
-        else if( answerNum.length() == 3 )
+        else if( (*answerNum).length() == 3 )
         {
             for(int i = 0; i < 3; i++)
             {
-                if(isdigit(answerNum[i]) != 4)
+                if(isdigit((*answerNum)[i]) != 4)
                 {
                     cout << "Only Numbers" << endl;
                     Game = false;
@@ -49,7 +48,7 @@ int main()
             }
             if(Game)
             {
-                if(answerNum[0] == answerNum[1] || answerNum[1] == answerNum[2] || answerNum[2] == answerNum[0])
+                if((*answerNum)[0] == (*answerNum)[1] || (*answerNum)[1] == (*answerNum)[2] || (*answerNum)[2] == (*answerNum)[0])
                 {
                     cout << "Please enter no duplicates" << endl;
 
@@ -60,19 +59,13 @@ int main()
                     {
                         for(int j = 0; j < 3; j++)
                         {
-                            if(i == j && solutionNum[i] == answerNum[j])
-                            {
-                                strikeNums += 1;
-                            }
-                            else if(i != j && solutionNum[i] == answerNum[j])
-                            {
-                                ballNums += 1;
-                            }
+                            if(i == j && solutionNum[i] == (*answerNum)[j]) strikeNums += 1;
+                            else if(i != j && solutionNum[i] == (*answerNum)[j]) ballNums += 1;
                         }
                     }
                     if(strikeNums == 3)
                     {
-                        cout << "3strikes!!! Congratulations!!!";
+                        cout << "3strikes!!! Congratulations!!!" << endl;
                         inputNum = false;
                     }
                     else
@@ -83,6 +76,8 @@ int main()
             }
         }
     }
+
+    delete answerNum;
 
     return 0;
 }
