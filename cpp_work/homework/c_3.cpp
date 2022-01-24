@@ -9,7 +9,7 @@ int main()
 {
     srand(time(NULL));
     int sNums[] = { 0,1,2,3,4,5,6,7,8,9 };
-    string solutionNum;
+    string* solutionNum = new string;
     string* answerNum = new string;
     
     for(int i = 0; i < 100; i++)
@@ -20,7 +20,7 @@ int main()
         sNums[a] = sNums[b];
         sNums[b] = tmp;
     }
-    solutionNum = to_string(sNums[0]*100 + sNums[1]*10 + sNums[2]);
+    *solutionNum = to_string(sNums[0]*100 + sNums[1]*10 + sNums[2]);
     cout << solutionNum << endl;
 
     bool inputNum = true;
@@ -59,8 +59,8 @@ int main()
                     {
                         for(int j = 0; j < 3; j++)
                         {
-                            if(i == j && solutionNum[i] == (*answerNum)[j]) strikeNums += 1;
-                            else if(i != j && solutionNum[i] == (*answerNum)[j]) ballNums += 1;
+                            if(i == j && (*solutionNum)[i] == (*answerNum)[j]) strikeNums += 1;
+                            else if(i != j && (*solutionNum)[i] == (*answerNum)[j]) ballNums += 1;
                         }
                     }
                     if(strikeNums == 3)
@@ -77,7 +77,17 @@ int main()
         }
     }
 
-    delete answerNum;
+    if ( solutionNum != NULL)
+    {
+        delete solutionNum;
+        solutionNum = NULL;
+    }
+
+    if ( answerNum != NULL)
+    {
+        delete answerNum;
+        answerNum = NULL;
+    }
 
     return 0;
 }
