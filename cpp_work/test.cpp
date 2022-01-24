@@ -10,15 +10,19 @@ int& Ref( int& ref)
 
 int main()
 {
-    int a = 1;
-    int& b = Ref(a);
+    // int a = 1;
+    // int& b = Ref(a);
 
-    a++;
-    b++;
+    // a++;
+    // b++;
 
-    cout << &a <<endl;
-    cout << a << endl;
-    cout << &b <<endl;
+    // cout << &a <<endl;
+    // cout << a << endl;
+    // cout << &b <<endl;
+    // cout << b << endl;
+    // return 0;
+    int a = 999;
+    int b = 999/100;
     cout << b << endl;
     return 0;
 }
