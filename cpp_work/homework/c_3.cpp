@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+#include <cctype>
 #include <stdlib.h>
 #include <string>
 #include <time.h>
@@ -32,7 +32,7 @@ int main()
         //     sNums[b] = tmp;
         // }
         *solutionNum = to_string(a*100 + b*10 + c);
-        cout << *solutionNum << endl;
+        // cout << *solutionNum << endl;
 
         bool inputNum = true;
         while(inputNum)
@@ -99,13 +99,36 @@ int main()
             delete answerNum;
             answerNum = NULL;
         }
-        char answer = ' ';
-        cout << "Do you wanna new game? (y/n)";
-        cin >> answer; cout << endl;
-        if( answer == 'n')
+
+        bool nextGame = true;
+        while(nextGame)
         {
-            newGame = false;
-        } 
+            char* answer;
+            cout << "Do you wanna new game? (y/n)";
+            cin >> answer; cout << endl;
+            if( strlen(answer) != 1)
+            {
+                cout << "Please answer 'y' or 'n'" << endl;
+            } 
+            else
+            {
+                if(*answer == 'y')
+                {
+                    cout << "Next Round" << endl;
+                    nextGame = false;
+                }
+                else if(*answer == 'n')
+                {
+                    cout << "Good Bye" << endl;
+                    newGame = false;
+                    nextGame = false;
+                }
+                else
+                {
+                    cout << "Please answer 'y' or 'n'" << endl;
+                }
+            }
+        }
     }
     return 0;
 }

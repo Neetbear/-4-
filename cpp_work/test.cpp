@@ -21,8 +21,9 @@ int main()
     // cout << &b <<endl;
     // cout << b << endl;
     // return 0;
-    int a = 999;
-    int b = 999/100;
+    double b;
+    cout << "input b : ";
+    cin >> b; cout << endl;
     cout << b << endl;
     return 0;
 }
