@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int& Ref( int& ref)
@@ -21,9 +22,16 @@ int main()
     // cout << &b <<endl;
     // cout << b << endl;
     // return 0;
-    double b;
-    cout << "input b : ";
-    cin >> b; cout << endl;
-    cout << b << endl;
+    string x = "5.123";
+    cout << stod(x) << endl;
+    string y = "5.qwe";
+    cout << stod(y) << endl;
+    cout << to_string(stod(y)) << endl;
+    double z = 4.123;
+    cout << to_string(z) << endl;
+    cout << stod(to_string(z)) << endl;
+    string yy = "qwe";
+    cout << stod(yy) << endl;
+    cout << to_string(stod(yy)) << endl;
     return 0;
 }

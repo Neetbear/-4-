@@ -12,7 +12,7 @@ double Calculator(double, double, double(*func)(double, double));
 bool isDouble(const string& str)
 {
     for (char const &c : str) {
-        if (isdigit(c) == 0) return false;
+        if (isdigit(c) == 0 && c != '.') return false;
     }
     return true;
 }
@@ -35,10 +35,16 @@ int main()
         cin >> dNum2; cout << endl;
         cout << "Write Operator : ";
         cin >> oper; cout << endl;
+
+        cout << to_string(stod(dNum1)) << " / " << to_string(stod(dNum2)) << endl;
         
         if(!isDouble(dNum1) || !isDouble(dNum2))
         {
-            cout << "Please write numbers for calculator" << endl;
+            cout << "Please write numbers for calculator!" << endl;
+        }
+        else if(stod(to_string(stod(dNum1))) != stod(dNum1) || stod(to_string(stod(dNum2))) != stod(dNum2))
+        {
+            cout << "Please write numbers for calculator!!!" << endl;
         }
         else
         {
@@ -61,7 +67,7 @@ int main()
                     break;
             }
 
-            cout << stod(dNum1) << " / " << stod(dNum2) << " / "  << oper << " / "<< endl;
+            cout << stod(dNum1) << " / " << stod(dNum2) << " / "  << oper << endl;
             result = Calculator(stod(dNum1), stod(dNum2), calc);
             cout << "The Result : " << result << endl;
             calcWork = false;
