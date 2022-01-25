@@ -2,7 +2,7 @@ new[] delete[]
     new[] operator
         문자배열, 즉 20자의 문자열에 대한 메모리를 할당한다고 가정하면, 예제와 같이 메모리를 동적으로 할당할 수 있다
             char* pvalue = null;
-            pvalue = new char[n]; ??
+            pvalue = new char[n]; 
 
     delete[] operator
         앞장에서 생성한 배열을 제거하려면 다음과 같이 한다
@@ -48,7 +48,8 @@ C++ Function
 
 defining a Function
     C++는 코드를 실행하는데 사용되는 main과 같은 일부 미리 정의된 함수를 제공한다
-    그러나 특정 작업을 수행하기 위한 ㅎ마수를
+        그러나 특정 작업을 수행하기 위해 고유한 기능을 만들수도 있다
+    함수를 생성(종종 선언이라고도함)하려면 함수 이름을 지정하고 그 뒤에 괄호()를 붙인다
 
 call a Function
     C++ 함수를 생성하는 동안 함수가 수행해야 하는 작업에 대한 정의를 제공한다
@@ -59,16 +60,23 @@ call a Function
 
 C++ Function Parameters
     정보는 매개변수로 함수에 전달할 수 있습니다
-    매개변수는 함수 내에 
+        매개변수는 함수 내에서 변수 역할을 한다
+    매개변수는 함수 이름 뒤에 괄호 안에 지정된다
+        원하는 만큼 매개변수를 추가할 수 있다
+         쉼표(,)로 구분하기만 하면 된다
 
 C++ Function Default Parameter Value
-    등호를 사용하여 기본 매개변수 값을 사용할 수도 있습니다
+    등호를 사용하여 기본 매개변수 값을 사용할 수도 있다
     인수 없이 함수를 호출하면 기본값이 사용된다
+C++ Function Multiple Parameters
+    함수 내에서 원하는 만큼 매개변수를 추가할 수 있다    
 
 C++ Function Return Value
+    이전 예에서 사용된 void 키워드는 함수가 값을 반환하지 않아야 함을 나타낸다
+    함수가 값을 반환하도록 하려면 void 대신 데이터 type(유형)(예: int, string 등)을 사용하고 함수 내에서 return 키워드를 사용한다
     이전 예제에서는 함수에 매개변수를 전달할 때 일반 변수를 사용했다
     함수에 대한 매개변수를 참조로 전달할 수 도 있다
-    이는 인수 값을 변경해야 할 때 유용할 수 있다 
+        이는 인수 값을 변경해야 할 때 유용할 수 있다 
 
 C++ Function Pass By Reference Argurment
     주소 참조로 받아와서 처리하면 return없어도 값이 변한다
@@ -82,7 +90,8 @@ C++ Function Overloading
 C++ Function signature
     함수 오버로딩의 핵심은 바로 함수 시그니쳐에 있다
     함수 시그니처란 함수의 원형에 명시되는 매개변수 리스트를 가리킨다
-    만약 두 함수가 매개변수의 개수와 그 타입이 모두 같다면, 이 두 함수의 시그니처
+    만약 두 함수가 매개변수의 개수와 그 타입이 모두 같다면, 이 두 함수의 시그니처는 같다고 할 수 있다
+    즉, 함수의 오버로딩은 서로 다른 시그니처를 갖는 여러 함수를 같은 이름으로 정의하는 것이라고 할 수 있다
 
 %call by pointer, value, reference 매개변수로 받는 유형에 따라 분류(int* number / int number / int& number)
 
