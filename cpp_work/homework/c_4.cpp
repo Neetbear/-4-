@@ -11,10 +11,13 @@ double Calculator(double, double, double(*func)(double, double));
 
 bool isDouble(const string& str)
 {
+    int dotNum = 0;
     for (char const &c : str) {
         if (isdigit(c) == 0 && c != '.') return false;
+        else if(c == '.') dotNum += 1;
     }
-    return true;
+    if(dotNum == 0 || dotNum == 1) return true;
+    else return false;
 }
 
 int main()
@@ -36,7 +39,7 @@ int main()
         cout << "Write Operator : ";
         cin >> oper; cout << endl;
 
-        cout << to_string(stod(dNum1)) << " / " << to_string(stod(dNum2)) << endl;
+        // cout << to_string(stod(dNum1)) << " / " << to_string(stod(dNum2)) << endl;
         
         if(!isDouble(dNum1) || !isDouble(dNum2))
         {

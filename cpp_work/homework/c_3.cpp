@@ -32,7 +32,7 @@ int main()
         //     sNums[b] = tmp;
         // }
         *solutionNum = to_string(a*100 + b*10 + c);
-        // cout << *solutionNum << endl;
+        cout << *solutionNum << endl;
 
         bool inputNum = true;
         while(inputNum)
@@ -103,21 +103,21 @@ int main()
         bool nextGame = true;
         while(nextGame)
         {
-            char* answer;
+            string* answer = new string;
             cout << "Do you wanna new game? (y/n)";
-            cin >> answer; cout << endl;
-            if( strlen(answer) != 1)
+            cin >> *answer; cout << endl;
+            if( (*answer).length() != 1)
             {
                 cout << "Please answer 'y' or 'n'" << endl;
             } 
             else
             {
-                if(*answer == 'y')
+                if(*answer == "y")
                 {
                     cout << "Next Round" << endl;
                     nextGame = false;
                 }
-                else if(*answer == 'n')
+                else if(*answer == "n")
                 {
                     cout << "Good Bye" << endl;
                     newGame = false;
