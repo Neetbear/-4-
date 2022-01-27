@@ -1,6 +1,6 @@
 #include "Box.h"
 
-double CBox::GetVolume() // visual studio에서 되는거 보면 json 오류
+double CBox::GetVolume(void) // visual studio에서 되는거 보면 json 오류
 {
     return m_length * m_breadth * m_height;
 }

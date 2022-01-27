@@ -10,7 +10,7 @@ class CBox
         };
         ~CBox() {};
         
-        double GetVolume();
+        double GetVolume(void);
         void SetLength(double length);
         void SetBreadth(double breadth);
         void SetHeight(double height);
