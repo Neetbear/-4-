@@ -12,4 +12,6 @@ class CCar
         string m_strCarNo;
 
         void PrintCarInformation();
+
+        int CarSpeed(int maxSpeed);
 };

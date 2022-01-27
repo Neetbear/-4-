@@ -51,6 +51,8 @@ using namespace std;
 int main()
 {
     CBooks booksObj;
+    booksObj.PrintBookInformation();
+    
     booksObj.m_Title = "Learning C++ 21 days";
     booksObj.m_Author = "SiEun Lee";
     booksObj.m_Subject = "Learning C++ Programming";
@@ -71,6 +73,8 @@ int main()
     carObj.m_strCarName = "BMW X5";
     carObj.m_strCarNo = "NY 3456";
     carObj.PrintCarInformation();
+
+    cout << carObj.m_strCarName << "'s Maximum speed : " << carObj.CarSpeed(220) << endl;
 
     return 0;
 }

@@ -8,6 +8,16 @@ using namespace std;
 class CBooks
 {
     public:
+        //constructor(객체 생성자)
+        CBooks() 
+        { 
+            cout << "CBooks Object Constructor!!!" << endl;
+            m_Title = "Learning javascript 21 days";
+            m_Author = "Bla Bla Foo";
+            m_Subject = "Javascript web programing";
+            m_BookId = 352345;
+        };
+
         // struct BooksInfo m_BooksInfo;
         string m_Title;
         string m_Author;
@@ -23,6 +33,7 @@ class CBooks
         
 
         void PrintBookInformation();
+        // inside 
         // {
         //     cout << "Book title : " << m_Title << endl;
         //     cout << "Book author : " << m_Author << endl;
@@ -30,7 +41,7 @@ class CBooks
         //     cout << "Book ID : " << m_BookId << endl;
         // }
 };
-
+// outside 
 void CBooks::PrintBookInformation()
 {
     cout << "Book title : " << m_Title << endl;

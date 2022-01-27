@@ -6,3 +6,8 @@ void CCar::PrintCarInformation()
     cout << "Car Name : " << m_strCarName << endl;
     cout << "Car No. : " << m_strCarNo << endl;
 }
+
+int CCar::CarSpeed(int maxSpeed)
+{
+    return maxSpeed;
+}
