@@ -6,7 +6,7 @@ double CBox::GetVolume(void) // visual studio에서 되는거 보면 json 오류
 }
 
 void CBox::SetLength(double length)
-{
+{   
     m_length = length;
 }
 
