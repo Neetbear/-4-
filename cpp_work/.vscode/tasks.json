@@ -2,13 +2,16 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: cl.exe 활성 파일 빌드",
-            "command": "cl.exe",
+            "label": "C/C++: clang++ 활성 파일 빌드",
+            "command": "/user/bin/clang++",
             "args": [
-                "/Zi",
-                "/EHsc",
-                "/nologo",
-                "/Fe:",
+                "-std=C++17",
+                "-stdlib=libc++",
+                "-g",
+                "-Zi",
+                "-EHsc",
+                "-nologo",
+                "-Fe:",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${file}"
             ],

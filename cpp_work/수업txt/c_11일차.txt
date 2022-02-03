@@ -1,0 +1,115 @@
+Stream and Buffer
+    C++은 C언어와 마찬가지로 입출력에 관한 기능을 언어에서 기본적으로 제공하지 않는다
+    그 이유는 컴파일러를 만들때 입출력 기능을 해당 하드웨어에 가장 적합한 형태로 만들 수 있도록 컴파일러가 개발자에게 권한을 주기 위해서이다
+    하지만 대부분의 C++ 컴파일러는 iostream과 fstream 헤더 파일에 정의되어 있는 클래스 라이브러리를 제공한다
+    iostream과 fstream 클래스 라이브러리의 중요 개념 중 하나가 바로 스트림이다
+
+Stream (이 개념은 기억해두기)
+    C++ 프로그램은 파일이나 콘솔의 입출력을 직접 다루지 않고, 스트림이라는 흐름을 통해 다룬다
+    스트림이란 실제의 입력이나 출력이 표현된 데이터의 이상 화된 흐름을 의미한다
+    즉, 스트림은 운영체제에 의해 생성되는 가상의 연결고리를 의미하며, 중간 매개자 역할을 한다
+
+Buffer
+    Stream은 내부에 버퍼라는 임시 메모리 공간을 가지고 있다
+    이러한 버퍼를 이용하면 입력과 출력을 좀 더 효율적으로 처리할 수 있게 된다
+    버퍼를 사용하면서 얻을 수 있는 장점은 다음과 같다
+        문자를 하나씩 전달하는 것이 아닌 묶어서 한번에 전달하므로, 전송시간이 적게 걸려 성능이 향상된다
+        사용자가 문자를 잘못 입력했을 경우 수정을 할 수가 있다
+    하지만 입력 작업에 버퍼를 사용하는 것이 반드시 좋은 것만은 아니다
+    빠른 반응이 요구되는 게임과 같은 프로그램에서는 키를 누르는 즉시 바로 전달되어야 한다
+    이렇게 버퍼를 사용하는 입력과 버퍼를 사용하지 않는 입력은 서로 다른 용도로 사용된다
+
+Buffer Synchronization(버퍼 동기화)
+    버퍼가 꽉 찼을때, 버퍼에 있는 모든 데이터는 (출력스트림의 경우)물리적인 매체에 기록되어지거나 (입력스트림이면)단순히 지워진다
+    이러한 처리를 동기화라고 부르고, 다음의 상황에서 일어나게 된다
+        파일이 닫힐때
+        버퍼가 꽉찼을때
+        조작자가 명시됐을 때 - flush 또는 endl
+        sync() 함수를 명시했을때 - 인수 없이 sync() 멤버 함수를 호출하여 즉시 동기화가 일어나게 할 수 있다
+
+    지금까지 standard input에서 읽고 standard output으로 일고 쓰기 위한 cin 및 cout 메서드를 각각 제공하는 iostream 표준 라이브러리를 사용했다
+    이번에는 file을 읽고 쓰는 방법을 배워보자
+        ofstream (output file)
+        ifstream (intput file)
+        fstream  (file ? of + if 느낌)
+    
+    fstream 라이브러리를 사용하려면 표준 iostream과 fstream 헤더 파일을 모두 포함한다
+    fstream 라이브러리에는 파일을 생성, 쓰기 또는 읽는데 사용되는 세가지 클래스가 포함되어 있다
+
+openint a file
+    파일을 읽거나 쓰려면 먼저 파일을 열어야한다
+        ofstream 또는 fstream 객체는 쓰기를 위해 파일을 여는 데 사용할 수 있다
+        그리고 ifstream 객체는 읽기 전용으로 파일을 여는데 사용된다
+    void open( const char* filename, ios::openmode mode); 
+    여기서 첫 번째 매개변수는 열려는 파일의 이름과 위치를 지정하고 
+        두번째 매개변수는 파일을 열어야 하는 모드를 정의한다
+    mode flag & description
+        ios::app
+            append mode. all output to that file to be appended to the end
+        ios::ate
+            open a file for output and move the read/write control to the end of the file
+        ios::in
+            open a file 
+        ios::out
+        ios::trunc
+    이들 값을 or로 결합하여 둘 이상의 값을 결합할 수 있다 
+        예를 들어 쓰기 모드에서 파일을 열고 이미 존재하는 파일을 자르고 싶다면 구문을 조합하여 사용하면 된다
+        "w"  = ios_base::out|ios_base::trunc             
+        "a"  = ios_base::out|ios_base::app               
+        "r+" = ios_base::in|ios_base::out                
+        "w+" = ios_base::in|ios_base::out|ios_base::trunc
+
+closing a File
+    C++ 프로그램이 종료되면 모든 스트림을 자동으로 플러시하고 할당된 모든 메모리를 해제하고 열려있는 모든 파일을 닫는다
+        그러나 프로그래머는 프로그램을 종료하기 전에 열려있는 모든 파일을 닫아야 한다
+    이는 아주 좋은 습관이며 불필요한 메모리 공간을 정리할 수 있다
+        -> 또한 오류로 인해서 도중에 프로그램이 종료되었을때를 위해서도 close해주는게 좋다
+    다음은 fstream, ifstream 및 ofstream 객체의 멤버인 close() 함수의 표준 구문이다
+        void close();
+
+Create and Write To a File
+    C++ 프로그래밍을 수행하는 동안 화면에 정보를 출력하기 위햇 해당 연산자를 사용하는 것처럼 스트림 삽입 연산자 << 를 사용하여 프로그램에서 파일에 정보를 쓴다
+    유일한 차이점은 cout 객체 대신 ofstream 또는 fstream 객체를 사용한다는 것이다
+
+Read a File
+    파일에서 읽으려면 ifstream 
+
+File Position Pointers
+    ifstream과 ofstream은 모두 파일 위치 포인터를 재배치하기 위한 멤버 함수를 제공한다
+    이러한 멤버 함수는 ifstream의 경우 seekg("seek get")이고 ofstream의 경우 seekp("seek put")이다
+    seekg와 seekp에 대한 인수는 일반적으로 long integer다
+        탐색 방향을 나타내기 위해 두번째 인수를 지정할 수 있다
+    탐색 방향은 스트림의 시작부분을 기준으로 위치 지정을 위한 ios::beg(default)일 수 있다
+    스트림의 현재 위치를 기준으로 위치를 지정하려면 ios::cur를, 스트림 끝을 기준으로 위치를 지정하려면 ios::end를 사용한다
+
+Exception Handling
+    Exception은 handler라는 특수 기능에 제어를 전달하여 프로그램의 예외적인 상황에 대응하는 방법을 제공한다
+    예외를 잡기 위해 코드의 일부가 예외 검사를 받는다
+        이는 코드의 해당부분을 try 블록으로 묶음으로써 수행된다
+        해당 블록 내에서 예외적인 상황이 발생하면 예외 처리기로 제어를 전송하는 예외가 발생한다
+        예외가 발생하지 않으면 코드가 정상적으로 계속되고 모든 예외 처리기가 무시된다
+    try 블록 내부에서 throw 키워드를 사용하면 예외가 발생된다
+        Exception handler는 catch 키워드로 선언되며 try 블록 바로 뒤에 위치해야 한다
+
+    try & catch
+        try 문을 사용하면 실행되는 동안 오류를 테스트할 코드 블록을 정의할 수 있다
+        throw 키워드는 문제를 감지하면 예외를 throw 하므로 사용자 지정 오류를 생성할 수 있다
+        catch 문을 사용하면 try 블록에서 오류가 발생할 경우 실행할 코드 블록을 정의할 수 있다
+
+
+throwing Exception
+    예외는 throw문을 사용하여 코드 블록 내 어디에서나 throw 될 수 있다
+        throw문의 피연산자는 예외의 유형을 결정하고 모든 표현식이 될 수 있으며 표현식의 결과 유형은 throw된 예외의 유형을 결정한다
+catching Exception
+    try 블록 다음에 오는 catch 블록은 모든 예외를 catch한다
+
+Handle any type of Exceptions
+    cathc 블록이 try 블록에서 throw 된 모든 유형의 예외를 처리하도록 지정하려면 다음과 같이 예외 선언을 묶는 괄호 사이에 줄임표...를 넣어줘야한다
+
+C++ standard Exception
+    c++는 우리 프로그램에서 사용할 수 있는 <exception>에 정의된 standard exception list를 제공한다
+        이들은 부모-자식 클래스 
+
+Define New Exception
+    exception class 기능을 inheriting 및 overriding 하여 고유한 예외를 정의할 수 있다
+    다음은 std::exception class를 사용하여 표준 방식으로 자신의 예외를 구현하는 예제이다 -> 이건 그냥 c++ 잘해 하고 과시용 스기에이나 할거
