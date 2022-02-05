@@ -45,7 +45,8 @@
         "bitset": "cpp",
         "string": "cpp",
         "filesystem": "cpp",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "vector": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
