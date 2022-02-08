@@ -1,0 +1,191 @@
+리눅스 
+
+Linux - 디렉토리 구조
+    파일 시스템 구조
+        리눅스 시스템의 구조는 전테적으로 역 트리 구조를 하고 있다
+            그리고 명령어의 종류와 성격, 사용권한 등에 따라 각각의 디렉토리들로 구분된다
+        리눅스 베포판들은 '리눅스 파일시스템 표준'인 FSSTND라는 표준을 준수하므로 대부분의 리눅스 배포판들을 그 기본 골격이 같다
+
+    디렉토리 구조
+        / (루트)
+            최상의 디렉토리인 루트 디렉토리를 의미하며, 리눅스의 모든 디렉토리들의 시작점이다 
+                죽, 모든 디렉토리들을 절대 경로로 표기할 때에 이 디렉토리로부터 시작해야 한다
+        /bin
+            기본적인 명령어가 저장된 디렉토리
+                즉, 리눅스 시스템사용에 있어 가장 기본적이라고 할 수 있는 mv, cp, rm 등과 같은 명령어들이 이 디렉토리에 존재하며 root 사용자와 
+                일반 사용자가 함께 사용할수 있는 명령어 디렉토리이다
+        /boot 
+            리눅스 부트로더가 존재하는 디렉토리
+                즉, GRUB와 같은 부트로더에 관한 파일들 (grub, conf 등)이 이 디렉토리에 존재한다
+        /dev
+            시스템 디바이스 파일을 저장하고 있는 디렉토리
+                즉, 하드디스크 장치파일 /dev/sda, CD-ROM 장치파일 /dev/cdrom등과 같은 장치파일들이 존재하는 디렉토리이다
+        /etc
+            시스템의 거의 모든 설정 파일이 존재하는 디렉토리
+            /etc/password (사용자관리 설정파일), /etc/named.conf (DNS 도메인 네임 서비스(시스템) 설정파일) 등과 같은 파일들이 존재한다
+        /etc/mail/
+            sendmail.cf나 access 파일등의 sendmail의 설정파일들이 존재하는 디렉토리들로
+        /etc/ssh/
+            SSH서비스 (보안)
+                즉, sshd 데몬에서 사용하는 각종 설정파일들이 존재하는 디렉토리
+        /etc/squid/
+            squid 프락시서버의 설정파일들이 저장된 디렉토리
+        /etc/samba/
+            삼바관련 설정파일들이 저장된 디렉토리
+        /etc/skel/
+            계정 사용자 생성시의 초가파일들이 저장된 디렉토리
+        /etc/rc.d/
+            부팅레벨별 부팅스크립트 파일들이 존재하는 디렉토리
+        /etc/rc.d/init.d/
+            시스템 초기화 파일들의 실제파일들이 존재함
+        /etc/pam.d/
+            PAM 설정 정보파일들이 저장된 디렉토리
+        /etc/httpd/
+            RPM 으로 설치된 아파치 설정파일들이 저장된 디렉토리
+        /etc/cron.d/,/etc/cron.daily/,/etc/cron.hourly/,/etc/cron.monthly/,/etc/cron.weekly/ 
+            이건 나중에 알아도 됨
+            모든 크론 설정 파일이 존재하는 디렉토리
+        /etc/xinetd.d/
+            xinetd 수퍼 데몬에 의해 서비스되는 서비스설정파일이 존재함
+        /home
+            사용자의 홈디렉토리
+            useradd명령어로 새로운 사용자를 생성하면 대부분 사용자의 ID와 동일한 이름의 디렉토리가 자동으로 생성됨
+        /lib
+            커널모듈파일과 라이브러리파일
+            즉, 커널이 필요로 하는 커널모듈 파일들과 프로그램(C, C++등)에 필요한 각종 라이브러리 파일들이 존재하는 디렉토리
+        /media
+            DVD, CD-ROM, USB 등과 같은 탈 부착이 가능한 장치들의 마운트포인트로 사용되는 디렉토리
+        /mnt (마운트)
+            /media 디렉토리와 비슷한 용도로 탈부착이 가능한 장치들에 대하여 일시적인 마운트 포인트로 사용하는 디렉토리
+        /proc
+            일명 가상파일시스템이라고 하는 곳으로 현재 메모리에 존재하는 모든 작업들이 파일형태로 존재하는 곳이다
+            디스크상에 실제 존재하는 것이 아니라 메모리상에 존재하기 때문에 가상 파일 시스템이라고 부른다
+            실제 운용상태를 정확하게 파악할 수 있는 중요한 정보를 제공하여 여기에 존재하는 파일들 가운데 현재 실행중인 커넬의 
+            옵션 같은 즉시 변경할 수 있는 파라미터 파일들이 있기 때문에 시스템 운용에 있어 매우 중요한 의미를 가진다
+        /root 
+            시스템 최고관리자인 root 사용자의 개인 홈 디렉토리
+        /sbin
+            ifconfig, e 등과 같이 주로 시스템 관리자들이 사용하는 시스템 관리자용 명령어를 저장하고 있는 디렉토리
+        /tmp
+            일명 공용 디렉토리
+            시스템을 사용하는 모든 사용자들이 공동으로 사용하는 디렉토리
+            mysql 에서 사용하는 mysql.sock등과 같은 소켓파일 또는 아파치에서 사용하는 세션파일등이 생성되기도 한다
+            웹해킹에 사용되기도 해서 주의를 요망
+        /usr
+
+        /usr/bin/
+
+        /usr/X11R6/
+
+        /usr/include/
+
+        /usr/lib/
+
+        /usr/sbin/
+
+        /usr/xsr/
+
+        /var
+
+        /var/tmp/
+
+        /var/log/
+        
+        /var/ftp/
+
+        /var/named/
+
+        /var/spool/mail/
+
+        /var/spool/lpd/
+
+        /var/spool/mqueue/
+
+        /var/spool/cron/
+
+        /var/spoo/at/
+
+        /lost+found
+            mv : move
+    
+    Linux - CLI
+        ls, mkdir, cd, etc
+
+        build-essential 설치, hello world, file attribute
+        g++ gcc 
+
+        ls --help
+        ls -a -> 숨김파일까지 보임
+        ls -l
+        ls -al -> 숨김파일 까지 상세보기
+        ls -d   -> 폴더 정보?
+        ls -ald -> 폴더 상세정보?
+        ls -n   -> 사용자?
+        ls -R
+        ls -F
+
+    d 디렉토리 l 링크된 파일 - 일반파일 r 리드 w 라이트 x 파일실행권한
+    
+    퍼미션의 사용자 그룹
+    0/000/000/000 3개로 쪼개짐 소유자/그룹/공개(type / owner / group / other) 이때 -는 퍼미션이 없다
+    - r w x이 들어감
+    맨앞은 d l - 등 
+
+    숫자로 r=4 w=2 x=1 -=0 모든 숫자를 더하면 하나의 퍼미션을 숫자 값으로 변환가능
+    rwxr-xr-x -> 755
+    디렉토리의 경우 -R옵션을 사용하면 하위 디렉토리의 모든 디렉토리 및 파일의 커미션 
+
+    mkdir work
+    vi ./HelloWorld.cpp 새로 파일 만들기
+    g++ -o HelloWorld HelloWorld.cpp
+    chmod 555 ./HelloWorld (default 775)
+
+    n y n n y
+    mysql.server start
+    show databases;
+    exit
+    mysql.server stop
+
+    계정 추가 생성
+    sudo useradd -m 사용자명            윈도우
+    sudo sysadminctl -addUser 사용자명  mac
+
+    sudo chown username 파일명 -> 권한자 변경
+
+    사용자 변경
+    su 그냥치면 
+    su 사용자
+    su - 하면 root 계정 (root 계정 비밀번호 변경은 sudo passwd root)
+    sudo passwd 사용자 -> 사용자의 비번 변경
+    exit -> 원래 사용자로 돌아감
+
+    whoami 사용자 계정 who 몇명이 사용중?
+
+    계정에 sudo 사용 권한 주기 (sudoers file 에 넣어주기)
+        sudo usermod -a -G sudo username(계정명) 윈도우
+        sudo dseditgroup -o edit -a 계정명 -t user admin
+        https://osxdaily.com/2014/02/06/add-user-sudoers-file-mac/
+
+    계정 권한 삭제 
+        sudo deluser
+
+    그룹 그룹단위로 파일/디렉토리에 대한 권한 지정
+
+    bash promt 터미널 개조용(커마)
+        echo $PS1 -> bash promt 설정 나옴 윈도우
+
+    프로세스 목록확인
+        ps
+        ps -f
+        ps -ef
+        ps -aux (x는 맥에서 적용 안된다)
+
+    ps -f 하면 나오는것들 
+        uid     프로세스 소유자 / 소유자 아이디
+        pid     프로세스 고유번호
+        ppid    부모 프로세스dml pid
+        C       프로세스 우선도
+        STIME   프로세스가 시작된 시간
+        TTY     프로세스와 연결된 타입
+        TIME    실행에 걸린시간
+        CMD     프로세스를 생성하는데 내린 명령

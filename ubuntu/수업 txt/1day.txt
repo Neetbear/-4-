@@ -1,0 +1,19 @@
+설치 방법
+https://docs.microsoft.com/ko-kr/windows/wsl/install
+
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt install build-essential libtool 여기까지만 (autotools-dev automake pkg-config bsdmainutils curl git)
+
+sudo apt-get install net-tools
+
+sudo apt-get install libssl-dev libevent-dev
+
+esc -> :q! (shift :)
+
+vi ./.bashrc 윈도우
+vi ./.zshrc 맥
+
+sudo -> 관리자 권한으로 실행
