@@ -1,0 +1,61 @@
+Linux  pipe
+    파이프는 재지향(redirection)과 더불어 리눅스의 명령어들을 훨씬 강력하게 무장시켜주는 역할을 하는 핵심 기능이다
+    마치 그 자체로는 특별한 맛이 나지 않지만 단맛이나 짠맛 같은 다른 맛을 훨씬 강하겍 만들어주는 조미료와 같다
+    일종의 필터링 
+
+Linux pakage managing
+    리눅스에서 패키지 관리 방법에 대해서 알아보도록 하자
+    먼저 패키지 관리란 새로운 소프트웨어를 설치, 업테이트, 삭제하는 일을 말한다
+    소프트웨어는 소스코드의 형태로 배포되는 경우와 바이너리 패키지 형태로 배포되는 경우가 있는데,
+        소스코드이 경우 보통 하나의 아카이브 파일 
+
+pakage
+    리눅스 배포 판에 따라서 서로 다른 패키지 형식을 지원하는데 대부분 다음의 3가지 중 하나를 지원한다
+        debian
+        redhat
+        opensuse
+    ubuntu에서는 debian 계열? deb 파일들
+
+각 패키지 관리 도구
+    dpkg
+
+    apt-get/apt-cache(search기능)/apt
+        apt-cache 는 apt search로도 가능
+        최신 배포판에서는 그냥 apt 로 가능 
+    aptitude
+        apt-get 보다 개선된 기능 하지만 apt-get 쓸거
+
+    mac은 brew 사용 
+        설치는 brew install 
+        찾기는 brew search
+
+brew install mingw-w64 -> 맥에서 윈도우용 빌드 위해서 설치
+brew install gedit
+
+pakage mamaging
+    윈도우의 경우 etc/apt/sources.list 에 있다
+
+파일 설치 복사 관리 등등
+    touch 하면 파일 새로 만들어줌
+    vi 는 없으면 새로 만들고 파일 열기
+    nano 
+    cp 파일 복사 
+        cp -fv test.txt testhello.txt
+    mv(move) 파일 이동 ( 파일명 변경처럼 사용도 가능하다 )
+        mv [options] {원본} {이동위치/파일명(파일명 변경 가능)}
+    rm(remove) 파일 삭제 
+        rm 파일/디렉토리 이름
+    rmdir 빈 디렉토리 삭제
+        rmdir -v ./rdir/
+
+    -fv v는 결과 출력 f는 권한 
+
+    wget (brew install wget)
+        인터넷에서 파일을 받는 가장 좋은 방법은 wget
+        
+        옵션들
+        -c 옵션으로 다시 이어받기도 가능
+        -i 텍스트 파일로 링킄들 저장해서 한번에 받을수 있음
+        FTP 
+        
+    vscode에서 remote wsl extension 
