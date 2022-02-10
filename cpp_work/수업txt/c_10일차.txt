@@ -32,7 +32,7 @@ C++ class access specifiers
                 이 멤버를 선언한 클래스의 멤버 함수
                 이 멤버를 선언한 클래스의 friend class
                 이 멤버를 선언한 클래스에서 public 또는 protected 접근 제어로 파생된 클래스(상속된 클래스)
-    클래스의 기본 접근 
+    클래스의 기본 접근 제어 권한은 private 이며, 구조체 및 공용체는 publice 이다
 
 %클래스의 접근 제어 지시자의 default는 private이다 
 %friend class는 object oriented programming개념에 반하므로 자주 사용하지는 않는다
@@ -57,7 +57,8 @@ Why Encapsulation?
     데이터 보안이 향상된다
 
 Designing Strategy(디자인 전략)
-    우리 대부분은 클래스 멤버를 실제로 노출해야 하는 경우가 아니면 기본적으로
+    우리 대부분은 클래스 멤버를 실제로 노출해야 하는 경우가 아니면 기본적으로 클래스 멤버를 비공개로 설정하는 방법을 배웠다
+    프로그램 설계측면에서 캡슐화는 아주 좋은 방법인 것이다
 
 C++ inheritance
     객체 지향 프로그래밍에서 가장 중요한 개념 중 하나는 상속 개념이다
@@ -70,9 +71,13 @@ C++ inheritance
     C++ 에서는 상속 개념은 두가지 범주의 그룹이 있다
         derived class (파생 클래스 / 자식) 다른 클래스에서 상속받은 클래스
         base class(기본 클래스 / 부모) 상속이 되는 클래스
+    클래스 상속은 : 로 표현한다
+    access-specifier는 public, protected 또는 private 중 하나이고 base-class는 이전에 정의된 클래스의 이름이다
+    access-specifier가 사용되지 않으면 기본적으로 private이다
 
 Why And When to use inheritance
     attributes와 methods 재사용할때 ?
+    It is useful for code reusability: reuse attributes and methods of an existing class when you create a new class
 
 Access control and inheritance
     파생 클래스는 기본 클래스의 모든 비공개 멤버에 액세스할 수 있다
@@ -85,17 +90,22 @@ Access control and inheritance
 
 type of inheritance
     기본 클래스에서 클래스를 파생할 때 기본 클래스는 public, protected 또는 private 상속을 통해 상속될 수 있다
-
+        상속 유형은 위에서 설명한대로 액세스 지정자에 의해 지정된다
+    우리는 protected나 private 상속을 거의 사용하지 않지만, public 상속은 일반적으로 사용된다
     다른 유형의 상속을 사용한느 동안 다음 규칙이 적용된다
         거의 public쓴다
         public inheritance
+            public 기본 클래스에서 클래스를 파생할 때 기본 클래스의 public 멤버 는 파생 클래스의 public 멤버가 되고 기본 클래스의 protected 멤버는 파생 클래스의 protected 멤버가 된다. 
+            기본 클래스의 private 멤버는 파생 클래스에서 직접 액세스할 수 없 지만 기본 클래스의 public 및 protected 멤버에 대한 호출을 통해 액세스할 수 있다
         protected inheritance
+            protected 기본 클래스에서 파생할 때 기본 클래스의 public 및 protected 멤버는 파생 클래스의 protected 멤버가 된다.
         private inheritance
+            private 기본 클래스에서 파생할 때 기본 클래스의 public 및 protected 멤버는 파생 클래스의 private 멤버가 된다.
     
 %virtual int GetArea() = 0; 자식 클래스에 다 int GetArea()를 구현하라는 내용
 
 Multilevel Inheritance(다단계 상속)
-    클래스는 이미 다른 클래스에서 파생된 한 클래스에서 파생도리 수도 있다
+    클래스는 이미 다른 클래스에서 파생된 한 클래스에서 파생될 수도 있다
 
 Multiple Inheritance(다중상속)
     클래스는 쉼표(,)로 구분된 목록을 사용하여 둘 이상의 base class에서 파생될 수도 있다
@@ -105,9 +115,19 @@ C++ class friend
     C++에서 객체의 private 멤버에는 해당 객체의 public 멤버 함수를 통해서만 접근할 수 있다고 했다
     하지만 경우에 따라서는 해당 객체의 멤버 함수가 아닌 함수도 private 멤버에 접근해야만 할 경우가 발생한다
     이럴때마다 매번 private 멤버에 접근하기 위한 새로운 public 멤버 함수를 작성하는 것은 매우 비효율적이다
-    따라서 C++ 
+    따라서 C++ 이러한 경우를 위해 friend라는 새로운 접근 제어 키워드를 제공한다
+    friend는 지정한 대상에 한해 해당 객체의 모든 멤버에 접근할 수 있는 권한을 제공한다
+    이러한 friend 키워드는 전역함수, 클래스, 멤버 함수의 세 가지 형태로 사용할 수 있다
 
 C++ definition of friend function
+    C++에서 friend 함수는 friend 키워드를 사용하여 다음과 같이 선 언한다
+    이렇게 선언된 friend 함수는 클래스 선언부에 그 원형이 포함되 지만, 클래스의 멤버 함수는 아니다.
+    이러한 friend 함수는 해당 클래스의 멤버 함수는 아니지만, 멤버 함수와 같은 접근 권한을 가지게 된다.
+    friend 키워드는 함수의 원형에서만 사용해야 하며, 함수의 정의에 서는 사용하지 않는다.
+    Friend 선언은 클래스 선언부의 public, private, protected 영역 등 어디에나 위치할 수 있으며, 위치에 따른 차이는 전혀 없다.
+    클래스 내부에서만 써야할 멤버들이 다른 곳에서 계속 접근을 허 용하게 되면 데이터 보호도 어렵고 캡슐화를 지향하는 객체지향 적 설계라고 보기 어렵다. 
+        friend는 가급적 남발하지 않고 필요한 경우에만 사용해 주는 것이 좋다.
+    friend className funcName(매개 변수)
 
 C++ class static member variables
     C++에서 static member란 클래스에는 속하지만, 객체 별로 할당되지 않고 클래스의 모든 객체가 공유하는 멤버를 의미한다
@@ -116,9 +136,27 @@ C++ class static member variables
     이러한 정적 멤버 변수는 외부 연결을 가지므로, 여러 파일에서 접근할 수 있다
     정적 멤버 변수에도 클래스 멤버의 접근 제한 규칙이 적용되므로, 클래스의 멤버 함수나 friend만이 접근할 수 있다
     하지만 정적 멤버 변수를 외부에서도 접근할 수 있게 하고 싶으면, 정적 멤버 변수를 public 영역에 선언하면 된다
+    C++에서는 클래스의 멤버 함수도 정적(static) 으로 선언할 수 있다
+    이렇게 선언된 정적 멤버 함수는 해당 클래스 의 객체를 생성하지 않고도, 클래스 이름만으 로 호출할 수 있다
+    정적 멤버 함수는 정적 멤버 변수를 선언하는 방법과 같이 static 키워드를 사용하여 선언한다
+        객체를 생성하지 않고 클래스 이름만으로 호출할 수 있다
+        객체를 생성하지 않으므로, this 포인터를 가지지 않는다
+        특정 객체와 결합하지 않으므로, 정적 멤버 변수밖에 사 용할 수 없다
 
 C++ polymorphism
-
+    다형성이라는 단어는 많은 형태를 갖는 다는 의미이다. 
+        일반적으로 다형성은 클 래스의 계층(hierarchy)이 있고 상속으 로 관련되어 있을 때 발생한다
+    상속을 통해 다른 클래스의 속성 (attribute)과 메서드(method)를 상속할 수 있다. 
+        다형성은 이러한 방법을 사용 하여 다른 작업을 수행한다. 
+        이를 통해 우리는 다양한 방식으로 단일 작업을 수행할 수 있다
+    
+    기본 클래스가 다른 두 클래스에 의 해 파생된 다음 예를 살펴보자
+    잘못된 출력의 이유는 함수 area()의 호출 이 기본 클래스에 정의된 버전으로 컴파 일러에 의해 한 번 설정되기 때문이다.
+    이 것을 함수 호출의 정적 해결 또는 정적 연 결이라고 한다. 
+    함수 호출은 프로그램이 실행되기 전에 고정된다. 
+    이는 프로그램 컴파일 중에 area() 함수가 설정되기 때문 에 초기 바인딩이라고도 한다
+    그러나 이제 프로그램을 약간 수정하고 Shape 클래스의 area() 선언 앞에 virtual 키워드를 사용하여 다음과 같이 살펴보자
+ 
 virtual function
     가상 함수는 virtual 키워드를 사용하여 선언된 기본 클래스의 함수이다
         파생 클래스의 다른 버전과 함께 기본 클래스에서 가상 함수를 정의하면 이 함수에 대한 정적 연결을 원하지 않는다는 신호가 컴파일러에 전달된다
@@ -128,7 +166,7 @@ virtual function
 pure virtual function
     기본 클래스에 가상 함수를 포함하여 해당 클래스의 객체에 맞게 파생 클래스에서 재정의할 수 있지만 기본 클래스의 함수에 대해 의미 있는 정의를 제공할 수 없다
     기본 클래스의 가상 함수를 다음과 같이 변경할 수 있다
-    = 0 는 함수에 본문과 
+    = 0 는 함수에 함수에 본문이 없고 가상 함수를 순수 가상 함수(Pure Virtual Function) 고 부를 것임을 컴파일러에 알린다
 %반드시 구현부문이 있어야 한다?
 
 polymorphism - abstract class (추상)
@@ -168,18 +206,22 @@ Data abstraction in C++(data 추상화)
     C++ 에서는 엑세스 레이블을 사용하여 클래스에 대한 abstract interface를 정의한다
     클래스는 0개 또는 그 이상의 액세스 레이블을 포함할 수 있다
         public laber로 정의된 멤버는 프로그램의 모든 부분에 액세스할 수 있다
-        형식의 데이터 추상화 보기는 해당 public member
+            형식의 데이터 추상화 보기는 해당 public member에 의해 정의된다
+        private laber로 정의된 멤버는 클래스르 사용하는 코드에 엑세스할 수 없다
+            private섹션은 해당 유형을 사용하는 코드에서 구현을 숨긴다
 
 interfaces in C++ (abstract classes)
     interface는 해당 클래스의 특정 구현을 커밋하지 않고 C++ 클래스의 동작 또는 기능을 설명한다
     C++ interface는 추상 클래스를 사용하여 구현되며 이러한 추상 클래스는 구현 세부 정보를 관련 데이터와 별도로 
-        유지하는 
+        유지하는 개념인 데이터 추상화와 혼동되어서는 안된다
+    클래스는 최소한 하나의 함수를 순수 가상 함수로 선언함으로써 추상화된다
     
-
     Abstract Class (ABC/추상클래스)의 목적은 다른 클래스가 상속할 수 있는 적절한 기본 클래스를 제공하는 것이다
     추상 클래스는 객체를 인스턴스화하는데 사용할 수 없으며 interface 역할만 한다
         추상클래스의 객체를 인스턴스화하려고 하면 컴파일 오류가 발생한다
     따라서 ABC의 하위 클래스를 인스턴스화해야 하는 경우 각 virtual function을 구현해야 하며,
         이는 ABC에서 선언한 인터페이스를 지원한다는 것을 의미한다
+    파생 클래스에서 순수 가상 함수를 재정의하지 못한 다음 해당 클래스의 객체를 인스턴스화하려고 하면 컴파일 오류가 발생한다
+    객체를 인스턴스화하는데 사용할 수 있는 클래스를 concrete class(구체 클래스)라고 한다
     
-    부모 클래스가 getArea()라는 함수를 
+    부모 클래스가 getArea()라는 함수 를 구현하기 위해 기본 클래스에 대 한 인터페이스를 제공하는 예제를 살펴 보자

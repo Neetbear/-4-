@@ -30,8 +30,11 @@ Buffer Synchronization(버퍼 동기화)
     지금까지 standard input에서 읽고 standard output으로 일고 쓰기 위한 cin 및 cout 메서드를 각각 제공하는 iostream 표준 라이브러리를 사용했다
     이번에는 file을 읽고 쓰는 방법을 배워보자
         ofstream (output file)
+            This data type represents the output file stream and is used to create files and to write information to files
         ifstream (intput file)
+            This data type represents the input file stream and is us ed to read information from files.
         fstream  (file ? of + if 느낌)
+            This data type represents the file stream generally, and has the capabilities of both ofstream and ifstream whic h means it can create files, write information to files, and read information from files.
     
     fstream 라이브러리를 사용하려면 표준 iostream과 fstream 헤더 파일을 모두 포함한다
     fstream 라이브러리에는 파일을 생성, 쓰기 또는 읽는데 사용되는 세가지 클래스가 포함되어 있다
@@ -49,15 +52,22 @@ openint a file
         ios::ate
             open a file for output and move the read/write control to the end of the file
         ios::in
-            open a file 
+            open a file for reading
         ios::out
+            open a file for writing
         ios::trunc
+            f the file already exists, its contents will be truncated before opening the file.
+
     이들 값을 or로 결합하여 둘 이상의 값을 결합할 수 있다 
         예를 들어 쓰기 모드에서 파일을 열고 이미 존재하는 파일을 자르고 싶다면 구문을 조합하여 사용하면 된다
         "w"  = ios_base::out|ios_base::trunc             
         "a"  = ios_base::out|ios_base::app               
         "r+" = ios_base::in|ios_base::out                
         "w+" = ios_base::in|ios_base::out|ios_base::trunc
+    이들 값을 OR로 결합하여 둘 이상 의 값을 결합할 수 있다. 
+        예를 들어 쓰기 모드에서 파일을 열고 이미 존 재하는 파일을 자르고 싶다면 구문 은 다음과 같다.
+        
+    비슷한 방법으로 다음과 같이 읽기 및 쓰기 목적으로 파일을 열 수 있다.
 
 closing a File
     C++ 프로그램이 종료되면 모든 스트림을 자동으로 플러시하고 할당된 모든 메모리를 해제하고 열려있는 모든 파일을 닫는다
@@ -72,7 +82,8 @@ Create and Write To a File
     유일한 차이점은 cout 객체 대신 ofstream 또는 fstream 객체를 사용한다는 것이다
 
 Read a File
-    파일에서 읽으려면 ifstream 
+    파일에서 읽으려면 ifstream 또는 fstream 클래스와 파일 이름을 사용한다.
+    파일을 한 줄씩 읽고 파일 내용을 인쇄하기 위해 (ifstream 클래스에 속하는) getline() 함수와 함께 while 루프도 사용한다
 
 File Position Pointers
     ifstream과 ofstream은 모두 파일 위치 포인터를 재배치하기 위한 멤버 함수를 제공한다
@@ -95,20 +106,23 @@ Exception Handling
         try 문을 사용하면 실행되는 동안 오류를 테스트할 코드 블록을 정의할 수 있다
         throw 키워드는 문제를 감지하면 예외를 throw 하므로 사용자 지정 오류를 생성할 수 있다
         catch 문을 사용하면 try 블록에서 오류가 발생할 경우 실행할 코드 블록을 정의할 수 있다
-
+        try 및 catch 키워드는 쌍으로 제공된다.
 
 throwing Exception
     예외는 throw문을 사용하여 코드 블록 내 어디에서나 throw 될 수 있다
         throw문의 피연산자는 예외의 유형을 결정하고 모든 표현식이 될 수 있으며 표현식의 결과 유형은 throw된 예외의 유형을 결정한다
+
 catching Exception
     try 블록 다음에 오는 catch 블록은 모든 예외를 catch한다
+    catch할 예외 유형을 지정할 수 있으며 이는 catch 키워드 다음에 괄호 안에 나 타나는 예외 선언에 의해 결정된다
 
-Handle any type of Exceptions
+Handle any type of Exceptions(...)
     cathc 블록이 try 블록에서 throw 된 모든 유형의 예외를 처리하도록 지정하려면 다음과 같이 예외 선언을 묶는 괄호 사이에 줄임표...를 넣어줘야한다
 
 C++ standard Exception
     c++는 우리 프로그램에서 사용할 수 있는 <exception>에 정의된 standard exception list를 제공한다
-        이들은 부모-자식 클래스 
+        이들은 부모-자식 클래스 계층 구조로 정렬된다
+    표참조
 
 Define New Exception
     exception class 기능을 inheriting 및 overriding 하여 고유한 예외를 정의할 수 있다
