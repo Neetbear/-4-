@@ -1,0 +1,25 @@
+main.cpp
+    일단 먼저 좌표값 6개 입력받기 double
+    원하는 함수 입력받아서 실행시키기
+    if문으로 거르든 case 돌리든
+
+getvertax.cpp
+getvertax.h
+    좌표값 6개 입력받기
+    2차원배열
+
+move.cpp
+move.h
+    좌표 이동
+    x축으로 a, y축으로 b 만큼
+
+scale.cpp
+scale.h
+    삼각형 확대
+    x좌표 *sx, y좌표 *sy
+
+area.hpp
+area.h
+    삼각형 면적 구하기
+
+-> gnu make

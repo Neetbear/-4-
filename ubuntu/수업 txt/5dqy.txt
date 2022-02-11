@@ -1,0 +1,26 @@
+if else
+    else if 는 elif로 쓴다
+
+case문
+    ;;가 break 기능
+    끝날땐 if처럼 esac
+    case $(option) in    
+        "case1") 실행문
+        ;;
+    esac
+
+shell loop types
+    반복문 
+
+while 문
+    while [조건]
+    do
+        명령1
+        명령2
+    done
+
+%mac date 연구 필요
+
+=======================================
+gnu makefile
+http://doc.kldp.org/KoreanDoc/html/GNU-Make/GNU-Make.html#toc1
