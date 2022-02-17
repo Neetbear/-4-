@@ -1,0 +1,4 @@
+ brew install 
+    automake berkeley-db4 libtool miniupnpc eopessl 
+    pkg-config protobuf python qt libevent qrencode
+
