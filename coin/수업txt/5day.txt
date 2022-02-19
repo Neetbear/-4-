@@ -1,0 +1,16 @@
+https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.bz2
+
+export SDKROOT=$(xcrun --sdk macosx --show-sdk-path)
+
+
+ litecoin 폴더 안에서 make -j 4
+* 블록체인을 다운받을 디렉토리 형성. mkdir litecoin_bin - 위치는 makecoin 근처에 만들 것
+* 다시 litecoin 폴더로 이동 후에 make install DESTDIR=/Users/nojinhyeong/litecoin_test
+* 그리고 litecoin_bin 으로 이동하면 bin include lib share 이렇게 4개의 폴더가 있을 것임. 여기에 data 라는 폴더 하나 추가로 생성
+* 생성 후, cd bin. bin 내부에 litecoin-qt가 존재하는 것을 확인. 그리고 ./litecoin-qt -datadir=/Users/kimjinkyung/litecoin021_bin/data 실행
+* 위 명령어를 실행하면, 생성했던 data 폴더 안에 블록체인이 받아질 것임. Gui가 뜨거나 터미널에 height가 쌓이면 성공
+
+데몬
+./litecoind -datadir=/Users/nojinhyeong/litecoin_test/aarch64-apple.darwin21.3.0/data -printtoconsole
+
+./litecoin-cli -datadir=/Users/nojinhyeong/litecoin_test/aarch64-apple.darwin21.3.0/data getnetworkinfo
