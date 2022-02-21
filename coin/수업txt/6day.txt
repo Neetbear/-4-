@@ -1,0 +1,40 @@
+litecoin-0.15버전으로 kigacoin제작
+
+0.15 버전 클론
+git clone -b 0.15 --single-branch https://github.com/litecoin-project/litecoin.git ./litecoin-0.15 
+
+맥 find 에러 남
+find ./ -type f -readable -writalbe -exec sed -i "s/Litecoin/Kigacoin/g" {}\;
+
+2번째 시도
+find . -type f -print0 | xargs -0 sed -i "" 's/litecoin/kigacoin/g' 
+    -> export LC_CTYPE=ko_KR -> cmd창에서 한글쓰기 위한용도
+    -> export LANG=C.UTF-8  로 해결함 -> cmd 창 끄면 날라감 주의
+    -> echo $LANG 로 확인하고 진행하기
+find . -type f -print0 | xargs -0 sed -i "" 's/Litecoin/Kigacoin/g'     
+find . -type f -print0 | xargs -0 sed -i "" 's/LiteCoin/KigaCoin/g'
+find . -type f -print0 | xargs -0 sed -i "" 's/LITECOIN/KIGACOIN/g'
+find . -type f -print0 | xargs -0 sed -i "" 's/LTC/KGC/g'
+find . -type f -print0 | xargs -0 sed -i "" 's/litecoind/kigacoind/g'
+find . -type f -print0 | xargs -0 sed -i "" 's/라이트/키가/g' 
+find . -type f -print0 | xargs -0 sed -i "" 's/라이트코인/키가코인/g' 
+find . -type f -print0 | xargs -0 sed -i "" 's/lites/kgcs/g'         
+find . -type f -print0 | xargs -0 sed -i "" 's/photons/kphotons/g'
+    -> photons 은 단위임?
+
+포트 변경
+find . -type f -print0 | xargs -0 sed -i "" 's/9333/9777/g' p2p 포트
+find . -type f -print0 | xargs -0 sed -i "" 's/9332/9776/g' rpc 포트 
+find . -type f -print0 | xargs -0 sed -i "" 's/19335/19779/g' p2p 포트 테스트넷
+find . -type f -print0 | xargs -0 sed -i "" 's/19332/19776/g' rpc 포트 테스트넷
+find . -type f -print0 | xargs -0 sed -i "" 's/19444/19888/g' p2p 포트 레그테스트넷
+find . -type f -print0 | xargs -0 sed -i "" 's/19776//g' -> 776으로 바꾼거 있으니 안하고 냅둠
+
+매직넘버
+    라이트코인 네트워크에 접근할때 들어가는 헤더 메시지에 포함되는 고유 값들 
+    아스키코드값으로 16진수로 넣어주는것
+        2씩 더해서 바꿀것
+        pchMessageStart[0] = 0xfb;
+        pchMessageStart[1] = 0xc0;
+        pchMessageStart[2] = 0xb6;
+        pchMessageStart[3] = 0xdb;
