@@ -1,0 +1,39 @@
+magic number 부터 
+
+매직넘버
+    라이트코인 네트워크에 접근할때 들어가는 헤더 메시지에 포함되는 고유 값들 
+    아스키코드값으로 16진수로 넣어주는것
+        2씩 더해서 바꿀것
+        chainparams.cpp - main net
+            pchMessageStart[0] = 0xfb;
+            pchMessageStart[1] = 0xc0;
+            pchMessageStart[2] = 0xb6;
+            pchMessageStart[3] = 0xdb;
+        
+        chainparams.cpp - test net
+            pchMessageStart[0] = 0xfd;
+            pchMessageStart[1] = 0xd2;
+            pchMessageStart[2] = 0xc8;
+            pchMessageStart[3] = 0xf1;
+
+지갑주소접미부 변경
+    base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,45); k니까 45로 변경해둠
+    base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+    base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
+    base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,176);
+
+genesis block 및 관련 merkle root 생성 
+    git clone https://github.com/lhartikk/GenesisH0
+    -> 파이썬3 사용
+    -> unix time stamp 사요
+    -> 파이썬 과 문법 달라져서 printf () 로 코드 수정 필요 vi ./genesis.py
+    -> ModuleNotFoundError: No module named 'scrypt' 
+
+    https://pypi.org/project/scrypt/
+    sudo pip install scrypt construct==2.5.2
+    brew install scrypt
+
+    python2 genesis.py -a scrypt -z "KGA Blockchain Class 4th Start At 10/Aug/2021" -t 1617604141 -n 2084524493
+
+    export LDFLAGS="-L/opt/homebrew/Cella/zlib/1.2.11/lib"
+    export CPPFLAGS="-I/opt/homebrew/Cella/zlib/1.2.11/include"

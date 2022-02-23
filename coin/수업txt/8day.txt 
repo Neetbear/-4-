@@ -1,0 +1,69 @@
+결국 hash는 일단 윈도우꺼 가져다 씀
+
+mainnet
+    python2 genesis.py -a scrypt -z "KGA Blockchain Class 4th Start At 18/Oct/2021" -t 1617604141
+    04ffff001d01042d4b474120426c6f636b636861696e20436c617373203474682053746172742041742031382f4f63742f32303231
+    algorithm: scrypt
+    merkle hash: 17fc12152daf402bd67a3bbee1895f997537b38d0dc3d6478d07d0f665b30c33
+    pszTimestamp: KGA Blockchain Class 4th Start At 18/Oct/2021
+    pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+    time: 1617604141
+    bits: 0x1e0ffff0
+    Searching for genesis hash..
+    3443.0 hash/s, estimate: 346.5 hgenesis hash found!
+    nonce: 1214009
+    genesis hash: de0bc9e62461efb7cb25b3dfadef8e3b9d032872b04d99bf121793691774161d
+[testnet]
+    python2 genesis.py -a scrypt -z "KGA Blockchain Class 4th Start At 18/Oct/2021" -t 1645587173
+    04ffff001d01042d4b474120426c6f636b636861696e20436c617373203474682053746172742041742031382f4f63742f32303231
+    algorithm: scrypt
+    merkle hash: 17fc12152daf402bd67a3bbee1895f997537b38d0dc3d6478d07d0f665b30c33
+    pszTimestamp: KGA Blockchain Class 4th Start At 18/Oct/2021
+    pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+    time: 1645587173
+    bits: 0x1e0ffff0
+    Searching for genesis hash..
+    3428.0 hash/s, estimate: 348.0 hgenesis hash found!
+    nonce: 2572211
+    genesis hash: 13f611d597e568ed379a03bd7d8b3f7b3be0677875c5abf7c02d3e903963cf6f
+
+해쉬 찾는게 작업증명
+
+테스트넷 블록이 테스트용으로만 생성
+레그테스트넷 블록이 진짜로 생성되지도 않는 완전 테스트용
+
+비트코인 반감 https://sheepone.tistory.com/42
+    consensus.nRuleChangeActivationThreshold = 6048; // 75% of 8064 -> 비트코인은 90%로 잡음
+
+amount.h - 보면 발행량 등등 볼수 있고  -> 정확히는 반감기 되는 발행량
+chainparams.cpp - halving  으로 반감기 볼수 있음
+
+    // vSeeds.emplace_back("seed-a.kigacoin.loshan.co.uk", true);
+    // vSeeds.emplace_back("dnsseed.thrasher.io", true);
+    // vSeeds.emplace_back("dnsseed.kigacointools.com", true);
+    // vSeeds.emplace_back("dnsseed.kigacoinpool.org", true);
+    // vSeeds.emplace_back("dnsseed.koin-project.com", false);
+    vSeeds.clear();
+    vSeeds.emplace_back("", true);
+
+contrib/seeds/readme.md -> chainparamsseeds.h
+
+테스트넷 시드 초기값
+consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000007d006a402163e");
+
+checkpointData -> 몇번째 블록의 해쉬값이 이거로 나왔니라고 확인하는 체크 포인트, 
+chainTxData -> 
+
+qt/res/icons 에서 라이트코인 png 파일들 각자 개인 파일들로 변경해줘야히 아니면 라이트 코인걸로 된다
+    about.png 
+    bitcoin_testnet.ico 
+    bitcoin.icns 
+    bitcoin.ico 
+    bitcoin.png 
+    litecoin_splash.png->kigacoin_splash.png
+
+doc/man file rename
+
+test/functional/test_framework/mininode.py import kigacoin_scrypt -> import litecoin_scrypt
+
+.travis.yml     - KIGACOIN_SCRYPT=0     ->    - LITECOIN_SCRYPT=0
