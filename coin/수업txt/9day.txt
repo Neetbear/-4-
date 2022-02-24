@@ -1,0 +1,16 @@
+brew install mingw-w64 
+arch -x86_64 brew install mingw-w64 -> arch 사용방법 확인 필요
+C:\work\kigacoin_win_bin\share\man\man1
+
+./autogen.sh
+CONFIG_SITE=$PWD/depends/arm-apple-darwin21.3.0/share/config.site ./configure --prefix=/aarch64-apple.darwin21.3.0 --with-gui=no 
+
+
+윈도우 
+make -j 8
+
+sudo bash -c "echo 1 > /proc/sys/fs/binfmt_misc/status"
+
+make install DESTDIR=/mnt/c/workspace/경로
+
+make deploy
