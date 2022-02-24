@@ -14,3 +14,10 @@ sudo bash -c "echo 1 > /proc/sys/fs/binfmt_misc/status"
 make install DESTDIR=/mnt/c/workspace/경로
 
 make deploy
+
+
+
+
+$ brew install openssl
+$ export CFLAGS="-I$(brew --prefix openssl)/include $CFLAGS"
+$ export LDFLAGS="-L$(brew --prefix openssl)/lib $LDFLAGS"
