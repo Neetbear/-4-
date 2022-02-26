@@ -1,0 +1,33 @@
+https://litecoin.info/index.php/Litecoin_API 여기서 명령어 확인
+https://developer.bitcoin.org/reference/rpc/index.html 비트코인 버전
+데몬
+./kigacoind -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data -printtoconsole
+
+./kigacoin-cli -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data getnetworkinfo
+
+./kigacoin-cli -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data stop
+
+bitcoin은 label / litecoin은 address
+
+통신
+    litecoin API
+        getnewaddress 유저들 계정을 만드는 용도?
+        ./kigacoin-cli -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data getnewaddress njh 
+            ->  주소값 해시로 생성?
+        ./kigacoin-cli -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data getaccount KRmZDd3rDAWk59qvJjDDvSPRS3SXcgs9dr
+
+사용불가 코인 수정하기
+    kigacoin/src/consensus/consensus.h에서
+        static const int COINBASE_MATURITY = 100; 이 수치 바꿔주면 된다
+        100이면 100개의 블록이 생겨야 사용가능으로 바뀜
+
+    0번 genesisblock 생기고 다음 블록부터 채굴한 블록
+
+rpc 통신 웹통신? node, nvm(nvm install --lts) 등등 필요
+    mkdir kigacoin_api_exam 
+    npm install -s express dotenv request pug body-parser babel-types
+
+
+./kigacoind -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data -conf=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/kigacoin.conf -printtoconsole 
+curl --user kbpark --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "getblockcount", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:9776/
+                kbpark:1234 -> 비밀번호 주는 법
