@@ -31,3 +31,11 @@ rpc 통신 웹통신? node, nvm(nvm install --lts) 등등 필요
 ./kigacoind -datadir=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/data -conf=/Users/nojinhyeong/kigacointest/aarch64-apple.darwin21.3.0/kigacoin.conf -printtoconsole 
 curl --user kbpark --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "getblockcount", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:9776/
                 kbpark:1234 -> 비밀번호 주는 법
+
+-genesisH0 안먹을때 
+export CFLAGS="-I$(brew —prefix openssl)/include $CFLAGS"
+export LDFLAGS="-L$(brew —prefix openssl)/lib $LDFLAGS"
+
+export PATH=/opt/homebrew/opt/openssl@1.1/bin:$PATH
+export LDFLAGS=-L/opt/homebrew/opt/openssl@1.1/lib
+export CPPFLAGS=-I/opt/homebrew/opt/openssl@1.1/include
