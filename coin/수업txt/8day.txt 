@@ -10,7 +10,7 @@ mainnet
     time: 1617604141
     bits: 0x1e0ffff0
     Searching for genesis hash..
-    3443.0 hash/s, estimate: 346.5 hgenesis hash found!
+    3443.0 hash/s, estimate: 346.5h genesis hash found!
     nonce: 1214009
     genesis hash: de0bc9e62461efb7cb25b3dfadef8e3b9d032872b04d99bf121793691774161d
 [testnet]
