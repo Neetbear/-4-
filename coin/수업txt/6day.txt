@@ -4,7 +4,12 @@ litecoin-0.15버전으로 kigacoin제작
 git clone -b 0.15 --single-branch https://github.com/litecoin-project/litecoin.git ./litecoin-0.15 
 
 맥 find 에러 남
-find ./ -type f -readable -writalbe -exec sed -i "s/Litecoin/Kigacoin/g" {}\;
+find ./ -type f -readable -writable -exec sed -i "s/Litecoin/Kigacoin/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/LiteCoin/KigaCoin/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/litecoin/kigacoin/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/litecoind/kigacoind/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/LITECOIN/KIGACOIN/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/LTC/KGC/g" {} \;
 
 2번째 시도
 find . -type f -print0 | xargs -0 sed -i "" 's/litecoin/kigacoin/g' 
