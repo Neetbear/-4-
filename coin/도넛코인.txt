@@ -1,2 +1,83 @@
 prefix D 30 d  90
 이미지 도넛
+
+git clone -b 0.15 --single-branch https://github.com/litecoin-project/litecoin.git ./donut
+
+------------------------------------------------------------------------------------------------
+
+find ./ -type f -readable -writable -exec sed -i "s/Litecoin/Donutcoin/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/LiteCoin/DonutCoin/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/litecoin/donutcoin/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/litecoind/donutcoind/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/LITECOIN/DONUTCOIN/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/LTC/DNC/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/라이트/도넛/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/라이트코인/도넛코인/g" {} \;
+find ./ -type f -readable -writable -exec sed -i "s/photons/dphotons/g" {} \;
+
+포트변경?
+find ./ -type f -readable -writable -exec sed -i "s/9333/9337/g" {} \; p2p 포트
+find ./ -type f -readable -writable -exec sed -i "s/9332/9336/g" {} \; rpc 포트 
+find ./ -type f -readable -writable -exec sed -i "s/19335/19339/g" {} \; p2p 포트 테스트넷
+find ./ -type f -readable -writable -exec sed -i "s/19332/19336/g" {} \; rpc 포트 테스트넷
+
+-------------------------------------------------------------------------------------------------
+매직넘버
+    라이트코인 네트워크에 접근할때 들어가는 헤더 메시지에 포함되는 고유 값들 
+    아스키코드값으로 16진수로 넣어주는것
+        2씩 더해서 바꿀것
+        chainparams.cpp - main net
+            pchMessageStart[0] = 0xfb;
+            pchMessageStart[1] = 0xc0;
+            pchMessageStart[2] = 0xb6;
+            pchMessageStart[3] = 0xdb;
+        
+        chainparams.cpp - test net
+            pchMessageStart[0] = 0xfd;
+            pchMessageStart[1] = 0xd2;
+            pchMessageStart[2] = 0xc8;
+            pchMessageStart[3] = 0xf1;
+-------------------------------------------------------------------------------------------------
+지갑주소접미부 변경
+    base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,45); k니까 45로 변경해둠
+    base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+    base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
+    base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,176);
+-------------------------------------------------------------------------------------------------
+    // vSeeds.emplace_back("seed-a.kigacoin.loshan.co.uk", true);
+    // vSeeds.emplace_back("dnsseed.thrasher.io", true);
+    // vSeeds.emplace_back("dnsseed.kigacointools.com", true);
+    // vSeeds.emplace_back("dnsseed.kigacoinpool.org", true);
+    // vSeeds.emplace_back("dnsseed.koin-project.com", false);
+    vSeeds.clear();
+    vSeeds.emplace_back("", true);
+
+contrib/seeds/readme.md -> chainparamsseeds.h
+-------------------------------------------------------------------------------------------------
+qt/res/icons 에서 라이트코인 png 파일들 각자 개인 파일들로 변경해줘야히 아니면 라이트 코인걸로 된다
+    about.png 
+    bitcoin_testnet.ico 
+    bitcoin.icns 
+    bitcoin.ico 
+    bitcoin.png 
+    litecoin_splash.png->kigacoin_splash.png
+
+doc/man file rename
+
+test/functional/test_framework/mininode.py import kigacoin_scrypt -> import litecoin_scrypt
+
+.travis.yml     - KIGACOIN_SCRYPT=0     ->    - LITECOIN_SCRYPT=0
+-------------------------------------------------------------------------------------------------
+python2 genesis.py -a scrypt -z "Donut is MY LIFE At 1997-01-24" -t 854031600
+
+04ffff001d01041e446f6e7574206973204d59204c49464520417420313939372d30312d3234
+algorithm: scrypt
+merkle hash: 32f3467f3abad9b6f6ecce75bafd65958aa9596555c61005d09b2c276ec85322
+pszTimestamp: Donut is MY LIFE At 1997-01-24
+pubkey: 04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f
+time: 854031600
+bits: 0x1e0ffff0
+Searching for genesis hash..
+genesis hash found! 
+nonce: 731059
+genesis hash: 7e0ca930302bf1917d87b8950e2c53f9961cec98d7e65c6a3494da4fdfe1a869
