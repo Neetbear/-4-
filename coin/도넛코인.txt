@@ -81,3 +81,13 @@ Searching for genesis hash..
 genesis hash found! 
 nonce: 731059
 genesis hash: 7e0ca930302bf1917d87b8950e2c53f9961cec98d7e65c6a3494da4fdfe1a869
+
+-------------------------------------------------------------------------------------------------
+.\donutcoin-qt.exe -conf=C:\work\donutcoin_win_bin -datadir=C:\work\donutcoin_win_bin\data
+.\donutcoin-qt.exe -datadir=C:\work\donutcoin_win_bin\data 
+
+=-===============================================================================================
+src/validation.cpp 
+    CAmount nSubsidy = 500 * COIN; 보상수량 조절
+src/consensus/consensus.h에서
+    static const int COINBASE_MATURITY = 10; 숙성량 조절

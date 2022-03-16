@@ -83,7 +83,7 @@ config 파일 수정
 qt창 실행
 ./kigacoin-qt.exe -conf=/C:\work\kigacoin_win_bin\kigacoin.conf -datadir=/C:\work\kigacoin_win_bin\data
 .\kigacoin-qt.exe -conf=C:\work\kigacoin_win_bin -datadir=C:\work\kigacoin_win_bin\data
-
+.\donutcoin-qt.exe -conf=C:\work\donutcoin-bin -datadir=C:\work\donutcoin-bin\data
 =================
 
 채굴
