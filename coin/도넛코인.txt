@@ -15,11 +15,13 @@ find ./ -type f -readable -writable -exec sed -i "s/라이트/도넛/g" {} \;
 find ./ -type f -readable -writable -exec sed -i "s/라이트코인/도넛코인/g" {} \;
 find ./ -type f -readable -writable -exec sed -i "s/photons/dphotons/g" {} \;
 
-포트변경?
-find ./ -type f -readable -writable -exec sed -i "s/9333/9337/g" {} \; p2p 포트
-find ./ -type f -readable -writable -exec sed -i "s/9332/9336/g" {} \; rpc 포트 
-find ./ -type f -readable -writable -exec sed -i "s/19335/19339/g" {} \; p2p 포트 테스트넷
-find ./ -type f -readable -writable -exec sed -i "s/19332/19336/g" {} \; rpc 포트 테스트넷
+포트 변경
+find . -type f -print0 | xargs -0 sed -i "" 's/9333/9777/g' p2p 포트
+find . -type f -print0 | xargs -0 sed -i "" 's/9332/9776/g' rpc 포트 
+find . -type f -print0 | xargs -0 sed -i "" 's/19335/19779/g' p2p 포트 테스트넷
+find . -type f -print0 | xargs -0 sed -i "" 's/19332/19776/g' rpc 포트 테스트넷
+find . -type f -print0 | xargs -0 sed -i "" 's/19444/19888/g' p2p 포트 레그테스트넷
+find . -type f -print0 | xargs -0 sed -i "" 's/19776//g' -> 776으로 바꾼거 있으니 안하고 냅둠
 
 -------------------------------------------------------------------------------------------------
 매직넘버
@@ -91,3 +93,8 @@ src/validation.cpp
     CAmount nSubsidy = 500 * COIN; 보상수량 조절
 src/consensus/consensus.h에서
     static const int COINBASE_MATURITY = 10; 숙성량 조절
+
+
+
+13.124.19.24
+D5V6za2BNbR7uW1ZR25S3AEL4WNPhkz6yz
