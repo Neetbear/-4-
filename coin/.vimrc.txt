@@ -1,0 +1,31 @@
+set hlsearch "검색어 하이라이팅
+set nu "줄번호
+set autoindent 
+set scrolloff=2
+set wildmode=longest,list
+set ts=4
+set sts=4
+set sw=1 "스크롤바 넓이
+set autowrite "다른 파일로 넘어갈때 자동 저장
+set autoread "작업중인 파일이 외부에서 변경됬을 경우 자동으로 불러옴
+set cindent
+set bs=eol,start,indent
+set history=2000
+set laststatus=2 "상태바 항상 표시
+set paste
+set shiftwidth=4
+set showmatch
+set smartcase
+set smarttab
+set softtabstop=4
+set tabstop=4
+set ruler
+set incsearch
+set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
+if $LANG[0]=='k' && $LANG[1]=='o'
+	set fileencoding=korea
+endif
+if has("syntax")
+	syntax on
+endif
+

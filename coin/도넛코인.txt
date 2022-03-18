@@ -98,3 +98,6 @@ src/consensus/consensus.h에서
 
 13.124.19.24
 D5V6za2BNbR7uW1ZR25S3AEL4WNPhkz6yz
+
+===================================
+git clone https://github.com/parkisak1029/parkisak1029.git
