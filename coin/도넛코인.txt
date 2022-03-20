@@ -100,6 +100,9 @@ src/consensus/consensus.h에서
 D5V6za2BNbR7uW1ZR25S3AEL4WNPhkz6yz
 
 ===================================
+ssh -i ubuntu_keypair.pem ubuntu@13.124.19.24  
 도넛코인 데몬용
 git clone https://github.com/parkisak1029/parkisak1029.git
-
+./donutcoind -datadir=/home/ubuntu/coin/parkisak1029/donut/data -conf=/home/ubuntu/coin/parkisak1029/donut/donutcoin.conf -printtoconsole
+~/coin/parkisak1029/donut/bin
+D7KceT55sMvctS7sopJWvUHpBfPDVo7DHu
